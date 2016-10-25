@@ -1,0 +1,48 @@
+{
+"resources":
+	[
+		{"name":"bgImage","type":"image","url":"assets/bg.png"},
+		{"name":"farHill","type":"image","url":"assets/farHill.png"},
+		{"name":"hill","type":"image","url":"assets/hill.png"},
+		{"name":"board","type":"image","url":"assets/board.png"},
+		{"name":"cloud1","type":"image","url":"assets/cloud1.png"},
+		{"name":"cloud2","type":"image","url":"assets/cloud2.png"},
+		{"name":"grass","type":"image","url":"assets/grass.png"},
+		{"name":"startboard","type":"image","url":"assets/startboard.png"},
+		{"name":"tower","type":"image","url":"assets/tower.png"},
+		{"name":"trash1","type":"image","url":"assets/trash1.png"},
+		{"name":"trash2","type":"image","url":"assets/trash2.png"},
+		{"name":"tree","type":"image","url":"assets/tree.png"},
+
+		{"name":"resultBg" ,"type":"image" , "url":"assets/result.png"},
+		{"name":"replay_btn","type":"image","url":"assets/replay.png"},
+		{"name":"share_btn","type":"image","url":"assets/shareBTN.png"},
+		{"name":"more_btn","type":"image","url":"assets/more.png"},
+		{"name":"avatar","type":"image","url":"assets/avatar.jpg"},
+		{"name":"myrank","type":"image","url":"assets/myrank.png"},
+		{"name":"failedBg","type":"image","url":"assets/failed.png"},
+		{"name":"rankall","type":"image","url":"assets/rankall.png"},
+
+
+		{"name":"friend_png","type":"image","url":"assets/friend.png"},
+		{"name":"friend_json","type":"json","url":"assets/friend.json"},
+
+		{"name":"stand_png","type":"image","url":"assets/stand.png"},
+		{"name":"stand_json","type":"json","url":"assets/stand.json"},
+		{"name":"ready_png","type":"image","url":"assets/ready.png"},
+		{"name":"ready_json","type":"json","url":"assets/ready.json"},
+		{"name":"pose_png","type":"image","url":"assets/pose.png"},
+		{"name":"pose_json","type":"json","url":"assets/pose.json"},
+		{"name":"fly_png","type":"image","url":"assets/fly.png"},
+		{"name":"fly_json","type":"json","url":"assets/fly.json"},
+		{"name":"stop_png","type":"image","url":"assets/stop.png"},
+		{"name":"stop_json","type":"json","url":"assets/stop.json"},
+		{"name":"jump_png","type":"image","url":"assets/jump.png"},
+		{"name":"jump_json","type":"json","url":"assets/jump.json"}
+	],
+
+"groups":
+	[
+        {"name":"preload","keys":"bgImage,avatar,myrank,resultBg,failedBg,rankall,replay_btn,share_btn,more_btn,friend_png,friend_json,pose_png,pose_json,stop_png,stop_json,fly_png,fly_json,stand_png,stand_json,ready_png,ready_json,jump_png,jump_json,farHill,hill,board,cloud1,cloud2,grass,startboard,tower,trash1,trash2,tree"}
+	]
+}

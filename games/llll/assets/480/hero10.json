@@ -1,0 +1,143 @@
+{
+    "frames": {
+        "run": {
+            "totalFrame": 6,
+            "childrenFrame": [
+                {
+                    "res": "hero1_idle_0",
+                    "x": 0,
+                    "y": 0
+                },
+                {
+                    "res": "hero1_idle_1",
+                    "x": 0,
+                    "y": 0
+                },
+                {
+                    "res": "hero1_idle_2",
+                    "x": 0,
+                    "y": 0
+                },
+                {
+                    "res": "hero1_idle_3",
+                    "x": 0,
+                    "y": 0
+                },
+                {
+                    "res": "hero1_idle_4",
+                    "x": 0,
+                    "y": 0
+                },
+                {
+                    "res": "hero1_idle_5",
+                    "x": 0,
+                    "y": 0
+                },
+                {
+                    "res": "hero1_idle_6",
+                    "x": 0,
+                    "y": 0
+                },
+                {
+                    "res": "hero1_idle_7",
+                    "x": 0,
+                    "y": 0
+                },
+                {
+                    "res": "hero1_idle_8",
+                    "x": 0,
+                    "y": 0
+                },
+                {
+                    "res": "hero1_idle_9",
+                    "x": 0,
+                    "y": 0
+                }
+            ]
+        }
+    },
+
+
+    "res": {
+        "hero1_idle_0": {
+            "w": 128,
+            "h": 73,
+            "x": 0,
+            "y": 0,
+            "offX":0,
+            "offY":0
+        },
+        "hero1_idle_1": {
+            "w": 128,
+            "h": 73,
+            "x": 128,
+            "y": 0,
+            "offX":0,
+            "offY":0
+        },
+        "hero1_idle_2": {
+            "w": 128,
+            "h": 73,
+            "x": 0,
+            "y": 73,
+            "offX":0,
+            "offY":0
+        },
+        "hero1_idle_3": {
+            "w": 128,
+            "h": 73,
+            "x": 128,
+            "y": 73,
+            "offX":0,
+            "offY":0
+        },
+        "hero1_idle_4": {
+            "w": 128,
+            "h": 73,
+            "x": 0,
+            "y": 146,
+            "offX":0,
+            "offY":0
+        },
+        "hero1_idle_5": {
+            "w": 128,
+            "h": 73,
+            "x": 128,
+            "y": 146,
+            "offX":0,
+            "offY":0
+        },
+        "hero1_idle_6": {
+            "w": 128,
+            "h": 73,
+            "x": 0,
+            "y": 219,
+            "offX":0,
+            "offY":0
+        },
+        "hero1_idle_7": {
+            "w": 128,
+            "h": 73,
+            "x": 128,
+            "y": 219,
+            "offX":0,
+            "offY":0
+        },
+        "hero1_idle_8": {
+            "w": 128,
+            "h": 73,
+            "x": 0,
+            "y": 292,
+            "offX":0,
+            "offY":0
+        },
+        "hero1_idle_9": {
+            "w": 128,
+            "h": 73,
+            "x": 128,
+            "y": 292,
+            "offX":0,
+            "offY":0
+        }
+    }
+}

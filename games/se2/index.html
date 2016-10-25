@@ -1,0 +1,78 @@
+﻿
+<!doctype html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,minimal-ui"><meta http-equiv="pragma" content="no-cache"><meta http-equiv="Cache-Control" content="no-cache, must-revalidate"><link rel="shortcut icon" href="assets/img/favicon.ico?ver=1.2.0"><link rel="icon" href="assets/img/favicon.ico?ver=1.2.0"><meta http-equiv="expires" content="-1"><title>看你有多色</title><link rel="stylesheet" type="text/css" href="assets/css/m.min.css?v=201408012215"></head><body></body></html><script id="tpl" type="text/html"><div class="grid">
+        <div class="page hide" id="loading">
+            <div class="loading-txt"><%=loading%></div>
+        </div>
+        <div class="page hide" id="index">
+            <h1><%=title%></h1>
+
+            <div id="help"><%=help_txt%></div>
+            <div class="btns">
+                <button data-type="color" class="btn btn-play">
+                    <%=btn_normal_mode%>
+                </button>
+                <button data-type="color2" class="btn btn-play btn-new">
+                    <%=btn_double_mode%>
+                </button>
+            </div>
+        </div>
+        <div class="page hide" id="room">
+            <header>
+                <span class="lv">
+                    <%=score%>
+                    <em>
+                        1
+                    </em>
+                </span>
+                <span class="time">
+                </span>
+                <span class="btn btn-pause">
+                    <%=btn_pause%>
+                </span>
+            </header>
+            <div id="box" class="lv1">
+            </div>
+        </div>
+        <div class="page hide" id="dialog">
+            <div class="inner">
+                <div class="content gameover">
+                    <div class="inner-content">
+                        <a href="http://g.lanrenmb.com/" target="_blank" class="boyaa-logo"><img src="assets/img/boyaa-logo.png" alt="boyaa-logo" /></a>
+                        <h3></h3>
+                        <p id="tips"><%=tips%></p>
+                        <div class="btn-wrap clearfix">
+                            <button id="mode" class="btn btn-play" data-type="color">
+                                <%=btn_normal%>
+                            </button>
+                            <button class="btn btn-restart">
+                                <%=btn_reTry%>
+                            </button>
+                        </div>
+                        <a href="http://g.lanrenmb.com/" target="_blank" class="btn btn-boyaa">
+                            <%=btn_more_game%>
+                        </a>
+                    </div>
+                </div>
+                <div class="content pause">
+                    <div class="inner-content">
+                        <a href="http://g.lanrenmb.com/" target="_blank" class="boyaa-logo"><img src="assets/img/boyaa-logo.png" alt="boyaa-logo" /></a>
+                        <h3>
+                            <%=game_pause%>
+                        </h3>
+                        <div class="btn-wrap clearfix">
+                            <button class="btn btn-resume">
+                                <%=btn_resume%>
+                            </button>
+                            <button class="btn btn-restart">
+                                <%=btn_reTry%>
+                            </button>
+                        </div>
+                        <a href="http://g.lanrenmb.com/" target="_blank" class="btn btn-boyaa">
+                            <%=btn_more_game%>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p class="coyright"><%=coyright%></p>
+    </div></script><script src="assets/js/libs.min.js"></script><script src="assets/js/main.min.js?v=201408012215"></script>

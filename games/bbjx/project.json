@@ -1,0 +1,171 @@
+<html><head><meta charset="utf-8"><meta name="viewport" content="user-scalable=no"/><title>步步惊心</title><link rel="icon" type="image/GIF" href="res/favicon.ico"/><meta name="viewport" content="width=device-width, user-scalable=no, maximum-scale=1.0"/><meta name="apple-mobile-web-app-capable" content="yes"/><meta name="full-screen" content="yes"/><meta name="screen-orientation" content="portrait"/><meta name="x5-fullscreen" content="true"/><meta name="360-fullscreen" content="true"/><style>body, canvas, div {
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	-khtml-user-select: none;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.tip-text {
+	padding: 7px 10px;
+	}
+.tip-close {
+	float:right;
+	color:#333;
+	text-shadow: 1px 1px 2px #FFF;
+	font-size: 10px;
+	margin-top: -13px;
+	padding-bottom: 2px;
+	padding-right: 5px;
+	}
+.mod_tips_weixin {
+	-webkit-animation: twinkling 1.5s infinite ease-in-out;
+	position: fixed;
+	width: 70%;
+	right: 10px;
+	top: 10px;
+	background-color: #F90;
+	color: #FFF;
+	line-height: 18px;
+	text-shadow: none;
+	border-radius: 3px;
+	font-size: 12px;
+	z-index: 101;
+	text-align:left;
+}
+.mod_tips_weixin:after {
+	-webkit-animation: twinkling 1.5s infinite ease-in-out;
+	content: "";
+	position: absolute;
+	right: 15px;
+	top: -10px;
+	border-width: 5px;
+	border-color: transparent transparent #F90;
+	border-style: dashed dashed solid;
+}
+@-webkit-keyframes twinkling {
+	0% {
+	 opacity: 0.5;
+	}
+	 50% {
+	opacity: 1;
+	}
+	100% {
+	opacity: 0.5;
+	}
+}
+.sbg {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	color: #fff;
+	font-size: 22px;
+	line-height: 1.7em;
+	background: rgba(0,0,0,0.85);
+	z-index: 200;
+}
+.sbg .arron {
+	position: absolute;
+	top: 8px;
+	right: 8px;
+	width: 100px;
+	height: 100px;
+	background: url(http://enjoy360.qiniudn.com//images/arron.gif) no-repeat;
+	background-size: 100px 100px;
+}
+.sbg p {
+	padding-top: 78px;
+}
+</style></head><body style="padding:0; margin: 0; background: #000;"><canvas id="gameCanvas" width="320" height="480"></canvas><script>function game_over_action()
+{
+	document.getElementById("share_to").style.display = "block";
+}
+function game_begin_action()
+{
+	document.getElementById("share_to").style.display = "none";
+}
+function click_share_action()
+{
+setTimeout(function(){
+          document.getElementById('sbg').style.display = 'block';
+		 },500);
+}
+var res_path = "http://wxzg.zhengguzhiwang.com/static_res//bbjx/res";
+var _host = "http://" + window.location.host;
+  (function () {
+    function onBridgeReady() {
+      var onShare = function(action) {
+        var title = _.sprintf(
+            "【步步惊心】我用%d步解开了迷局，被皇上赐封为【%s】，你的官职是什么？",
+            wx.chess.lastScore, wx.chess.getTitle()
+        );
+        if (wx.chess.lastScore == 0 || wx.chess.shareType == "help") {
+            title = "我在玩【步步惊心】的时候被难住了...求安抚！求帮助！";
+        }
+        WeixinJSBridge.invoke(action, {
+          "appid": "",
+          "img_url": "http://enjoy360.qiniudn.com//images/bbjx.jpg",
+          "img_width": "200",
+          "img_height": "200",
+          "link": "http://u2765.o-o-0.com/index.php?r=" + _host + "/enjoy.php/tinygame/bbjx/from/tl",
+          "desc": "智力小游戏《步步惊心》，等你来战！",
+          "title": title
+        }, function(res) {
+         onShareComplete(res)
+        });
+      };
+      WeixinJSBridge.on('menu:share:timeline', function() {
+        onShare("shareTimeline");
+      });
+      WeixinJSBridge.on('menu:share:appmessage', function() {
+        onShare('sendAppMessage');
+      });
+      WeixinJSBridge.call('showOptionMenu');
+    }
+function attention_wx() {
+	alert("《整蛊专家》最火爆的朋友圈整人游戏！\n点击确认立即关注！");
+	location.href = 'http://mp.weixin.qq.com/s?__biz=MjM5Mjg3NjUwMA==&mid=203878037&idx=1&sn=0d99edf65bd472c5178d47d3d855e1b6#rd';
+}
+function onShareComplete(res) {
+		setTimeout(function(){
+          attention_wx();
+		 },500);                }
+    //显示右边上方的分享按钮
+    var d = document;
+    if (d.addEventListener) {
+      d.addEventListener('WeixinJSBridgeReady', onBridgeReady);
+    } else if (d.attachEvent) {
+      d.attachEvent('WeixinJSBridgeReady', onBridgeReady);
+      d.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+    }
+  })();
+</script><script>    var wx = {}, cc = {};
+    wx.production = true;
+    cc.OrbitCamera = cc.CatmullRomBy = cc.CatmullRomTo = cc.CardinalSplineBy = cc.CardinalSplineTo = {};
+</script><script src="http://enjoy360.qiniudn.com//bbjx/cocos2d-html5-v3.0-rc1-core.min.js"></script><script src="http://enjoy360.qiniudn.com//bbjx/game.min.js"></script><div id="share_to" class="mod_tips_weixin" onClick="this.style.display='none'" style="display:none;"><div class="tip-text" >点击右上角按钮，分享到朋友圈，和微信好友一起比拼!</div><span class="tip-close">点击关闭</span></div><div id="sbg" class="sbg" onClick="document.getElementById('sbg').style.display = 'none';"><div class="arron"></div><p id="msg">请点击右上角按钮<br />    再点击【分享到朋友圈】<br />    去向小伙伴炫耀一下吧！</p></div><style>.ad {
+	text-align: center;
+	left:0px;
+	right:0px;
+	bottom: -5px;
+	position: fixed;
+	background-color:#FFF;
+	z-index:999;
+}
+</style><div id='google_js'></div><div id="google_ad" class="ad"><ins
+		class="adsbygoogle"
+		style="display: inline-block; width: 320px; height: 50px"
+		data-ad-client="ca-pub-9048483410846116" data-ad-slot="6220581246"></ins></div><script>(adsbygoogle = window.adsbygoogle || []).push({});
+function load_google_js()
+{
+	 var header = document.getElementById('google_js');
+	 var script = document.createElement('script');
+	 script.src = '//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+	 header.appendChild(script);
+}
+ setTimeout(function(){
+          load_google_js();
+		 },100);
+</script></body></html>

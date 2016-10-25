@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no width=device-width">
+    <title>火爆朋友圈</title>
+    <link rel="stylesheet" href="css/style.css">
+    <STYLE TYPE="text/css" MEDIA=screen>
+    #desktop-ad {
+        display: block;
+        margin-left: -160px;
+        width: 320px;
+        position: absolute;
+        top: 0px;
+        left: 50%;
+        z-Index: 1000;
+        text-align: center;
+    }
+    </STYLE>
+    <script src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/cookies.js"></script>
+    <script>
+        if (!window.paper) {
+            var paperScript = document.createElement('script');
+            paperScript.src = "js/paper-full.min.js";
+            document.head.appendChild(paperScript);
+        }
+    </script>
+</head>
+<body>
+    <div id='wx_logo' style='margin:0 auto;display:none;'>
+        <img src='logo/balance.png' />
+    </div>
+    <canvas id="canvas" resize stats hidpi="on"></canvas>
+    <div id="inputpage">
+        <div id="middle">
+            <div id="name_form">
+                <p>载入中，请稍等。。。</p>
+            </div>
+        </div>
+    </div>
+     <script type="text/paperscript" canvas="canvas" src="js/game.min.js"></script>
+    <script language=javascript>
+		var mebtnopenurl = 'http://g.lanrenmb.com/games/qpjzg/';
+		window.shareData = {
+		        "imgUrl": "http://g.lanrenmb.com/icon/qpjzg.png",
+		        "timeLineLink": "http://g.lanrenmb.com/games/qpjzg/",
+		        "tTitle": "强迫症患者",
+		        "tContent": "强迫症患者"
+		};
+				
+		function goHome(){
+			window.location=mebtnopenurl;
+		}
+		function clickMore(){
+			if((window.location+"").indexOf("zf",1)>0){
+				window.location = "http://g.lanrenmb.com/";
+			 }
+			 else{
+				goHome();
+			 }
+		}
+		function dp_share(){
+			document.title ="我有强迫症，"+myData.scoreName+"，你觉得你可以超越我么？";
+			document.getElementById("share").style.display="";
+			window.shareData.tTitle = document.title;
+		}
+		function dp_Ranking(){
+			window.location=mebtnopenurl;
+		}
+
+		function showAd(){
+		}
+		function hideAd(){
+		}
+		document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+		    
+		    WeixinJSBridge.on('menu:share:appmessage', function(argv) {
+		        WeixinJSBridge.invoke('sendAppMessage', {
+		            "img_url": window.shareData.imgUrl,
+		            "link": window.shareData.timeLineLink,
+		            "desc": window.shareData.tContent,
+		            "title": window.shareData.tTitle
+		        }, onShareComplete);
+		    });
+
+		    WeixinJSBridge.on('menu:share:timeline', function(argv) {
+		        WeixinJSBridge.invoke('shareTimeline', {
+		            "img_url": window.shareData.imgUrl,
+		            "img_width": "640",
+		            "img_height": "640",
+		            "link": window.shareData.timeLineLink,
+		            "desc": window.shareData.tContent,
+		            "title": window.shareData.tTitle
+		        }, onShareComplete);
+		    });
+		}, false);
+		</script>
+		<div id=share style="display: none">
+			<img width=100% src="http://g.lanrenmb.com/icon/qpjzg.png"
+				style="position: fixed; z-index: 9999; top: 0; left: 0; display: "
+				ontouchstart="document.getElementById('share').style.display='none';" />
+		</div>
+		<div style="display: none;">
+			<script type="text/javascript">
+            var myData = { gameid: "qpzhz" };
+			window.shareData.timeLineLink = "http://g.lanrenmb.com/games/qpjzg" + myData.gameid + (localStorage.myuid ? "&uid=" + localStorage.myuid : "");
+			function dp_submitScore(score){
+				myData.score = score*100;
+				myData.scoreName ="坚持了"+ score+"秒";
+				if(score>0){
+					if (confirm("我的强迫症在矫正棍上搞了"+score+"秒，看来强迫症快治好了！")){
+						dp_share();
+					}
+				}
+			}
+			function onShareComplete(res) {
+                document.location.href = mebtnopenurl;
+	        }
+			</script>
+</body>
+</html>

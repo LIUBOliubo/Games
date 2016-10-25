@@ -1,0 +1,86 @@
+<!DOCTYPE html> 
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>滚滚足球</title>
+
+    <!-- Define the viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0, target-densitydpi=device-dpi">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <style>
+        * {
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        }
+
+        html {
+            overflow: hidden;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            background-color: #333333;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+        #gamediv {
+            margin: 0;
+            padding: 0;
+            height: 960px;
+            min-height:  960px;
+            width: 100%;
+            display: block;
+        }
+
+        #canvas {
+            background-color: #64B5DF;
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -172px;
+            margin-left: -160px;
+            z-index: 1;
+        }
+    </style>
+	
+	<script language="javascript" type="text/javascript" src="play68.js"></script>
+    <script type="text/javascript" src="core.js"></script>
+    <script type="text/javascript">
+	(function() {
+		var ga = document.createElement('script');
+		ga.type = 'text/javascript';
+		ga.async = true;
+		ga.src = 'game.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	 
+		ga.onload = function() {
+			ga.parentNode.removeChild(ga);
+		};
+	})();
+</script>
+
+<!--Analytics-->
+<div style="display:none">
+</div>
+
+</head>
+
+<body onLoad="MyGame.init()" ryt12819="1">
+
+<div id="gamediv" style="height: 946px;"></div>
+    <canvas id="canvas" width="765" height="946" style="margin-top: 0px; margin-left: 0px; left: 577px; top: 0px;"></canvas>
+
+<!--play68 init-->
+<link type="text/css" rel="stylesheet" href="sidebar.css">
+<script language="javascript" type="text/javascript" src="play68bar.js"></script>
+
+	
+</body></html>

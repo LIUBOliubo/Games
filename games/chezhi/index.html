@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta http-equiv="pragma" content="no-cache"/>
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name ="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+	<meta charset="utf-8"/>
+	<title>真屌丝鉴定-懒人模板</title>
+		<script type="text/javascript">
+		var _configs = {}; _configs['isSite'] = 'http://g.lanrenmb.com/';_configs["isCount"] = "http://g.lanrenmb.com/";_configs["isSites"] = "http://g.lanrenmb.com/";
+		var _con = {}; _con["num"] = 43;
+	</script>
+	<script type="text/javascript" src="./js/jquery.min.js"></script>
+<style type="text/css">
+ body {
+	  background: #000000;
+	  color:#cccccc;
+	  margin: 0px;
+	  padding: 0px;
+	  border: 0px;
+	}
+	canvas {
+	  image-rendering: optimizeSpeed;
+	  -webkit-interpolation-mode: nearest-neighbor;
+	  -ms-touch-action: none;
+	  margin: 0px;
+	  padding: 0px;
+	  border: 0px;
+	}
+	:-webkit-full-screen #canvas {
+		 width: 100%;
+		 height: 100%;
+	}
+	div.gm4html5_div_class
+	{
+	  margin: 0px;
+	  padding: 0px;
+	  border: 0px;
+	}
+	div.gm4html5_login
+	{
+		 padding: 20px;
+		 position: absolute;
+		 border: solid 2px #000000;
+		 background-color: #404040;
+		 color:#00ff00;
+		 border-radius: 15px;
+		 box-shadow: #101010 20px 20px 40px;
+	}
+	div.gm4html5_cancel_button
+	{
+		 float: right;
+	}
+	div.gm4html5_login_button
+	{
+		 float: left;
+	}
+	div.gm4html5_login_header
+	{
+		 text-align: center;
+	}
+	:-webkit-full-screen {
+	   width: 100%;
+	   height: 100%;
+	}
+#share-wx{
+	background:rgba(0,0,0,0.8);
+	position:absolute;top:0px;
+	left:0px;
+	width:100%;
+	height:100%;
+	z-index:10000;
+	display:none;
+}
+#wx-qr{
+	background:rgba(0,0,0,0.8);
+	position:absolute;top:0px;
+	left:0px;
+	width:100%;
+	height:100%;
+	z-index:10000;
+	display:none;
+}
+.lis{ left: 0;overflow: hidden;width: 100%;z-index: 122;position: absolute;bottom: 0;}
+.lis a{float: left;width:99.9%;margin-right:1px;color:#ffffff;font-size:14px;text-decoration: none;background:#606783;text-align: center;opacity: 0.8;line-height:30px;font-weight: bold;font-family:"微软雅黑"；}
+.lis a img{position: relative;top: 1px;}
+</style>
+</head>
+<body>
+<script type="text/javascript" src="./js/code.js"></script>
+	<div class="lis">
+		<div style="float: left;width:33%;"><a style="border-bottom: 3px solid #fd6766;" href="http://g.lanrenmb.com/">游戏列表</a></div>
+		<div style="float: left;width:34%;"><a style="border-bottom: 3px solid #04fece;" href="http://g.lanrenmb.com/">关注收藏</a></div>
+		<div style="float: left;width:33%;"><a style="width:100%;margin:0;border-bottom: 3px solid #fdcd01;" onclick="location.href=location.href;" href="javascript:;" ><img width="15" src="./vapp/4.png">重玩</a></div>
+	</div>
+		<div class="gm4html5_div_class" id="gm4html5_div_id">
+            <canvas id="canvas" width="300" height="640">
+               <p>Your browser doesn't support HTML5 canvas.</p>
+            </canvas>
+        </div>
+        <script language=javascript>
+		var mebtnopenurl = 'http://g.lanrenmb.com/';
+		dataForWeixin = {
+			"appId": "wxd47d75faf9fa3097",
+		    "imgUrl": "http://g.lanrenmb.com/games/chezhi/logo.jpg",
+		    "url": "http://g.lanrenmb.com/games/chezhi/",
+		    "tTitle": "屌丝扯纸大作战，看你多久能扯完一卷卫生纸",
+		    "tContent": "你是否就是屌丝中的战斗机？"
+		};
+				
+		function goHome(){
+			window.location=mebtnopenurl;
+		}
+		function clickMore(){
+			if((window.location+"").indexOf("zf",1)>0){
+				window.location = mebtnopenurl;
+			 }
+			 else{
+				goHome();
+			 }
+		}
+		function dp_share(){
+			document.title ="屌丝扯纸大作战我共用了："+myData.scoreName+"，看你多久能扯完一卷卫生纸";
+			document.getElementById("share").style.display="";
+			dataForWeixin.tTitle = document.title;
+		}
+		function dp_Ranking(){
+			window.location=mebtnopenurl;
+		}
+		document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+		    
+		    WeixinJSBridge.on('menu:share:appmessage', function(argv) {
+		        WeixinJSBridge.invoke('sendAppMessage', {
+					"appid": dataForWeixin.appId,
+		            "img_url": dataForWeixin.imgUrl,
+		            "link": dataForWeixin.url,
+		            "desc": dataForWeixin.tContent,
+		            "title": dataForWeixin.tTitle
+		        });
+				 setTimeout(function () {location.href = mebtnopenurl;}, 1500); 
+		    });
+
+		    WeixinJSBridge.on('menu:share:timeline', function(argv) {
+		        WeixinJSBridge.invoke('shareTimeline', {
+		            "appid": dataForWeixin.appId,
+		            "img_url": dataForWeixin.imgUrl,
+		            "img_width": "640",
+		            "img_height": "640",
+		            "link": dataForWeixin.url,
+		            "desc": dataForWeixin.tContent,
+		            "title": dataForWeixin.tTitle
+		        });
+				setTimeout(function () {location.href = mebtnopenurl;}, 1500);
+		    });
+		}, false);
+		</script>
+		 <div id="share" style="display: none">
+			<img width=100% src="./vapp/43/share.png" style="position: fixed; z-index: 9999; top: 0; left: 0; display: " ontouchstart="document.getElementById('share').style.display='none';"/>
+		</div>
+		<div style="display: none;">
+			<script type="text/javascript">
+			var myData = {};
+			function dp_submitScore(score){
+				myData.score = Math.round(score*1000);
+				myData.scoreName = score+"秒";
+				if(score){
+					if (confirm("屌丝扯纸大作战您共用了："+score+"秒！\n要不要通知下小伙伴们呢？")){
+						dp_share();
+					}
+
+				}
+			}
+			</script>
+        <script type="text/javascript" src="./js/43/bumf.js"></script>
+    <div style="display: none;"> <img src="http://img.tongji.linezing.com/3455448/tongji.gif"></div>  
+</body>
+</html>

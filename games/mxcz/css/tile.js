@@ -1,0 +1,1 @@
+function Tile(e,t){this.x=e.x,this.y=e.y,this.value=t||2,this.previousPosition=null,this.mergedFrom=null}Tile.prototype.savePosition=function(){this.previousPosition={x:this.x,y:this.y}},Tile.prototype.updatePosition=function(e){this.x=e.x,this.y=e.y},Tile.prototype.serialize=function(){return{position:{x:this.x,y:this.y},value:this.value}}

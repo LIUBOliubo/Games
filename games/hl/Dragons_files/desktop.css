@@ -1,0 +1,27 @@
+body {
+	font-size: 12px;
+	margin: 0px;
+	padding: 0px;
+	background-color: #000;
+}
+
+#container {
+	width: 320px;
+	height: 480px;
+	margin: 0px auto;
+	position: relative;
+}
+
+.canvas {
+	background-color: #121212;
+}
+
+#console {
+	position: fixed;
+	height: 400px; width: 300px;
+	top: 0px; left: 0px;
+	overflow: auto;
+	font-family: Helvetica;
+	color: white;
+	text-align: left;
+}

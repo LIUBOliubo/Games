@@ -1,0 +1,59 @@
+@charset "UTF-8";
+/* CSS Document */
+
+.bar {
+    position: fixed;
+    right: 0;
+    left: 0;
+    z-index: 10;
+    height: 44px;
+    padding-right: 10px;
+    padding-left: 10px;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+	background-color: rgba(0, 104, 183, .98);
+    border-bottom: 0;
+    -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, .85);
+    box-shadow: 0 0 1px rgba(0, 0, 0, .85)
+}
+.bar-nav {
+    top: 0
+}
+
+.title {
+    position: absolute;
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin: 0 -10px;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 44px;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+	font-family:"Microsoft Yahei";
+}
+body{ padding:44px 0 0 0}
+.content .slide{ text-align:center}
+.game-item img{ -moz-border-radius:10px; -webkit-border-radius:10px; border-radius:10px;-webkit-box-shadow: 0 0 3px 0 rgba(0,0,0,.9);
+box-shadow: 0 0 3px 0 rgba(0,0,0,.9); width:60px; height:60px; float:left; margin-right:10px;}
+.game-item{ border-bottom:1px dotted #c4c4c4; padding:10px; float:left; width:100%; position:relative}
+.gamename{ float:left; width:100%; padding-left:70px; margin-left:-70px; position:relative; height:60px; overflow:hidden}
+.gamename h5{ font-size:16px;font-weight:700; line-height:16px; margin:3px 0 8px 0; padding:0}
+.gamename p{ color:#999; font-size:12px;}
+.gamename p em{ font-style:normal; color:#f50;}
+.game-go{ float:right; position:absolute; right:10px; line-height:16px; top:32px;}
+.game-go span{ display:inline-block; width:16px; height:16px; background:url(../images/arrow.png) no-repeat; background-size:contain; float:right; margin-left:5px;}
+.game-go a{ color:#76c100; text-decoration:none}
+footer ul{ margin:5px 0 0 0; padding:0}
+footer li{ list-style:none; text-align:center; float:left; display:inline-block; width:33.3%}
+footer li a{ display:inline-block; width:70px; height:30px; padding-left:40px; line-height:30px; font-size:14px; color:#fff; text-decoration:none}
+footer li.foot-ico01 a{ background:url(../images/foot1.png) no-repeat 0 50% ;background-size:contain;}
+footer li.foot-ico02 a{ background:url(../images/foot2.png) no-repeat 0 50% ;background-size:contain;}
+footer li.foot-ico03 a{ background:url(../images/foot3.png) no-repeat 0 50% ;background-size:contain;}
+footer li a:hover{ color:#fff; text-decoration:none}
+
+

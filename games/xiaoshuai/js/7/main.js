@@ -1,0 +1,14 @@
+var gameCounter,gameCounterText=0;var t;$$.onready(function(){setHeight();gameCounter=getElement('#gameCounter');fb.fn.setCounter=function(n){};fb.fn.dead=function(){setTimeout(function(){showDieMenu();},200);return true;}
+fb.fn.alertRelive=function(){setTimeout(function(){showDieMenu(true);},200);return true;}
+fb.fn.restart=function(){gameCounter.css('display','block');}
+fb.init('GameCanvas',function(){getElement('#startLayer').onclick=function(){var n=2;gameCounter.innerHTML='<img class="FBfont" src="'+_config['isSite']+'vapp/7/f_1.png"/><img class="FBfont" src="'+_config['isSite']+'vapp/7/f_0.png"/><img class="FBfont" src="'+_config['isSite']+'vapp/7/f_0.png"/>';t=setInterval(function(){n=n+'';var num=''
+for(var i=0,len=n.length;i<len;i++){num+='<img class="FBfont" src="'+_config['isSite']+'vapp/7/f_'+n[i]+'.png"/>';}
+gameCounter.innerHTML=num+'<img class="FBfont" src="'+_config['isSite']+'vapp/7/f_0.png"/><img class="FBfont" src="'+_config['isSite']+'vapp/7/f_0.png"/>';fb.status.score=n;n++;},1000);getElement('#startLayer').rm();gameCounter.css('display','block');setTimeout(function(){createjs.Sound.play("Menu");fb.birdJump();},300)};getElement('#restart-btn').onclick=function(){clearInterval(t);gameCounter.innerHTML='<img class="FBfont" src="'+_config['isSite']+'vapp/7/f_1.png"/><img class="FBfont" src="'+_config['isSite']+'vapp/7/f_0.png"/><img class="FBfont" src="'+_config['isSite']+'vapp/7/f_0.png"/>';var n=2;t=setInterval(function(){n=n+'';var num=''
+for(var i=0,len=n.length;i<len;i++){num+='<img class="FBfont" src="'+_config['isSite']+'vapp/7/f_'+n[i]+'.png"/>';}
+gameCounter.innerHTML=num+'<img class="FBfont" src="'+_config['isSite']+'vapp/7/f_0.png"/><img class="FBfont" src="'+_config['isSite']+'vapp/7/f_0.png"/>';fb.status.score=n;n++;},1000);hideDieMenu();fb.restart();};});})
+$$.onresize(function(){setHeight();})
+function setHeight(){var c=document.getElementById('GameCanvas');c.style.height=window.innerHeight+'px';c.style.width=window.innerWidth+'px';}
+function showDieMenu(relive,callback){createjs.Sound.play("Menu");var n=fb.status.score+'';var num=''
+for(var i=0,len=n.length;i<len;i++){num+='<img class="FBfont" src="'+_config['isSite']+'vapp/7/f_'+n[i]+'.png"/>';}
+getElement('#gameScoreText').innerHTML=num+'<img class="FBfont" src="'+_config['isSite']+'vapp/7/f_0.png"/><img class="FBfont" src="'+_config['isSite']+'vapp/7/f_0.png"/>';gameCounter.css('display','none');getElement('#gameMenuLayer').rmCls('HIDE');getElement('#gameName').addCls('HIDE');dataForWeixin.title="酷跑炫飞模式即将登场，我的小帅飞了"+fb.status.score+"00米，你呢？";dataForWeixin.desc="酷跑炫飞模式即将登场，我的小帅飞了"+fb.status.score+"00米，你呢？";}
+function hideDieMenu(callback){createjs.Sound.play("Menu");getElement('#gameMenuLayer').addCls('HIDE');getElement('#gameName').rmCls('HIDE');gameCounter.css('display','block');dataForWeixin.title="听说酷跑变成炫飞了？来试试让金枪小帅飞翔起来，比比谁飞得更远！";dataForWeixin.desc="听说酷跑变成炫飞了？来试试让金枪小帅飞翔起来，比比谁飞得更远！";}

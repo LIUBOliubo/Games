@@ -1,0 +1,405 @@
+{
+    "module" : {
+        "actions" : [
+            "core",
+
+            "CCAction.js",
+            "CCActionInterval.js",
+            "CCActionInstant.js",
+            "CCActionCamera.js",
+            "CCActionEase.js",
+            "CCActionCatmullRom.js",
+            "CCActionTween.js"
+        ],
+        "actions3d" : [
+            "core", "kazmath", "shaders", "actions", "effects", "render-texture",
+
+            "CCActionGrid.js",
+            "CCActionGrid3D.js",
+            "CCActionTiledGrid.js",
+            "CCActionPageTurn3D.js"
+        ],
+        "audio" : [
+            "core",
+
+            "CCAudio.js"
+        ],
+        "clipping-nodes" : [
+            "core", "shape-nodes",
+
+            "CCClippingNode.js"
+        ],
+        "compression" : [
+            "core",
+
+            "ZipUtils.js",
+            "base64.js",
+            "gzip.js",
+            "zlib.min.js"
+        ],
+        "core" : [
+            "CCDebugger.js",
+            "BinaryLoader.js",
+            "Base64Images.js",
+            "CCClass.js",
+            "CCCommon.js",
+            "CCGeometry.js",
+            "CCSAXParser.js",
+            "CCLoaders.js",
+            "CCConfig.js",
+            "miniFramework.js",
+            "CCMacro.js",
+            "CCTypesWebGL.js",
+            "CCTypesPropertyDefine.js",
+            "CCTypes.js",
+            "CCEGLView.js",
+            "CCScreen.js",
+            "CCVisibleRect.js",
+
+            "CCInputManager.js",
+            "CCInputExtension.js",
+
+            "CCAffineTransform.js",
+            "CCPointExtension.js",
+            "CCVertex.js",
+            "TransformUtils.js",
+            "CCTouch.js",
+
+            "CCEvent.js",
+            "CCEventListener.js",
+            "CCEventManager.js",
+            "CCEventExtension.js",
+
+            "BaseNodesWebGL.js",
+            "BaseNodesPropertyDefine.js",
+            "CCNode.js",
+            "CCAtlasNode.js",
+
+            "TexturesWebGL.js",
+            "TexturesPropertyDefine.js",
+            "CCTexture2D.js",
+            "CCTextureCache.js",
+            "CCTextureAtlas.js",
+
+            "CCScene.js",
+            "CCLoaderScene.js",
+
+            "CCLayerWebGL.js",
+            "CCLayerPropertyDefine.js",
+            "CCLayer.js",
+
+            "SpritesWebGL.js",
+            "SpritesPropertyDefine.js",
+            "CCSprite.js",
+            "CCSpriteBatchNode.js",
+            "CCBakeSprite.js",
+            "CCAnimation.js",
+            "CCAnimationCache.js",
+            "CCSpriteFrame.js",
+            "CCSpriteFrameCache.js",
+            "CCConfiguration.js",
+
+            "CCDirectorWebGL.js",
+            "CCDirector.js",
+
+            "CCCamera.js",
+            "CCScheduler.js",
+            "CCDrawingPrimitivesCanvas.js",
+            "CCDrawingPrimitivesWebGL.js",
+
+            "LabelTTFWebGL.js",
+            "LabelTTFPropertyDefine.js",
+            "CCLabelTTF.js",
+
+            "CCActionManager.js"
+        ],
+        "effects" : [
+            "core",
+
+            "CCGrid.js",
+            "CCGrabber.js"
+        ],
+        "kazmath" : [
+            "core",
+
+            "utility.js",
+            "vec2.js",
+            "vec3.js",
+            "vec4.js",
+            "ray2.js",
+            "mat3.js",
+            "mat4.js",
+            "plane.js",
+            "quaternion.js",
+            "aabb.js",
+            "mat4stack.js",
+            "matrix.js"
+        ],
+        "labels" : [
+            "core",
+
+            "CCLabelAtlas.js",
+            "CCLabelBMFont.js"
+        ],
+        "menus" : [
+            "core", "actions",
+
+            "CCMenuItem.js",
+            "CCMenu.js"
+        ],
+        "motion-streak" : [
+            "core", "shaders", "kazmath", "labels",
+
+            "CCMotionStreak.js"
+        ],
+        "node-grid" : [
+            "core",
+
+            "CCNodeGrid.js"
+        ],
+        "parallax" : [
+            "core",
+
+            "CCParallaxNode.js"
+        ],
+        "particle" : [
+            "core", "compression",
+
+            "CCPNGReader.js",
+            "CCTIFFReader.js",
+            "CCParticleSystem.js",
+            "CCParticleExamples.js",
+            "CCParticleBatchNode.js"
+        ],
+        "physics" : [
+            "core", "shape-nodes",
+
+            "CCPhysicsSprite.js",
+            "CCPhysicsDebugNode.js"
+        ],
+        "progress-timer" : [
+            "core", "actions",
+
+            "CCProgressTimer.js",
+            "CCActionProgressTimer.js"
+        ],
+        "render-texture" : [
+            "core",
+
+            "CCRenderTexture.js"
+        ],
+        "shaders" : [
+            "core", "kazmath",
+
+            "CCShaders.js",
+            "CCShaderCache.js",
+            "CCGLProgram.js",
+            "CCGLStateCache.js"
+        ],
+        "shape-nodes" : [
+            "core",
+
+            "CCDrawNode.js"
+        ],
+        "text-input" : [
+            "core",
+
+            "CCIMEDispatcher.js",
+            "CCTextFieldTTF.js"
+        ],
+        "tilemap" : [
+            "core", "compression",
+
+            "CCTGAlib.js",
+            "CCTMXTiledMap.js",
+            "CCTMXXMLParser.js",
+            "CCTMXObjectGroup.js",
+            "CCTMXLayer.js"
+        ],
+        "transitions" : [
+            "core", "actions", "render-texture", "progress-timer",
+
+            "CCTransition.js",
+            "CCTransitionProgress.js",
+            "CCTransitionPageTurn.js"
+        ],
+
+        "base4webgl" : ["core", "kazmath", "shaders"],
+        "cocos2d" : [
+            "core", "kazmath", "shaders", "render-texture", "motion-streak", "node-grid",
+            "clipping-nodes", "effects", "shape-nodes", "actions", "actions3d",
+            "progress-timer", "transitions", "labels", "compression", "particle",
+            "text-input", "menus", "tilemap", "parallax", "audio"
+        ],
+
+        "ccbreader" : [
+            "core", "audio", "gui", "menus", "particle", "actions", "labels",
+
+            "CCNodeLoader.js",
+            "CCBReaderUtil.js",
+            "CCControlLoader.js",
+            "CCSpriteLoader.js",
+            "CCNodeLoaderLibrary.js",
+            "CCBReader.js",
+            "CCBValue.js",
+            "CCBKeyframe.js",
+            "CCBSequence.js",
+            "CCBRelativePositioning.js",
+            "CCBAnimationManager.js"
+        ],
+        "editbox" : [
+            "core", "gui",
+
+            "CCdomNode.js",
+            "CCEditBox.js"
+        ],
+        "ccpool" : [
+            "core",
+
+            "CCPool.js"
+        ],
+        "ccui" : [
+            "core", "actions", "labels", "text-input","clipping-nodes",
+            "CCProtectedNode.js",
+            "CocosGUI.js",
+            "UIWidget.js",
+            "UIScale9Sprite.js",
+            "UILayout.js",
+            "UILayoutParameter.js",
+            "UILayoutManager.js",
+            "UIHBox.js",
+            "UIRelativeBox.js",
+            "UIVBox.js",
+            "UIHelper.js",
+            "UIButton.js",
+            "UICheckBox.js",
+            "UIImageView.js",
+            "UILoadingBar.js",
+            "UISlider.js",
+            "UIText.js",
+            "UITextAtlas.js",
+            "UITextBMFont.js",
+            "UITextField.js",
+            "UIRichText.js",
+            "UIScrollView.js",
+            "UIListView.js",
+            "UIPageView.js"
+        ],
+        "cocostudio" : [
+            "core",  "tilemap", "particle", "shape-nodes", "ccui",
+
+            "CCComponent.js",
+            "CCComponentContainer.js",
+            "CocoStudio.js",
+
+            "CCArmatureDefine.js",
+            "CCDataReaderHelper.js",
+            "CCSpriteFrameCacheHelper.js",
+            "CCTransformHelp.js",
+            "CCTweenFunction.js",
+            "CCUtilMath.js",
+            "CCArmatureDataManager.js",
+            "CCDatas.js",
+            "CCDecorativeDisplay.js",
+            "CCDisplayFactory.js",
+            "CCDisplayManager.js",
+            "CCSkin.js",
+            "CCProcessBase.js",
+            "CCArmatureAnimation.js",
+            "CCTween.js",
+            "CCColliderDetector.js",
+            "CCArmature.js",
+            "CCBone.js",
+
+            "CCActionFrame.js",
+            "CCActionManager.js",
+            "CCActionNode.js",
+            "CCActionObject.js",
+
+            "CCComAttribute.js",
+            "CCComAudio.js",
+            "CCComController.js",
+            "CCComRender.js",
+
+            "ObjectFactory.js",
+            "TriggerBase.js",
+            "TriggerMng.js",
+            "TriggerObj.js",
+
+
+            "ButtonReader.js",
+            "CheckBoxReader.js",
+            "ImageViewReader.js",
+            "LabelAtlasReader.js",
+            "LabelBMFontReader.js",
+            "LabelReader.js",
+            "LayoutLayoutReader.js",
+            "ScrollViewReader.js",
+            "ListViewReader.js",
+            "LoadingBarReader.js",
+            "PageViewReader.js",
+            "SliderReader.js",
+            "TextFieldReader.js",
+            "WidgetReaderProtocol.js",
+            "WidgetReader.js",
+
+            "GUIReader.js",
+            "SceneReader.js"
+        ],
+        "gui" : [
+            "core", "clipping-nodes", "render-texture", "actions", "progress-timer",
+
+            "CCControl.js",
+            "CCControlButton.js",
+            "CCControlUtils.js",
+            "CCInvocation.js",
+            "CCScale9Sprite.js",
+            "CCMenuPassive.js",
+            "CCControlSaturationBrightnessPicker.js",
+            "CCControlHuePicker.js",
+            "CCControlColourPicker.js",
+            "CCControlSlider.js",
+            "CCControlSwitch.js",
+            "CCControlStepper.js",
+            "CCControlPotentiometer.js",
+            "CCScrollView.js",
+            "CCSorting.js",
+            "CCTableView.js"
+        ],
+
+        "pluginx" : [
+            "core",
+
+            "Plugin.js"
+        ],
+        "plugin-facebook" : [
+            "facebook_sdk.js",
+            "facebook.js"
+        ],
+
+        "spine":[
+            "core",
+
+            "Spine.js",
+            "CCSkeleton.js",
+            "CCSkeletonAnimation.js"
+        ],
+        "extensions" : ["gui", "ccbreader", "editbox", "cocostudio", "spine", "ccpool"],
+
+        "box2d" : [
+            "core", "physics",
+
+            "box2d.js"
+        ],
+        "chipmunk" : [
+            "core", "physics",
+
+            "chipmunk.js"
+        ],
+        "socketio" : [
+            "socket.io.min.js"
+        ],
+        "external" : ["box2d", "chipmunk", "socketio", "pluginx"]
+    },
+    "bootFile" : "CCBoot.js"
+}

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>手机捉鬼 微信HTML5在线朋友圈游戏</title>
+        
+        <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+        <style>*{padding:0;margin:0}body{background:#000}#canvas{background:url('./catch_gui/bg.jpg');background-size:100% 100%}#timer,#times{position:absolute;top:15px;color:#e44a43;font-size:24px;display:none}#timer{left:15px}#times{right:15px}.pop{position:absolute;top:0;background:url('./catch_gui/bg2.jpg');display:none}#c0{height:100%;width:100%}.result-text{width:100%;height:70%;margin:20px auto;background:url('img/textBg.png');background-size:cover}.weixin-button{width:73%;height:10%;margin:20px auto;background:url('./catch_gui/btn-share2.png');background-size:cover}h1,h2,h3,h4{color:#fff;text-align:center;line-height:40px}.begin,.fenxiang{position:absolute;left:0;top:81%;width:100%}.begin div{margin:0 auto;width:204px;height:52px;background:url("./catch_gui/btn.png") no-repeat center;background-size:204px 52px}#play-again{position:absolute;left:10%;top:68%;font-size:2em;color:white;width:80%;border:2px solid white;display:none}.fenxiang{top:80%;z-index:1000}.fenxiang div{width:264px;height:52px;margin:0 auto}.fx_body{width:100%;height:100%;position:absolute;left:0;top:0;background:rgba(28,26,24,0.8);display:none}.fx_body div{position:absolute;right:50px;top:50px;width:191px;height:215px;background:url("./catch_gui/show_share.png") no-repeat center;background-size:191px 215px}</style>  
+
+        <script src="./static/zepto.min.js"></script>
+        <script src="./static/sprites.js"></script>
+        <script src="./static/requestNextAnimationFrame.js"></script>
+        <script type="text/javascript">
+        var title = "鬼节到了，我的手机见鬼了！！胆大的快来帮忙抓鬼啊！！";
+        var image_ready = new Image;
+            image_ready.src = "./catch_gui/ready.png", window.onload = function() {
+                function P(e) {
+                    var t = e.x || e.clientX, n = e.y || e.clientY, r = a.getBoundingClientRect();
+                    return{x: t - r.left * (a.width / r.width), y: n - r.top * (a.height / r.height)}
+                }
+                function H(e) {
+                    return{left: e.left, top: e.top, width: e.width, height: e.height}
+                }
+                function B() {
+                    var e = H(y), t = e.left + e.width, n = e.top + e.height;
+                    if (t > a.width || e.left < 0)
+                        E = -E, t > a.width && (y.left -= t - a.width), e.left < 0 && (y.left -= e.left);
+                    if (n > a.height || e.top < 0)
+                        S = -S, n > a.height && (y.top -= n - a.height), e.top < 0 && (y.top -= e.top)
+                }
+                function j() {
+                    b && B()
+                }
+                function F(e, t) {
+                    return e > y.left && e < y.left + y.width && t > y.top && t < y.top + y.height
+                }
+                function I(e, t) {
+                    return e > a.width * (1 - M) * .5 && e < a.width * (1 - M) * .5 + a.width * M && t > a.height * .8 && t < a.height + a.width * M * v.height / v.width
+                }
+                function q(e, t) {
+                    return e > a.width * (1 - D) * .5 && e < a.width * (1 - D) * .5 + a.width * D && t > a.height * .8 && t < a.height + a.width * D * v.height / v.width
+                }
+                function R(e) {
+                    var t = "", n, r;
+                    e == 0 ? (v.src = "./catch_gui/btn-share.png", n = "\u4f60\u7684\u624b\u62bd\u7b4b\u4e86\u4e48\uff1f", r = "\u5feb\u5411\u670b\u53cb\u6c42\u6551\u5427\uff01") : (v.src = "./catch_gui/btn-share2.png", n = "\u54c7\uff01\u6293\u5230" + e + "\u53ea\u9b3c", r = "\u5feb\u5411\u670b\u53cb\u70ab\u8000\u5427\uff01"), c.clearRect(0, 0, a.width, a.height), c.drawImage(p, 0, 0, a.width, a.height), c.drawImage(d, a.width * .05, a.height * .1, a.width * .9, a.width * .9 * d.height / d.width), c.drawImage(v, a.width * (1 - M) * .5, a.height * .8, a.width * M, a.width * M * v.height / v.width), n && (c.fillStyle = "rgba(255, 255, 255, 1)", c.font = "28px \u9ed1\u4f53", c.fillText(n, a.width / 2, a.height * .35), c.textAlign = "center", c.shadowBlur = 4, c.shadowOffsetX = 2, c.shadowOffsetY = 2, c.textBaseline = "middle"), r && (c.font = "28px \u9ed1\u4f53", c.fillText(r, a.width / 2, a.height * .5))
+                }
+                function U() {
+                    A = 0, L = 0, T = !1, N = !1, b = !1, C = !0, y.width = t, y.height = n, E = MOVE_SPEED_X, S = MOVE_SPEED_Y, $("#timer,#times").hide(), window.requestNextAnimationFrame(z)
+                }
+                function z(e) {
+                    var t;
+                    N ? (R(A), $("#timer,#times").hide()) : w === 0 ? w = e : (c.clearRect(0, 0, a.width, a.height), b && (t = parseFloat(e - w) / 1e3, y.left += E * t, y.top += S * t, j()), w = e, N && !A && y.width < screenWidth && y.height < screenHeight && (y.width += scaleX, y.height += scaleY, y.top = (screenHeight - y.height) / 2, y.left = (screenWidth - y.width) / 2), C ? (c.drawImage(image_ready, 0, 0, a.width, a.height), c.drawImage(m, a.width * (1 - D) * .5, a.height * .8, a.width * D, a.width * D * m.height / m.width)) : y.paint(c)), window.requestNextAnimationFrame(z)
+                }
+                var e = "./catch_gui/gui.png", t = 80, n = 80, r = "./catch_gui/hun.png", i = 10;
+                MOVE_SPEED_X = 370, MOVE_SPEED_Y = 98, MOVE_SPEED_INC_PER = 1, SHOW_START_TEXT = !0, IMAGE_READY = "./catch_gui/ready.png";
+                var s = 0, o = 0, u = function(e, t) {
+                    s = e, o = t, aab = e
+                }, a = document.getElementById("canvas");
+                document && (screenWidth = document.documentElement.clientWidth, screenHeight = document.documentElement.clientHeight, a.width = screenWidth, a.height = screenHeight);
+                var f = document.getElementById("second"), l = document.getElementById("number"), c = a.getContext("2d"), h = new Image, p = new Image, d = new Image, v = new Image, m = new Image, g = new Image, y = new Sprite("ball", new ImagePainter(e, t, n)), b = !1, w = undefined, E = incVelocityX = MOVE_SPEED_X, S = incVelocityY = MOVE_SPEED_Y, T = !1, N = !1, C = SHOW_START_TEXT, k, L = 0, A = 0;
+                h.src = r, p.src = "./catch_gui/bg2.jpg", d.src = "img/textBg.png", v.src = "./catch_gui/btn-share.png", g.src = "./catch_gui/btn-share2.png", m.src = "./catch_gui/btn.png";
+                var O = 0;
+                imgArr = [h, p, d, v, m, g];
+                for (x in imgArr)
+                    imgArr[x].onload = function() {
+                        console.log(O), ++O == 6 && ($("timer").text(O), console.log(O), window.requestNextAnimationFrame(z))
+                    };
+                var M = .75, _ = .9, D = .6;
+                y.catched = function() {
+                    this.painter.image.src = r, b = !1, f.innerHTML = parseInt(f.innerHTML)
+                }, y.init = function() {
+                    this.painter.image.src = e, b = !0, this.left = Math.random() * (screenWidth - y.width), this.top = Math.random() * (screenHeight - y.height)
+                }, y.stop = function() {
+                    b = !1, N = !0, y.left = screenWidth / 2 - y.width / 2, y.top = screenHeight / 2 - y.height / 2
+                }, $("body").on("touchstart", function(e) {
+                    if (e.target.className == "fx_body")
+                        return $(".fx_body").hide(), !1;
+                    e = e.touches[0];
+                    if (q(e.clientX, e.clientY) || T) {
+                        if (!b)
+                            if (!T) {
+                                $("#timer,#times").show(), scaleX = (screenWidth - y.width) / i, scaleY = (screenHeight - y.height) / i, f.innerHTML = 10;
+                                var t = setInterval(function() {
+                                    var e = parseInt(f.innerHTML);
+                                    f.innerHTML = --e, L++, L != 0 && (E = E < 0 ? E - incVelocityX * MOVE_SPEED_INC_PER : E + incVelocityX * MOVE_SPEED_INC_PER, S = S < 0 ? S - incVelocityY * MOVE_SPEED_INC_PER : S + incVelocityY * MOVE_SPEED_INC_PER), e <= 0 && (y.stop(), clearInterval(t), u(A, L), setInterval(function() {
+                                        R(A)
+                                    }, 500))
+                                }, 1e3);
+                                b = !0, T = !0
+                            } else
+                                N && I(e.clientX, e.clientY) && $(".fx_body").show();
+                        else
+                            !N && F(e.clientX, e.clientY) && (A++, l.innerHTML = A, b = !b, y.catched(), setTimeout(function() {
+                                y.init();
+                                var num = document.getElementById("number").innerHTML;
+                                if(num>0){
+                                    title = "哇！我抓到 "+num+" 只鬼，赶紧来试试吧！";
+                                }
+                            }, 300));
+                        C && (C = !1)
+                    }
+                    return!1
+                }), this.left = Math.random(screenWidth / 2), this.top = Math.random(screenHeight / 2)
+            }</script>
+
+        <script>
+
+        </script>
+    </head>
+
+    <body>
+
+        <canvas id="canvas" width="1366" height="652">
+            Canvas not supported
+        </canvas>
+        <div id="timer">Time:<span id="second">10</span>s</div>
+        <div id="times">Catch:<span id="number">0</span></div>
+        <div class="fx_body"><div></div></div>
+
+
+        <script>
+          document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+                WeixinJSBridge.on('menu:share:appmessage', function(argv) {
+                    WeixinJSBridge.invoke('sendAppMessage', {
+                        "img_url": "http://g.lanrenmb.com/games/zhuogui/logo.png",
+                        "link": "http://g.lanrenmb.com/games/zhuogui/index.html",
+                        "desc": "鬼节到了，我的手机见鬼了！！胆大的快来帮忙抓鬼啊！！",
+                        "title": title
+                    }, function(res) {
+                        document.location.href = "http://g.lanrenmb.com/";
+                    })
+                });
+
+                WeixinJSBridge.on('menu:share:timeline', function(argv) {
+                    WeixinJSBridge.invoke('shareTimeline', {
+                        "img_url": "http://g.lanrenmb.com/games/zhuogui/logo.png",
+                        "img_width": "120",
+                        "img_height": "120",
+                        "link": "http://g.lanrenmb.com/games/zhuogui/index.html",
+                        "desc": "鬼节到了，我的手机见鬼了！！胆大的快来帮忙抓鬼啊！！",
+                        "title": title
+                    }, function(res) {
+                        document.location.href = "http://g.lanrenmb.com/";
+                    });
+                });
+            }, false);
+
+            </script> 
+
+<img src="http://img.tongji.linezing.com/3455448/tongji.gif">
+</body></html>

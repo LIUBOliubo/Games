@@ -1,0 +1,162 @@
+
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>XXOO-9G游戏</title>
+  <meta name="viewport"
+    content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="full-screen" content="true"/>
+  <meta name="screen-orientation" content="portrait"/>
+  <meta name="x5-fullscreen" content="true"/>
+  <meta name="360-fullscreen" content="true"/>
+  <style>
+body {
+  overflow: hidden;
+  text-align: center;
+  background: #000;
+  padding: 0;
+  border: 0;
+  margin: 0;
+  height: 100%;
+}
+
+* {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+html {
+  -ms-touch-action: none;
+}
+
+.content {
+  overflow: hidden;
+  margin: 0 auto;
+}
+  </style>
+</head>
+<body>
+  <div class="content">
+    <canvas id="canvas" width="720" height="1280" style="width: 360px; height: 640px;">
+      <span>您的浏览器不支持html5 canvas.</span>
+    </canvas>
+  </div>
+  <script src="game.js" tppabs="http://game.9g.com/xxoo/js/game.js"></script>
+  <script language=javascript>
+		var mebtnopenurl = 'http://g.lanrenmb.com';
+		window.shareData = {
+		        "imgUrl": "icon.png"/*tpa=http://game.9g.com/xxoo/icon.png*/,
+		        "timeLineLink": "game.html-f=zf.htm"/*tpa=http://game.9g.com/xxoo/game.html?f=zf*/,
+		        "tTitle": "XXOO-9G游戏",
+		        "tContent": "XXOO-9G游戏"
+		};
+				
+		function goHome(){
+			window.location=mebtnopenurl;
+		}
+		function clickMore(){
+			if((window.location+"").indexOf("zf",1)>0){
+				window.location = "http://game.9g.com/goto9g.html?f=xxoo";
+			 }
+			 else{
+				goHome();
+			 }
+		}
+		function dp_share(){
+			document.title ="XXOO我在30秒内X了"+myData.score+"下，不服你来挑战我！";
+			document.getElementById("share").style.display="";
+			window.shareData.tTitle = document.title;
+		}
+		function dp_Ranking(){
+			window.location=mebtnopenurl;
+		}
+
+		function showAd(){
+		}
+		function hideAd(){
+		}
+		document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+		    
+		    WeixinJSBridge.on('menu:share:appmessage', function(argv) {
+		        WeixinJSBridge.invoke('sendAppMessage', {
+		            "img_url": window.shareData.imgUrl,
+		            "link": window.shareData.timeLineLink,
+		            "desc": window.shareData.tContent,
+		            "title": window.shareData.tTitle
+		        }, onShareComplete);
+		    });
+
+		    WeixinJSBridge.on('menu:share:timeline', function(argv) {
+		        WeixinJSBridge.invoke('shareTimeline', {
+		            "img_url": window.shareData.imgUrl,
+		            "img_width": "640",
+		            "img_height": "640",
+		            "link": window.shareData.timeLineLink,
+		            "desc": window.shareData.tContent,
+		            "title": window.shareData.tTitle
+		        }, onShareComplete);
+		    });
+		}, false);
+		</script>
+		<div id=share style="display: none">
+			<img width=100% src="share.png" tppabs="http://game.9g.com/share.png"
+				style="position: fixed; z-index: 9999; top: 0; left: 0; display: "
+				ontouchstart="document.getElementById('share').style.display='none';"/>
+		</div>
+		<script src="jquery.min.js" tppabs="http://game.9g.com/auth/jquery.min.js"></script>
+		<script src="api.js" tppabs="http://game.9g.com/auth/api.js"></script>
+		<div style="display: none;">
+			<script type="text/javascript">
+			var auth = new Auth9G("xxoo");
+			var myData = {};
+			auth.identify = function() {
+				if (auth.user) {
+					window.shareData.timeLineLink += ((window.shareData.timeLineLink.indexOf("?") == -1 ? "?" : "&") + "uid=" + auth.myuid);
+				}
+			}
+			auth.ready = function() {
+				baiducnzz();
+			}
+			auth.check();
+			function baiducnzz() {
+				var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+				document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F0ae524064813b8dc07ece5ce724a7b04' type='text/javascript'%3E%3C/script%3E"));
+				var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+				document.write(unescape("%3Cspan id='cnzz_stat_icon_2947366'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s5.cnzz.com/stat.php%3Fid%3D2947366' type='text/javascript'%3E%3C/script%3E"));
+			}
+			function dp_submitScore(score){
+				myData.score = score;
+				myData.scoreName = "XXOO了"+score+"下";
+				if(score>5){
+					if (confirm("真行,你XXOO了"+score+"下！要不要通知下小伙伴们呢？")){
+						dp_share();
+					}
+				}
+			}
+			function onShareComplete(res) {
+				if (auth.user && myData.score != undefined) {
+					setTimeout(function(){
+						if (confirm("要将成绩提交到9G游戏排行榜吗？")) {
+							auth.submit(myData.score, myData.scoreName, function(){
+					        	auth.gotoRank("24h");
+							});
+						}
+						else {
+				        	document.location.href = mebtnopenurl;
+						}
+					}, 500);
+				}
+				else {
+		        	document.location.href = mebtnopenurl;
+				}
+	        }
+			</script>
+</body>
+</html>

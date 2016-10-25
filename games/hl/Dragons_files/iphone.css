@@ -1,0 +1,37 @@
+body {
+	background-color: #000;
+	color: #222;
+	font-family: Helvetica, sans-serif;
+	font-size: 12px;
+	margin: 0px;
+	padding: 0px;
+}
+
+#container {
+	width: 320px;
+	height: 480px;
+	margin: 0px auto;
+	position: relative;
+}
+
+.canvas {
+	background-color: green;
+}
+
+#console {
+	position: fixed;
+	height: 400px; width: 300px;
+	top: 0px; left: 0px;
+	overflow: auto;
+	font-family: Helvetica;
+	color: white;
+}
+#banad {
+	width: 320px;
+	height: 50px;
+	background-color: transparent;
+	position:absolute;
+	left:0px; top:360px;
+	z-index: 2;
+	text-align: center;
+}

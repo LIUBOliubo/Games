@@ -1,0 +1,40 @@
+body {-webkit-tap-highlight-color: transparent; margin: 0; padding: 0; background: #333; color: #fff; }
+#SF_Game { display: block; margin: 0; background: #036; /* background: url(assets/bg.png) 0 0 no-repeat */; width: 320px; height: 480px; color: #fff; position: relative; }
+canvas { width: 100%; height: 100%; color: #fff; cursor: crosshair; z-index: -1; background: transparent; }
+
+#textLayer { position: absolute; bottom: 0px; left: 0; width: 100%; background: rgba(0,0,0,0.1); z-index: 1000; }
+#textLayer p { text-align: center; padding: 5px 0; margin: 0; font-family: monospace; }
+#textLayer a { color: #fff; text-decoration: none; font-weight: bold; }
+#textLayer a:hover { color: #f0f; }
+
+#inputBox {height: 100%;position: absolute; bottom: 0; left: 0; width:100%; color: #036; z-index: 1001; display: none; text-align: center; /* background:#003466; */}
+#inputBox a{color:#fff;position:absolute;text-align:center;text-decoration:none;}
+#playAgain, #shareGame{
+    bottom: 80px;
+    background: #002448;
+    padding: 2% 4%;
+    border-radius: 5px;
+}
+#playAgain{
+    left: 10%;
+}
+#shareGame{
+    right: 10%;
+}
+#moreGame{
+	padding: 10px 0;
+	color:#fff;display:block;width:100%;
+	bottom: 30px;
+}
+
+
+@media only screen and (min-width: 480px) {
+
+	#SF_Game { 
+	
+    /* margin: 0 auto;-webkit-transform: scale(1.5,1.5); */
+	/* margin-top:120px;  */
+	}
+
+}
+

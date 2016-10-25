@@ -1,0 +1,25 @@
+﻿{
+"res":{
+	"guizitaopao0000": {"x":0,"y":0,"w":61,"h":85},
+	"guizitaopao0001": {"x":61,"y":0,"w":61,"h":85},
+	"guizitaopao0002": {"x":122,"y":0,"w":61,"h":85},
+	"guizitaopao0003": {"x":183,"y":0,"w":61,"h":85},
+	"guizitaopao0004": {"x":0,"y":85,"w":61,"h":85},
+	"guizitaopao0005": {"x":61,"y":85,"w":61,"h":85},
+	"guizitaopao0006": {"x":122,"y":85,"w":61,"h":85}
+},
+"frames": {
+	"guizitaopao": {
+		"totalFrame": 7,
+		"childrenFrame": [
+			{"res":"guizitaopao0000","x":-25.9,"y":-40.15},
+			{"res":"guizitaopao0001","x":-25.9,"y":-40.15},
+			{"res":"guizitaopao0002","x":-25.9,"y":-40.15},
+			{"res":"guizitaopao0003","x":-25.9,"y":-40.15},
+			{"res":"guizitaopao0004","x":-25.9,"y":-40.15},
+			{"res":"guizitaopao0005","x":-25.9,"y":-40.15},
+			{"res":"guizitaopao0006","x":-25.9,"y":-40.15}
+		]
+	}
+}
+}

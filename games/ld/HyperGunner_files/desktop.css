@@ -1,0 +1,46 @@
+body {
+	background-color: #142760;
+	color: #222;
+	font-family: Helvetica, sans-serif;
+	font-size: 12px;
+	margin: 0px;
+	padding: 0px;
+}
+
+#container {
+	width: 320px;
+	height: 480px;
+	margin: 0px auto;
+	position: relative;
+}
+
+.canvas {
+	background-color: #000;
+	position: absolute;
+	z-index: -1;
+	width: 320px;
+}
+
+#console {
+	position: absolute;
+	height: 400px; width: 300px;
+	top: 0px; left: 0px;
+	overflow: auto;
+	font-family: Helvetica;
+	color: white;
+	z-index: 3;
+}
+
+
+#banad {
+	width: 320px;
+	height: 50px;
+	background-color: transparent;
+	z-index: 2;
+	position: absolute;
+	margin: 0px auto;
+	padding: 0px;
+	left: 0px; top: 320px;
+}
+
+

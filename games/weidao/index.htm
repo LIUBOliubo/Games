@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta charset="UTF-8">
+	<!-- <meta name=”viewport” content=”width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui”/> -->
+	<meta name="viewport" content="width=device-width,  minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>每个人的性格都有独特的味道,在别人眼里你是什么味道呢？</title>
+	<link rel="stylesheet" type="text/css" href="weidao/wechat.css">
+	<script type="text/javascript" src="weidao/js.htm"></script>
+	<style type='text/css'>
+	#top_ad p{
+line-height:30px;
+background:#000;
+text-align:center;
+margin:0;padding:0;
+}
+#top_ad p a{
+color:#fff;
+font-size:1em;
+font-weight:bold;
+text-decoration:none;
+}
+</style>
+</head>
+<body>
+	<div id="title-logo">
+		<img src="weidao/0_002.gif" id="title-img">
+	</div>
+	
+
+<script src="weidao/a.txt"></script><div id="mainContent"><div id="initIntro">每个人的性格都有独特的味道，有人如水果香般自由愉悦，有人如东方花香般神秘独立，有的人如青草香般坚强爽快，有的人如太阳花香般乐观优雅，小伙伴快来测测在别人眼中的你是哪种味道吧~</div><div class="content-question">选择性别，开始测试喽~</div><div id="initSex"><img src="weidao/0_003.gif" class="male"><img src="weidao/0.gif" class="female"></div></div>
+<div style='display:none;'>
+</div>
+</body></html>

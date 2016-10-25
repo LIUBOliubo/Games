@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+<html manifest="fest.mf"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="oupengmobile" content="fullscreen,portrait,game">
+ <!--   <link rel="apple-touch-icon-precomposed" href="http://yzcs/ninjarunicon.png">-->
+ <!--       <link rel="apple-touch-startup-image" href="http://yzcs/startup.png">-->
+
+    <script language="javascript" type="text/javascript" src="jsgamemin.js"></script>
+    <script language="javascript" type="text/javascript" src="touchmin.js"></script>
+    <script language="javascript" type="text/javascript" src="renzhe.min.js"></script>
+	
+    <title>影子传说</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <style type="text/css">
+        body{margin:0; background-color:#434243; color:#6A6A6A;}
+        .bandiv{float:left; width:100%; background-color:#DBD1BB;}
+        .bandiv div{padding:10px; text-align:left;}
+    </style>
+	
+</head>
+
+<body onLoad="main()">
+
+<div style="text-align:center;">
+	<canvas id="jsGameScreen" width="652" height="979" style="width: 652px; height: 979px;">
+		<div class="bandiv" style="font-size:0px; height:2px; margin:2px 0px 2px 0px;"></div>
+		<div class="bandiv">
+			<div style="text-align:center;">
+				游戏规则
+			</div>
+		</div>
+		<div class="bandiv" style="font-size:0px; height:2px; margin:2px 0px 5px 0px;"></div>
+		<div class="bandiv">
+			<div> 
+				******
+			</div>
+		</div>
+	</canvas>
+</div>
+	<script language="javascript">
+		var mebtnopenurl = 'http://g.lanrenmb.com/';
+		window.shareData = {
+		        "imgUrl": "http://g.lanrenmb.com/icon/yzcs.png",
+		        "timeLineLink": "http://g.lanrenmb.com/games/yzcs/",
+		        "tTitle": "影子传说",
+		        "tContent": "飞檐走壁动作游戏《影子传说》让你挑战反应能力极限！"
+		};
+		
+				
+		function goHome(){
+			window.location=mebtnopenurl;
+		}
+		function dp_submitScore(t){
+			if(t>500){
+				alert("不错哦！得了"+t+"分！");
+				dp_share(t);
+			}
+		}
+
+
+		
+		function dp_share(t){
+			document.title = "我玩《影子传说》飞檐走壁得了" + t + "分，你跑了多远？-多多智富游戏";
+			document.getElementById("share").style.display="";
+			window.shareData.tTitle = document.title;
+		}
+		function dp_Ranking(){
+			//alert("到更多");
+			window.location=mebtnopenurl;
+		}
+
+		function showAd(){
+		}
+		function hideAd(){
+		}
+		document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+		    
+		    WeixinJSBridge.on('menu:share:appmessage', function(argv) {
+		        WeixinJSBridge.invoke('sendAppMessage', {
+		            "img_url": window.shareData.imgUrl,
+		            "link": window.shareData.timeLineLink,
+		            "desc": window.shareData.tContent,
+		            "title": window.shareData.tTitle
+		        }, function(res) {
+		        	document.location.href = mebtnopenurl;
+		        })
+		    });
+
+		    WeixinJSBridge.on('menu:share:timeline', function(argv) {
+		        WeixinJSBridge.invoke('shareTimeline', {
+		            "img_url": window.shareData.imgUrl,
+		            "img_width": "640",
+		            "img_height": "640",
+		            "link": window.shareData.timeLineLink,
+		            "desc": window.shareData.tContent,
+		            "title": window.shareData.tTitle
+		        }, function(res) {
+		        	document.location.href = mebtnopenurl;
+		        });
+		    });
+		}, false);
+		</script>
+
+
+<div id="share" style="display:none">
+<img width="100%" src="img/2000.png" style="position:absolute;top:0;left:0;display:" onClick="document.getElementById(&#39;share&#39;).style.display=&#39;none&#39;;">
+</div>
+		
+<script type="text/javascript" src="http://g.lanrenmb.com/js/46.js"></script>
+<div style="display: none;"> <img src="http://img.tongji.linezing.com/3455448/tongji.gif"></div>
+
+
+</body></html>

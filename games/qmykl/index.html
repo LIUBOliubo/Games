@@ -1,0 +1,142 @@
+
+<!doctype html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport"
+			content="width=device-width,initial-scale=1, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no, minimal-ui">
+		<meta name="copyright" content="Copyright (c) ijinshan.com">
+		<meta name="format-detection" content="telephone=no">
+		<title>懒人模板</title>
+		<link rel="stylesheet" type="text/css" href="css/min.css">
+	</head>
+	<body>
+		<div id="wrap">
+			<div class="title"></div>
+			<div class="main">
+				<div class="shadow"></div>
+				<div class="cola"></div>
+				<div class="cap">
+					<div class="tomatina"></div>
+				</div>
+				<div class="boom"></div>
+			</div>
+			<div class="progress_box">
+				<div class="progress"></div>
+			</div>
+			<span class="bf_2">0%</span>
+			<div class="ready"></div>
+			<div class="progress_num">
+				<span class="time">00.000</span><span class="bf"
+					style="font-size: 16px">100%</span>
+			</div>
+			<div class="layer">
+				<div class="confirm client_pop_show">
+					<p>
+						我用了
+						<span class="red" id="t"></span>秒，摇爆可乐，超级爽！击败了全国
+						<span class="red" id="b">90%</span>燥热的人，看谁比我快？
+					</p>
+					<div class="layer_btns">
+						<a href="javascript:;" id="tryagain">再摇一次</a><a
+							href="javascript:;" onClick="clickMore();">更多游戏</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<audio src="images/fizzing.mp3" id="fizzing" preload></audio>
+		<audio src="images/shake.mp3" id="shake" preload></audio>
+		<script src="js/shake.min.js"></script>
+		<script language=javascript>
+		var mebtnopenurl = 'http://g.lanrenmb.com';
+		window.shareData = {
+		        "imgUrl": "http://g.lanrenmb.com/icon/qmykl.png",
+		        "timeLineLink": "http://g.lanrenmb.com/games/qmykl/index.html",
+		        "tTitle": "全民摇可乐-懒人模板",
+		        "tContent": "全民摇可乐-懒人模板"
+		};
+				
+		function goHome(){
+			window.location=mebtnopenurl;
+		}
+		function clickMore(){
+			if((window.location+"").indexOf("zf",1)>0){
+				window.location = "http://g.lanrenmb.com/games/qmykl";
+			 }
+			 else{
+				goHome();
+			 }
+		}
+		function dp_share(){
+			document.title ="全民摇可乐，摇不停，爽到爆，快乐不停歇，一起来摇摆！";
+			document.getElementById("share").style.display="";
+			window.shareData.tTitle = document.title;
+		}
+		function dp_Ranking(){
+			window.location=mebtnopenurl;
+		}
+
+		function showAd(){
+		}
+		function hideAd(){
+		}
+		document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+		    
+		    WeixinJSBridge.on('menu:share:appmessage', function(argv) {
+		        WeixinJSBridge.invoke('sendAppMessage', {
+		            "img_url": window.shareData.imgUrl,
+		            "link": window.shareData.timeLineLink,
+		            "desc": window.shareData.tContent,
+		            "title": window.shareData.tTitle
+		        }, onShareComplete);
+		    });
+
+		    WeixinJSBridge.on('menu:share:timeline', function(argv) {
+		        WeixinJSBridge.invoke('shareTimeline', {
+		            "img_url": window.shareData.imgUrl,
+		            "img_width": "640",
+		            "img_height": "640",
+		            "link": window.shareData.timeLineLink,
+		            "desc": window.shareData.tContent,
+		            "title": window.shareData.tTitle
+		        }, onShareComplete);
+		    });
+		}, false);
+		</script>
+		<div id=share style="display: none">
+			<img width=100% src="http://g.lanrenmb.com/games/qmykl/share.png"
+				style="position: fixed; z-index: 9999; top: 0; left: 0; display: "
+				ontouchstart="document.getElementById('share').style.display='none';" />
+		</div>
+		<div style="display: none;">
+			<script type="text/javascript">
+            var myData = { gameid: "qmykl" };
+			window.shareData.timeLineLink ="http://g.lanrenmb.com/games/qmykl";
+			function dp_submitScore(score,percent){
+				myData.score = parseInt(score*1000);
+				myData.scoreName = "摇可乐用时"+score+"秒";
+				if(score>0){
+					if (confirm("我仅用了"+score+"秒摇可乐，征服了"+percent+"%的人们，不摇一摇怎么够爽！")){
+						dp_share();
+					}
+				}
+			}
+			function onShareComplete(res) {
+                if (localStorage.myuid && myData.score != undefined) {
+                    setTimeout(function(){
+                        if (confirm("要将成绩提交到懒人模板排行榜吗？")) {
+                            window.location = "http://g.lanrenmb.com";
+                        }
+                        else {
+                            document.location.href = mebtnopenurl;
+                        }
+                    }, 500);
+                }
+				else {
+		        	document.location.href = mebtnopenurl;
+				}
+	        }
+			</script>
+			
+	</body>
+</html>

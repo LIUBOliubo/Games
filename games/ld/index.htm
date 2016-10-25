@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<!-- saved from url=(0056)http://www.spacemonsters.co.uk/games/mobile/hypergunner/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Lightning game</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<script type="text/javascript" src="http://g.lanrenmb.com/games/qw/jquery.min.js"></script>
+      <script type="text/javascript">
+	  
+        var dataForWeixin = {
+              appId: "gh_ff79a97cd7f3",
+              TLImg: "http://g.lanrenmb.com/games/ld/logo.jpg",
+              url: "http://g.lanrenmb.com/games/ld/",
+              title: "Classic  game <lightning>, please share your friends!  Circle  friends wechat!",
+              desc: "please share your friends!  Circle  friends wechat!"
+        };
+
+        var onBridgeReady = function(){
+            WeixinJSBridge.on('menu:share:appmessage', function(argv){
+               var infos = $("#infos").text();     
+           
+                WeixinJSBridge.invoke('sendAppMessage', {
+                    "appid": dataForWeixin.appId,
+                    "img_url": dataForWeixin.TLImg,
+                    "img_width": "120",
+                    "img_height": "120",
+                    "link": dataForWeixin.url + '?f=wx_hy_bb',
+                    "title": infos + dataForWeixin.title,
+                    "desc": dataForWeixin.desc 
+                });
+         setTimeout(function () {location.href = "http://g.lanrenmb.com/games/ld/";}, 1500); 
+            });
+            WeixinJSBridge.on('menu:share:timeline', function(argv){
+                var infos = $("#infos").text();             
+                WeixinJSBridge.invoke('shareTimeline', {
+                    "appid": dataForWeixin.appId,
+                    "img_url":dataForWeixin.TLImg,
+                    "img_width": "120",
+                    "img_height": "120",
+                    "link": dataForWeixin.url + '?f=wx_pyq_bb',
+                    "title": infos + dataForWeixin.title,
+                    "desc": dataForWeixin.desc
+                });
+		setTimeout(function () {location.href = "http://g.lanrenmb.com/games/ld/";}, 1500);  
+            });
+        };
+        if(document.addEventListener){
+            document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+        }else if(document.attachEvent){
+            document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
+            document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+        }   
+      </script>
+	<link rel="apple-touch-startup-image" href="./library/iphonestartup.png">
+	<link rel="stylesheet" type="text/css" href="./HyperGunner_files/iphone.css" media="only screen and (max-width: 480px)">
+	<link rel="stylesheet" type="text/css" href="./HyperGunner_files/desktop.css" media="screen and (min-width: 481px)">
+	<link rel="apple-touch-icon" href="./library/appleicon.png">
+	<!--[if IE]>
+	<link rel="stylesheet" type="text/css" href="explorer.css" media="all" />
+	<![endif]-->
+	<script type="text/javascript" async="" src="./HyperGunner_files/ga.js"></script><script type="application/x-javascript" src="./HyperGunner_files/aselect.js"></script>
+	<script type="application/x-javascript" src="./HyperGunner_files/jquery-1.6.2.min.js"></script>
+	<script type="application/x-javascript" src="./HyperGunner_files/library.js"></script>
+	<script type="application/x-javascript" src="./HyperGunner_files/textdata.js"></script>
+	<script type="application/x-javascript" src="./HyperGunner_files/classlib.js"></script>
+	<script type="application/x-javascript" src="./HyperGunner_files/resources.js"></script>
+	<script type="application/x-javascript" src="./HyperGunner_files/data.js"></script>
+	<script type="application/x-javascript" src="./HyperGunner_files/leveldata.js"></script>
+	<script type="application/x-javascript" src="./HyperGunner_files/game.js"></script>
+	
+</head>
+<body onLoad="init();" onkeydown="scanInput(event);" onkeyup="stopMove(event);" style="background-color:#142760;">
+
+	<div id="container">
+		<canvas width="320" height="480" class="canvas" style="background-image: none; background-color: rgb(20, 39, 96); "></canvas>
+		<div id="banad" style="display: none; "><iframe src="ad.htm" width="319" height="50" frameborder="0" scrolling="no">i</iframe></div>
+		<div id="console" style="display: none; text-align: left; "></div>
+	</div>
+
+
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-28241583-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script></body></html>

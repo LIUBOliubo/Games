@@ -1,0 +1,57 @@
+html, body {
+  color: #776e65;
+  background: #faf8ef;
+}
+
+.panel {
+  border-radius: 0.2rem;
+  background: #bbada0;
+  position: relative;
+  margin-bottom: 0;
+} 
+
+
+.status div{
+  display: inline-block;
+  height: 2rem;
+  line-height: 2rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: 0 0.5rem;
+  width: 10rem;
+  color: #FFF;
+}   
+  .best{
+    float: right;
+  } 
+
+
+.game {
+  height: 21rem;
+  margin-top: 0.2rem;
+  padding: 0.5rem;
+}
+
+  .cell-container {
+    position: absolute;
+  }
+    .cell-container div {
+      width: 4rem;
+      height: 4rem;
+      float: left;
+      background: #878787;
+      border: 0.1rem solid #bbada0;
+      border-radius: 0.4rem;
+      cursor: pointer;
+      text-align: center;
+      font-size: 3rem;
+      line-height: 4rem;
+    }
+    .cell-container .blank, .cell-container .number, .cell-container .bomb {
+      background: #eee4da;
+      color: #776e65;
+    }
+    .cell-container span{
+      font-size: 3rem;
+      line-height: 4rem;
+    }

@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="pragma" content="no-cache">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=0" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta charset="utf-8">
+
+<title>弹力小方块-懒人模板</title>
+
+<link rel="shortcut icon" href="icon.png">
+<link rel="icon" href="icon.png">
+<style>
+	.body {overflow: hidden; background: #222; color:#cccccc; margin: 0px; padding: 0px; border: 0px; } 
+
+	#game_div {image-rendering: optimizeSpeed; -webkit-interpolation-mode: nearest-neighbor; margin: 0px; padding: 0px; border: 0px; }
+
+	:-webkit-full-screen #game_div {width: 100%; height: 100%; } 
+</style>
+<script type="text/javascript" src="js/zepto.min.js"></script>
+<script type="text/javascript" src="js/phaser.min.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+</head>
+
+<body class="body">
+<div id="wrapper">
+	<div id="game_div" style="position: absolute;"></div>
+</div>
+  <script language=javascript>
+		var mebtnopenurl = 'http://g.lanrenmb.com/index.html';
+var thegameurl ="http://g.lanrenmb.com/games/dlxfk/"; 
+var guanzhuurl ="http://mp.weixin.qq.com/s?__biz=MjM5NjA0MTI0OQ==&mid=200068987&idx=1&sn=1de5daeaae94c66a3c46a13e20e8011e#rd";
+		window.shareData = {
+		        "imgUrl": "http://mmbiz.qpic.cn/mmbiz/2zpp2iaH4HWG8sQXExicfBKIpEreyLV1Unic4NJ13CQlcyAuYxe5iadoPLouplOwSCLcogC771aq3HcLTQTic9ibqkbw/640",
+		        "timeLineLink": thegameurl,
+		        "tTitle": "弹力小方块",
+		        "tContent": "弹力小方块"
+		};
+				
+		function goHome(){
+			window.location=mebtnopenurl;
+		}
+		function clickMore(){
+			if((window.location+"").indexOf("f=zf",1)>0){
+				window.location = mebtnopenurl ;
+			 }
+			 else{
+				goHome();
+			 }
+		}
+		function dp_share(){
+			document.title ="我在《弹力小方块》中弹出了"+myData.score+"次还没死，你有我这么能弹吗？";
+			document.getElementById("share").style.display="";
+			window.shareData.tTitle = document.title;
+		}
+		function dp_Ranking(){
+			window.location=mebtnopenurl;
+		}
+
+		function showAd(){
+		}
+		function hideAd(){
+		}
+		document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+		    
+		    WeixinJSBridge.on('menu:share:appmessage', function(argv) {
+		        WeixinJSBridge.invoke('sendAppMessage', {
+		            "img_url": window.shareData.imgUrl,
+		            "link": window.shareData.timeLineLink,
+		            "desc": window.shareData.tContent,
+		            "title": window.shareData.tTitle
+		        }, onShareComplete);
+		    });
+
+		    WeixinJSBridge.on('menu:share:timeline', function(argv) {
+		        WeixinJSBridge.invoke('shareTimeline', {
+		            "img_url": window.shareData.imgUrl,
+		            "img_width": "640",
+		            "img_height": "640",
+		            "link": window.shareData.timeLineLink,
+		            "desc": window.shareData.tContent,
+		            "title": window.shareData.tTitle
+		        }, onShareComplete);
+		    });
+		}, false);
+		</script>
+		<div id=share style="display: none">
+			<img width=100% src="share.png"
+				style="position: fixed; z-index: 9999; top: 0; left: 0; display: "
+				ontouchstart="document.getElementById('share').style.display='none';" />
+		</div>
+		<div style="display: none;">
+			<script type="text/javascript">
+            var myData = { gameid: "dlxfk" };
+            // var domain = ["oixm.cn", "hiemma.cn", "peagame.net"][parseInt(Math.random() * 3)];
+			window.shareData.timeLineLink = thegameurl ;
+			function dp_submitScore(score){
+				myData.score = parseInt(score);
+				myData.scoreName ="坚持了"+score+"次";
+				if(score>0){
+					if (confirm("弹弹弹！你坚持了"+score+"次，快分享到朋友圈炫耀一下吧？")){
+						setTimeout(dp_share,500);
+					}
+				}
+			}
+			function onShareComplete(res) {
+                if (localStorage.myuid && myData.score != undefined) {
+                    setTimeout(function(){
+                        if (confirm("？")) {
+                            window.location = mebtnopenurl ;
+                        }
+                        else {
+                            document.location.href = mebtnopenurl;
+                        }
+                    }, 500);
+                }
+				else {
+		        	document.location.href = guanzhuurl ;
+				}
+	        }
+			</script>
+<div style="display: none;">
+	
+</div>
+</body>
+</html>

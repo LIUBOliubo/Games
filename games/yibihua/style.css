@@ -1,0 +1,29 @@
+body{
+    background-color:#080808;
+    margin:0 0 0 0;
+    color:white;
+}
+canvas { 
+    border:solid 0px black; 
+   position:absolute;
+  top:0px;
+  left:0px;
+}
+
+div.clsContainer
+{
+    width:40px;
+   position:absolute;
+    border:soild 1px green;   
+    background-color:Black;
+
+}
+
+canvas , div.clsContainer 
+{
+
+}
+div.clsImages{
+    display:none;
+    
+}

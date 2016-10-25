@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
+<head>
+	 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	  <meta charset="UTF-8">
+	  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1">
+	  <meta http-equiv="pragma" content="no-cache">
+	  <meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+	  <meta http-equiv="expires" content="-1">
+	 <title>上山打老虎-懒人模板</title>
+		<script type="text/javascript">
+		var _config = {}; _config['isSite'] = 'http://g.lanrenmb.com/games/dalaohu/';_config["isSites"] = "http://g.lanrenmb.com/games/dalaohu/";
+		var _con = {}; _con["num"] = 49;
+	</script>
+	<script type="text/javascript" src="./js/jquery.min.js"></script>
+<style type="text/css">
+html,body,#teach{margin:0;padding:0}
+#teach{padding:40px 32px}#teach div.info{float:left}
+#teach .info{text-align:middle}#teach .info span{vertical-align:middle}
+#start{display:block;position:absolute;height:50px;bottom:50px;left:20px;right:20px;line-height:50px;text-align:center;background:#f00;color:#fff;border:none;padding:0;outline:none;-webkit-tap-highlight-color:rgba(0,0,0,0);z-index:1}#start:hover,#start:active{background:#c00}
+#game{background:#fff;position:absolute;left:0;top:0;right:0;bottom:0}#game.shake{-webkit-animation:shake 120ms}
+#game img{display:block;position:absolute}
+#game #current{width:200px;height:200px;top:100px;left:50%;margin-left:-100px}
+#game #next{width:50px;height:50px;top:20px;left:30px}
+#score{position:absolute;right:20px;top:20px;font-size:28px;color:#f00}
+#slash{position:absolute;left:0;top:0;bottom:0;right:0;opacity:0;-webkit-animation-duration:100ms}#slash.play{-webkit-animation:fadeout}
+#timer{display:none;position:absolute;left:20px;right:20px;bottom:180px;height:10px;font-size:20px;text-align:center;padding:0;line-height:1.5em}
+#share,#more{display:none;position:absolute;width:80px;height:30px;bottom:120px;line-height:30px;margin-left:-40px;background:#6ea8e2;text-align:center;border-radius:2px;color:#fff}#share:hover,#more:hover{background:#2a7fd5}
+#more{right:20px;background:none;color:#000}
+#share{left:50%}
+#share-mask{position:absolute;left:0;top:0;right:0;bottom:0;background:rgba(0,0,0,0.5) url(./vapp/49/share.png) top right no-repeat;display:none;z-index:999}
+@-webkit-keyframes fadeout{from{opacity:.5} to{opacity:0}}@-webkit-keyframes shake{0%{-webkit-transform:translate(0, 0)} 2%{-webkit-transform:translate(-6px, 0)} 4%{-webkit-transform:translate(5px, 0)} 6%{-webkit-transform:translate(3px, 0)} 8%{-webkit-transform:translate(-3px, 0)} 10%{-webkit-transform:translate(2px, 0)} 12%{-webkit-transform:translate(6px, 0)} 14%{-webkit-transform:translate(5px, 0)} 16%{-webkit-transform:translate(5px, 0)} 18%{-webkit-transform:translate(5px, 0)} 20%{-webkit-transform:translate(-4px, 0)} 22%{-webkit-transform:translate(5px, 0)} 24%{-webkit-transform:translate(-1px, 0)} 26%{-webkit-transform:translate(7px, 0)} 28%{-webkit-transform:translate(-5px, 0)} 30%{-webkit-transform:translate(8px, 0)} 32%{-webkit-transform:translate(-8px, 0)} 34%{-webkit-transform:translate(-2px, 0)} 36%{-webkit-transform:translate(2px, 0)} 38%{-webkit-transform:translate(6px, 0)} 40%{-webkit-transform:translate(-10px, 0)} 42%{-webkit-transform:translate(-6px, 0)} 44%{-webkit-transform:translate(0, 0)} 46%{-webkit-transform:translate(3px, 0)} 48%{-webkit-transform:translate(-3px, 0)} 50%{-webkit-transform:translate(6px, 0)} 52%{-webkit-transform:translate(0, 0)} 54%{-webkit-transform:translate(-6px, 0)} 56%{-webkit-transform:translate(-3px, 0)} 58%{-webkit-transform:translate(-9px, 0)} 60%{-webkit-transform:translate(-4px, 0)} 62%{-webkit-transform:translate(-3px, 0)} 64%{-webkit-transform:translate(-3px, 0)} 66%{-webkit-transform:translate(-2px, 0)} 68%{-webkit-transform:translate(6px, 0)} 70%{-webkit-transform:translate(-8px, 0)} 72%{-webkit-transform:translate(9px, 0)} 74%{-webkit-transform:translate(-6px, 0)} 76%{-webkit-transform:translate(-10px, 0)} 78%{-webkit-transform:translate(-7px, 0)} 80%{-webkit-transform:translate(1px, 0)} 82%{-webkit-transform:translate(0, 0)} 84%{-webkit-transform:translate(-2px, 0)} 86%{-webkit-transform:translate(-3px, 0)} 88%{-webkit-transform:translate(-5px, 0)} 90%{-webkit-transform:translate(-9px, 0)} 92%{-webkit-transform:translate(7px, 0)} 94%{-webkit-transform:translate(8px, 0)} 96%{-webkit-transform:translate(-8px, 0)} 98%{-webkit-transform:translate(4px, 0)}}
+#share-wx{
+	background:rgba(0,0,0,0.8);
+	position:absolute;top:0px;
+	left:0px;
+	width:100%;
+	height:100%;
+	z-index:10000;
+	display:none;
+}
+#wx-qr{
+	background:rgba(0,0,0,0.8);
+	position:absolute;top:0px;
+	left:0px;
+	width:100%;
+	height:100%;
+	z-index:10000;
+	display:none;
+}
+.lis{ left: 0;overflow: hidden;width: 100%;z-index: 122;position: absolute;top: 0;}
+.lis a{float: left;width:99.9%;margin-right:1px;color:#ffffff;font-size:14px;text-decoration: none;background:#606783;text-align: center;opacity: 0.8;line-height:30px;font-weight: bold;font-family:"微软雅黑"；}
+.lis a img{position: relative;top: 1px;}
+</style>
+<script>
+	var preloads = [
+		_config['isSite']+'vapp/49/fly2.png',
+		_config['isSite']+'vapp/49/tiger2.png'
+	];
+	for (var i = preloads.length - 1; i >= 0; i--) {
+		(new Image()).src = preloads[i];
+	};
+
+</script>
+</head>
+<body>
+	<script type="text/javascript" src="./js/code.js"></script>
+	<div class="lis">
+		<div style="float: left;width:33%;"><a style="border-bottom: 3px solid #fd6766;" href="http://g.lanrenmb.com/">游戏列表</a></div>
+		<div style="float: left;width:34%;"><a style="border-bottom: 3px solid #04fece;" href="http://g.lanrenmb.com/">关注收藏</a></div>
+		<div style="float: left;width:33%;"><a style="width:100%;margin:0;border-bottom: 3px solid #fdcd01;" onclick="location.href=location.href;" href="javascript:;" ><img width="15" src="./vapp/4.png">重玩</a></div>
+	</div>
+	<script language=javascript>
+		var mebtnopenurl = 'http://g.lanrenmb.com/';
+		dataForWeixin = {
+			"appId": "wx6d5d37d74fcd62b1",
+		    "imgUrl": "http://g.lanrenmb.com/games/dalaohu/vapp/49/3.jpg",
+		    "url": "http://g.lanrenmb.com/games/dalaohu/",
+		    "tTitle": "上山打老虎-6e游戏",
+		    "tContent": "上山打老虎，敢来试试吗？46465游戏"
+		};
+				
+		function goHome(){
+			window.location=mebtnopenurl;
+		}
+		function dp_share(){
+			document.title =judgeLevel(myData.score);
+			document.getElementById("share").style.display="";
+			dataForWeixin.tTitle = document.title;
+		}
+		function dp_Ranking(){
+			window.location=mebtnopenurl;
+		}
+		document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+		    WeixinJSBridge.on('menu:share:appmessage', function(argv) {
+		        WeixinJSBridge.invoke('sendAppMessage', {
+					"appid": dataForWeixin.appId,
+		            "img_url": dataForWeixin.imgUrl,
+		            "link": dataForWeixin.url,
+		            "desc": dataForWeixin.tContent,
+		            "title": dataForWeixin.tTitle
+		        });
+				 setTimeout(function () {location.href = mebtnopenurl;}, 1500); 
+		    });
+
+		    WeixinJSBridge.on('menu:share:timeline', function(argv) {
+		        WeixinJSBridge.invoke('shareTimeline', {
+					"appid": dataForWeixin.appId,
+		            "img_url": dataForWeixin.imgUrl,
+		            "img_width": "640",
+		            "img_height": "640",
+		            "link": dataForWeixin.url,
+		            "desc": dataForWeixin.tContent,
+		            "title": dataForWeixin.tTitle
+		        });
+				 setTimeout(function () {location.href = mebtnopenurl;}, 1500); 
+		    });
+		}, false);
+		</script>
+	 <div id="teach">
+        <div class="info">
+            <img src="./vapp/49/tiger2.png" width="130" height="130" />
+            <img src="./vapp/49/two_fingers.png" width="80" height="80" />
+            <p>看到老虎，两个手指打死。</p>
+        </div>
+        <div class="info">
+            <img src="./vapp/49/fly2.png" width="130" height="130" />
+            <img src="./vapp/49/one_finger.png" width="80" height="80" />
+            <p>看到苍蝇，一个手指按死。</p>
+        </div>
+    </div>
+    <div id="start">OK, 开始吧</div>
+    <div id="game" style="display: none">
+        <img id="current"></img>
+        <img id="next"></img>
+        <div id="score"></div>
+        <div id="slash"></div>
+    </div>
+    <div id="timer"></div>
+    <div id="share">分享</div>
+    <a id="more" href="http://g.lanrenmb.com/">更多游戏</a>
+    <div id="share-mask"></div>
+	<script src="./js/49/eg.js"></script>
+    <script src="./js/49/tiger.js"></script>
+	 <script type="text/javascript">
+    /*20:3底部悬*/
+    var cpro_id = "u1639910";
+</script>
+
+    <div style="display: none;"><script type="text/javascript" src="http://tajs.qq.com/stats?sId=36313548" charset="UTF-8"></script></div>  
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html >
+<html >
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta id="viewport" name="viewport" content="width=480,user-scalable=no,uc-user-scalable=no,target-densitydpi=high-dpi" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png" />
+<link rel="apple-touch-startup-image" href="startup.png">
+<script language="javascript" type="text/javascript" src="js/jsgamemin.js"></script>
+<script language="javascript" type="text/javascript" src="js/munaiyiguilai.js"></script>
+<title>木乃伊归来</title>
+<style>
+	body{margin:0px; background-color:#434243; color:#6A6A6A;}
+	.bandiv{float:left; width:100%; background-color:#DBD1BB;}
+		.bandiv div{padding:10px; text-align:left;}
+</style>
+
+ <style>
+        html {
+            -ms-touch-action: none; /* Direct all pointer events to JavaScript code. */
+        }
+        .sbgshow{z-index:10000;display:block;position:fixed;top:0;left:0;width:100%;height:100%;text-align:center;color:#fff;font-size:30px;line-height:1.7em;background:rgba(0,0,0,0.85);}
+        .sbgshow .arron{z-index:10000; position:absolute;top:8px;right:8px;width:100px;height:100px;background:url(./img/arron.png) no-repeat; background-size:100px 100px;}
+        .sbgshow p{z-index:10000; padding-top:78px;}
+        .sbg{display:none; z-index:10000;  position:fixed;top:0;left:0;width:100%;height:100%;text-align:center;color:#fff;font-size:26px;line-height:1.7em;background:rgba(0,0,0,0.85);}
+        .sbg .arron{ z-index:10001; position:absolute;top:8px;right:8px;width:100px;height:100px;background:url(./img/arron.png) no-repeat; background-size:100px 100px;}
+        .sbg p{ z-index:10002; padding-top:78px;}
+
+</style>	
+
+</head>
+
+<body onLoad="main()"  id="0">
+<div style="text-align:center;">
+	<canvas id="jsGameScreen">
+	</canvas>
+</div>
+<script language=javascript>
+		var mebtnopenurl = 'http://g.lanrenmb.com/';
+		window.shareData = {
+		        "imgUrl": "http://g.lanrenmb.com/icon/mnygl.png",
+		        "timeLineLink": "http://g.lanrenmb.com/games/mnygl/",
+		        "tTitle": "木乃伊归来",
+		        "tContent": "木乃伊归来"
+		};
+				
+		function goHome(){
+			window.location=mebtnopenurl;
+		}
+		function clickMore(){
+			if((window.location+"").indexOf("zf",1)>0){
+				window.location = "http://g.lanrenmb.com/";
+			 }
+			 else{
+				goHome();
+			 }
+		}
+		function dp_share(){
+			document.title ="传说中的木乃伊出现了，我竟然玩了"+myData.score+"关,世界上也没有几个人能通关哟！";
+			document.getElementById("share").style.display="";
+			window.shareData.tTitle = document.title;
+		}
+		function dp_Ranking(){
+			window.location=mebtnopenurl;
+		}
+
+		function showAd(){
+		}
+		function hideAd(){
+		}
+		document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+		    
+		    WeixinJSBridge.on('menu:share:appmessage', function(argv) {
+		        WeixinJSBridge.invoke('sendAppMessage', {
+		            "img_url": window.shareData.imgUrl,
+		            "link": window.shareData.timeLineLink,
+		            "desc": window.shareData.tContent,
+		            "title": window.shareData.tTitle
+		        }, onShareComplete);
+		    });
+
+		    WeixinJSBridge.on('menu:share:timeline', function(argv) {
+		        WeixinJSBridge.invoke('shareTimeline', {
+		            "img_url": window.shareData.imgUrl,
+		            "img_width": "640",
+		            "img_height": "640",
+		            "link": window.shareData.timeLineLink,
+		            "desc": window.shareData.tContent,
+		            "title": window.shareData.tTitle
+		        }, onShareComplete);
+		    });
+		}, false);
+		</script>
+		<div id=share style="display: none">
+			<img width=100% src="share.png"
+				style="position: fixed; z-index: 9999; top: 0; left: 0; display: "
+				ontouchstart="document.getElementById('share').style.display='none';" />
+		</div>
+		<div style="display: none;">
+			<script type="text/javascript">
+            var myData = { gameid: "mnygl" };
+			//window.shareData.timeLineLink ="http://"+ parseInt(Math.random()*100000) +"."+ myData.gameid +".oixm.cn/gamecenter.html?gameid=" + myData.gameid + (localStorage.myuid ? "&uid=" + localStorage.myuid : "");
+			function dp_submitScore(score){
+				myData.score = parseInt(score);
+				myData.scoreName ="成功闯了"+score+"关";
+				if(score>0){
+					if (confirm("你真吊炸天玩了"+score+"关，快把你的探险历程告诉小伙伴们吧？")){
+						dp_share();
+					}
+				}
+			}
+			function onShareComplete(res) {
+                if (localStorage.myuid && myData.score != undefined) {
+                    setTimeout(function(){
+                        if (confirm("要将成绩提交到懒人模板排行榜吗？")) {
+                          //  window.location = "http://wx.9g.com/rank/submit2.jsp?gameid=" + myData.gameid + "&uid=" + localStorage.myuid + "&score=" + myData.score + "&scorename=" + encodeURIComponent(myData.scoreName);
+                        }
+                        else {
+                            document.location.href = mebtnopenurl;
+                        }
+                    }, 500);
+                }
+				else {
+		        	document.location.href = mebtnopenurl;
+				}
+	        }
+			</script>
+			<div style="display: none;">
+			 
+			</div>
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId=36313548" charset="UTF-8"></script></body>
+</html>

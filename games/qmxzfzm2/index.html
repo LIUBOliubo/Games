@@ -1,0 +1,197 @@
+
+<html>
+	<head>
+			<meta charset="UTF-8">
+			<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,minimal-ui">
+			<meta http-equiv="pragma" content="no-cache">
+			<meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+			<meta http-equiv="expires" content="-1">
+			<title>懒人模板</title>
+			<link rel="stylesheet" type="text/css" href="css/m.min.css">
+		</head>
+<body>
+	<div id="container">
+	
+	</div>
+	<div style="position:absolute;rigth:0px;bottom:20px;">找不到？摇一摇有惊喜哦！</div>
+	<script language=javascript>
+		var mebtnopenurl = 'http://g.lanrenmb.com';
+		window.shareData = {
+		        "imgUrl": "http://g.lanrenmb.com/icon/qmxzfzm2.png",
+		        "timeLineLink": "http://g.lanrenmb.com/games/qmxzfzm2",
+		        "tTitle": "升级版全民摇一摇寻找房祖名-懒人模板",
+		        "tContent": "升级版全民摇一摇寻找房祖名-懒人模板"
+		};
+				
+		function goHome(){
+			window.location=mebtnopenurl;
+		}
+		function clickMore(){
+			// if((window.location+"").indexOf("zf",1)>0){
+			// 	window.location = "http://g.lanrenmb.com/games/qmxzfzm2";
+			//  }
+			//  else{
+			// 	goHome();
+			//  }
+			if (Math.random() > 0.5) {
+				window.location = "http://g.lanrenmb.com/games/qmxzfzm2";
+			}
+			else {
+				goHome();
+			}
+		}
+		function dp_share(){
+			document.title ="升级版！我在1分钟内" + (myData.score) + "次从柯少身边找到房祖名！你也来试试！";
+			document.getElementById("share").style.display="";
+			window.shareData.tTitle = document.title;
+		}
+		function dp_Ranking(){
+			window.location=mebtnopenurl;
+		}
+
+		function showAd(){
+		}
+		function hideAd(){
+		}
+		document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+		    
+		    WeixinJSBridge.on('menu:share:appmessage', function(argv) {
+		        WeixinJSBridge.invoke('sendAppMessage', {
+		            "img_url": window.shareData.imgUrl,
+		            "link": window.shareData.timeLineLink,
+		            "desc": window.shareData.tContent,
+		            "title": window.shareData.tTitle
+		        }, onShareComplete);
+		    });
+
+		    WeixinJSBridge.on('menu:share:timeline', function(argv) {
+		        WeixinJSBridge.invoke('shareTimeline', {
+		            "img_url": window.shareData.imgUrl,
+		            "img_width": "640",
+		            "img_height": "640",
+		            "link": window.shareData.timeLineLink,
+		            "desc": window.shareData.tContent,
+		            "title": window.shareData.tTitle
+		        }, onShareComplete);
+		    });
+		}, false);
+		</script>
+		<div style="display: none;">
+			<script type="text/javascript">
+            var myData = { gameid: "qmxzfzm" };
+			var domain = ["oixm.cn", "hiemma.cn", "peagame.net"][parseInt(Math.random() * 3)];
+			window.shareData.timeLineLink = "http://g.lanrenmb.com/games/qmxzfzm2";
+			function dp_submitScore(score){
+				myData.score = parseInt(score);
+				myData.scoreName = "成功寻找"+score+"次房祖名";
+				if(score>1){
+					if (confirm("你一共" + score+ "次从柯少身边找到房祖名，你的24k氪金眼还没瞎吗？快让你的朋友也来试试吧")){
+						dp_share();
+					}
+				}
+			}
+			function onShareComplete(res) {
+                if (localStorage.myuid && myData.score != undefined) {
+                    setTimeout(function(){
+                        if (confirm("要将成绩提交到懒人模板排行榜吗？")) {
+                            window.location = "http://g.lanrenmb.com/";
+                        }
+                        else {
+                            document.location.href = mebtnopenurl;
+                        }
+                    }, 500);
+                }
+				else {
+		        	document.location.href = mebtnopenurl;
+				}
+	        }
+			</script>
+			<div style="display: none;">
+				<script type="text/javascript">var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F0ae524064813b8dc07ece5ce724a7b04' type='text/javascript'%3E%3C/script%3E"));</script>
+				<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_2947366'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s5.cnzz.com/stat.php%3Fid%3D2947366' type='text/javascript'%3E%3C/script%3E"));</script>
+			</div>
+</body>
+</html>
+<script id="tpl" type="text/html">
+<div class="grid">
+        <div class="page hide" id="loading">
+            <div class="loading-txt"><%=loading%></div>
+        </div>
+        <div class="page hide" id="index">
+            <h1><%=title%></h1>
+
+            <div id="help"><%=help_txt%></div>
+            <div class="btns">
+                <button data-type="color" class="btn play-btn">
+                    <%=btn_start%>
+                </button>
+				<a href="javascript:void(0);"  onclick="clickMore();" class="btn btn-boyaa">
+								<%=btn_more_game%>
+				</a>
+            </div>
+        </div>
+        <div class="page hide" id="room">
+            <header>
+                <span class="lv">
+                    <%=score%>
+                    <em>
+                        1
+                    </em>
+                </span>
+                <span class="time">
+                </span>
+               <!-- <span class="btn btn-pause">
+                    <%=btn_pause%>
+                </span>
+				-->
+            </header>
+            <div id="box" class="lv1">
+            </div>
+        </div>
+        <div class="page hide" id="dialog">
+        <div class="inner">
+                <div class="content gameover">
+                    <div class="inner-content">
+                        
+                        <h3></h3>
+                        <div class="btn-wrap">
+                            <button class="btn btn-restart">
+                                <%=btn_reTry%>
+                            </button>
+							<a href="javascript:void(0);" onclick="clickMore();" class="btn btn-boyaa">
+								<%=btn_more_game%>
+							</a>
+                        </div>
+						
+						
+                    </div>
+                </div>
+                <div class="content pause">
+                    <div class="inner-content">
+                        
+                        <h3>
+                            <%=game_pause%>
+                        </h3>
+                        <div class="btn-wrap">
+                            <button class="btn btn-resume">
+                                <%=btn_resume%>
+                            </button>
+							<a href="javascript:void(0);" onclick="clickMore();" class="btn btn-boyaa">
+								<%=btn_more_game%>
+							</a>
+                        </div>
+						
+                    </div>
+                </div>
+            </div>
+    </ins>
+        </div>
+    </div>
+	<div id=share style="display: none">
+			<img width=100% src="http://g.lanrenmb.com/games/qmxzfzm2/share.png"
+				style="position: fixed; z-index: 9999; top: 0; left: 0; display: "
+				ontouchstart="document.getElementById('share').style.display='none';" />
+		</div>
+</script>
+<script src="js/libs.min.js"></script>
+<script src="js/main.min3.js"></script>

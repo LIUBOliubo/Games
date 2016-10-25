@@ -1,0 +1,214 @@
+﻿* {
+	margin: 0px;
+	padding: 0px;
+	-webkit-tap-highlight-color: transparent;
+	-webkit-user-select: none;
+}
+body {
+	font-family: "Microsoft YaHei";
+	text-align: center;
+	/*background-color: #171717;*/
+	background: url(congruent_outline.png) repeat;
+}
+
+a
+{
+    text-decoration:none;
+    color:inherit;
+}
+
+#menu {
+	margin: auto;
+	width: 320px;
+	padding-bottom: 3px;
+}
+#menu h3 {
+	text-align: center;
+	margin: 14px 0px 6px;
+	font-size: 32px;
+	font-style: italic;
+	text-decoration: none;
+	text-shadow: 0px 1px 3px rgba(0,0,0,1);
+	color: white;
+}
+#menu div {
+	display: inline-block;
+	width: 50px;
+	text-align: center;
+	font-size: 30px;
+	padding: 5px 0px 8px;
+	margin: 3px 3px;
+	background: rgba(180,180,180,0.5);
+	background: rgba(50,50,50,0.5);
+	border: 2px solid rgba(0,0,0,0.3);
+	border-radius: 5px;
+	color: #fff;
+	-webkit-background-clip: padding-box;
+}
+.menuBtn {
+	text-decoration: none;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	padding: 6px 8px;
+	color: white;
+	font-size: 19px;
+	font-weight: bold;
+	text-shadow: 0px 1px 3px rgba(0,0,0,1);
+	z-index:1000;
+}
+#gametitle {
+	position: absolute;
+	top: 0px;
+	left:35%;
+	padding: 6px 8px;
+	color: white;
+	font-size: 26px;
+	font-weight: bold;
+	text-shadow: 0px 1px 3px rgba(0,0,0,1);
+	z-index:1000;
+}
+@media screen and (min-device-width: 640px) {
+	body {
+		text-align: center;
+		background: url(congruent_outline.png) repeat;
+	}
+	h1, h2, h2 a {
+		display: block;
+		margin: 14px 0px 6px;
+		font-style: italic;
+		text-decoration: none;
+		text-shadow: 0px 1px 3px rgba(0,0,0,1);
+		color: white;
+	}
+	h1 {
+		cursor: default;
+		font-size: 34px;
+	}
+	h2 {
+		cursor: pointer;
+		font-size: 21px;
+		position: fixed;
+		bottom: -6px;
+		right: 14px;
+	}
+	.menuBtn {
+	    text-decoration: none;
+	    position: absolute;
+	    top: 0px;
+	    right: 0px;
+	    padding: 6px 8px;
+	    color: white;
+	    font-size: 19px;
+	    font-weight: bold;
+	    text-shadow: 0px 1px 3px rgba(0,0,0,1);
+	    z-index:1000;
+    }
+	canvas {
+		border: 1px solid rgba(0,0,0,0.1);
+		-moz-border-radius: 2px;
+		border-radius: 2px;
+		margin-top: 61px;
+		z-index:2000;
+	}
+}
+
+canvas
+{margin-top: 61px;z-index:2000;}
+
+#credit 
+{
+    width:100%;  bottom:35px; margin-left:auto; margin-right:auto; color: #FFF;
+}
+#credit a {text-decoration:none; color:#FFF;font-size:9px; }
+
+#overlay     
+{
+    background: #000;     
+}
+
+#overlay3
+{
+    background: #000;   
+}
+
+.overlay
+{
+    display: none;    position: absolute;    
+    top: 0px;    left: 0px;    width: 100%;    height: 100%;    
+    z-index: 2000; /* 此处的图层要大于页面 */
+}
+
+#overlay2   
+{
+    background: rgba(0,0,0,0.5); 
+}
+
+#overlay5   
+{
+    background: rgba(0,0,0,0.5); 
+}
+
+#userinfo
+{
+    width:100%; position: absolute; bottom:40px; margin-left:auto; margin-right:auto; height:32px; line-height:32px;
+    font-family:宋体; font-size:12px; color:green; 
+}
+
+#TimeClock 
+{
+    position: absolute;
+    top:15px;
+    width:100%;
+    color: #fff;
+    font-size: 28px;
+    margin-top: 10px;
+    display:none;
+}
+
+#dialogmsg
+{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#mode2msg
+{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ygjbtn
+{
+    background-color: #00c942;
+    border: 2px solid #FFF;
+    border-radius: 5px;
+    -webkit-background-clip: padding-box;
+    width: 80px;
+    height: 30px;
+    line-height: 30px;
+    position: relative;
+    top: 10px;
+    display:inline-block;
+}
+
+.table-c {width:100%; height:80%; overflow:scroll;}
+.table-c table{border-right:1px solid #FFF;border-bottom:1px solid #FFF; 
+               color:#FFF; margin-left:auto; margin-right:auto;
+               font-size:12px; border-radius: 5px;} 
+.table-c table td{border-left:1px solid #FFF;border-top:1px solid #FFF; text-indent: 2px;} 
+
+#loading
+{
+    position:fixed;
+    _position:absolute;
+    top:50%;
+    left:50%;
+    display:none;
+    width:124px;
+    height:124px;
+    overflow:hidden;
+    z-index:3000; 
+    margin:-62px 0 0 -62px;}  

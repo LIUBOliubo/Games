@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>分享2048到朋友圈，将免费参加南山郡8.17号啤酒狂欢节！</title>
+
+  <link href="style/main.css" rel="stylesheet" type="text/css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="meta/apple-touch-icon.png">
+  <link rel="apple-touch-startup-image" href="meta/apple-touch-startup-image-640x1096.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)"> <!-- iPhone 5+ -->
+  <link rel="apple-touch-startup-image" href="meta/apple-touch-startup-image-640x920.png"  media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)"> <!-- iPhone, retina -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0, maximum-scale=1, user-scalable=no, minimal-ui">
+</head>
+
+
+
+
+<script>
+lastScrollY=0;
+function heartBeat(){
+var diffY;
+if (document.documentElement && document.documentElement.scrollTop)
+    diffY = document.documentElement.scrollTop;
+else if (document.body)
+    diffY = document.body.scrollTop
+else
+    {/*Netscape stuff*/}
+percent=.1*(diffY-lastScrollY);
+if(percent>0)percent=Math.ceil(percent);
+else percent=Math.floor(percent);
+document.getElementById("full").style.top=parseInt(document.getElementById("full").style.top)+percent+"px";
+lastScrollY=lastScrollY+percent;
+}
+suspendcode="<div id=\"full\" style='right:15px;POSITION:absolute;TOP:150px;z-index:100'><a href='tel:18857911858'><img src=top.jpg border=0 alt='返回顶部'></a><br></div>"<!--此处修改右侧联系电话-->
+document.write(suspendcode);
+window.setInterval("heartBeat()",1);
+</script>
+<body>
+  <div class="container">
+    <div class="heading">
+      <h1 class="title">2048</h1>
+      <div class="scores-container">
+        <div class="score-container">0</div>
+        <div class="best-container">0</div>
+      </div>
+    </div>
+
+    <div class="above-game">
+      <p class="game-intro"><a href="http://g.lanrenmb.com/games/2048" target="_blank"><img src="140x50.png" width="140" height="50" longdesc="http://g.lanrenmb.com/"></a></p><!--此处可改成你们自己的链接-->
+      <a class="restart-button">点我开始</a>
+    </div>
+
+    <div class="game-container">
+      <div class="game-message">
+        <p></p>
+        <div class="lower">
+	        <a class="keep-playing-button">Keep going</a>
+          <a class="retry-button">再玩一次</a>
+        </div>
+      </div>
+
+      <div class="grid-container">
+        <div class="grid-row">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+        </div>
+        <div class="grid-row">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+        </div>
+        <div class="grid-row">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+        </div>
+        <div class="grid-row">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+        </div>
+      </div>
+
+      <div class="tile-container">
+
+      </div>
+    </div>
+
+   
+    <hr>
+    
+    <p><strong><a href="http://wx.vdcom.cn" target="_blank">懒人模板网络技术支持</a></strong></p><!--此处可改成你们自己的链接-->
+    <p><strong>玄元南山郡首期8月17日盛大开盘，关注xynsj0579免费参加安地楼盘现场的啤酒节！</strong></p>
+</div>
+<script><!--此处可分值和等级名称-->
+    var my_list = {2:'九头虫',4:'白龙马',8:'沙僧',16:'猪八戒',32:'孙悟空',64:'唐僧',128:'观音',256:'弥勒佛',512:'上老君',1024:'如来佛',2048:'神笔记',4096:'http://iduanzi.qiniudn.com/tuoguang/4096.jpg',8192:'http://iduanzi.qiniudn.com/tuoguang/8192.jpg',16384:'http://iduanzi.qiniudn.com/tuoguang/16384.jpg',32768:'32768',65536:'65536',131072:'131072',262144:'262144',524288:'524288',1048576:'1048576',2097152:'2097152',4194304:'4194304',8388608:'8388608',16777216:'16777216',33554432:'33554432',67108864:'67108864',134217728:'134217728',268435456:'268435456',536870912:'536870912',1073741824:'1073741824',2147483648:'2147483648'}
+    var my_mark = {2:'快来变身吧！',4:'小白马就挂了！',8:'沙和尚，是你吗',16:'对小猪就是你！',32:'悟空，等等我！',64:'打雷啦，收衣服啦',128:'普渡众生！',256:'阿弥托福！',512:'你这泼猴，不像话！',1024:'五指山压死你',2048:'恭喜！终于见到本尊了！ ',4096:'强者！太伟大了！',8192:'你有这么厉害呀！',16384:'你已跳出三界之外了！',32768:'Game Over, HiScore: 32768',65536:'Game Over, HiScore: 65536',131072:'Game Over, HiScore: 131072',262144:'Game Over, HiScore: 262144',524288:'Game Over, HiScore: 524288',1048576:'Game Over, HiScore: 1048576',2097152:'Game Over, HiScore: 2097152',4194304:'Game Over, HiScore: 4194304',8388608:'Game Over, HiScore: 8388608',16777216:'Game Over, HiScore: 16777216',33554432:'Game Over, HiScore: 33554432',67108864:'Game Over, HiScore: 67108864',134217728:'Game Over, HiScore: 134217728',268435456:'Game Over, HiScore: 268435456',536870912:'Game Over, HiScore: 536870912',1073741824:'Game Over, HiScore: 1073741824',2147483648:'Game Over, HiScore: 2147483648'}
+    var my_goal = 1024;
+  </script>  <script src="js/bind_polyfill.js"></script>
+  <script src="js/classlist_polyfill.js"></script>
+  <script src="js/animframe_polyfill.js"></script>
+  <script src="js/keyboard_input_manager.js"></script>
+  <script src="js/html_actuator.js"></script>
+  <script src="js/grid.js"></script>
+  <script src="js/tile.js"></script>
+  <script src="js/local_storage_manager.js"></script>
+  <script src="js/game_manager.js"></script>
+  <script src="js/application.js"></script>
+  
+
+</body>
+</html>

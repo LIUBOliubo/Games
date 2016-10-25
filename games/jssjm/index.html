@@ -1,0 +1,206 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>懒人模板</title>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+    <meta name="full-screen" content="true"/>
+    <meta name="screen-orientation" content="portrait"/>
+    <meta name="x5-fullscreen" content="true"/>
+    <meta name="360-fullscreen" content="true"/>
+    
+    <script src="jquery.min.js"></script>
+    <style>
+        *{padding: 0; margin: 0;}
+        body {
+            text-align: center;
+            background: #000000;
+            padding: 0;
+            border: 0;
+            margin: 0;
+            height: 100%;
+        }
+
+        html {
+
+            -ms-touch-action: none; /* Direct all pointer events to JavaScript code. */
+            
+        }
+        #ranklist{
+            display:none;position:fixed;top:0;left:0;width:100%;height:100%;text-align:center;color:#fff;font-size:24px;background:rgba(255,255,255,1); text-align: left;overflow-y:auto;
+        }
+        #ranklist ul{}
+        #ranklist ul li{height:50px;border-bottom:1px #bbb dashed;list-style-type:none;}
+        #ranklist ul .avatar{float:left;width:30px;height:30px;padding:10px 0; margin-left: 10px}
+        #ranklist ul .avatar img{width:30px;height:30px;}
+        #ranklist ul .name{float:left;height:30px;padding:10px 0 10px 10px;font-size:10px;color:#838383;}
+        #ranklist ul .num{float:left;height:30px;padding:10px 0 10px 0;font-size:20px;color:#b20204; margin-right: 10px}
+        #ranklist ul .fst{text-align:center;line-height:50px;font-size:18px;color:#777777;font-weight:bold;border:none;}
+
+        #top_bar{height: 45px; width: 100% ; line-height: 45px;background: #000; display: block; text-align: right; font-size: 1em}
+
+        .sbgshow{display:block;position:fixed;top:0;left:0;width:100%;height:100%;text-align:center;color:#fff;font-size:30px;line-height:1.7em;background:rgba(0,0,0,0.85);}
+        .sbgshow .arron{ position:absolute;top:8px;right:8px;width:100px;height:100px;background:url(http://baby.ci123.com/yunqi/m/weixin/images/arron.png) no-repeat; background-size:100px 100px;}
+        .sbgshow p{padding-top:78px;}
+        .sbg{display:none;position:fixed;top:0;left:0;width:100%;height:100%;text-align:center;color:#fff;font-size:26px;line-height:1.7em;background:rgba(0,0,0,0.85);}
+        .sbg .arron{ position:absolute;top:8px;right:8px;width:100px;height:100px;background:url(http://baby.ci123.com/yunqi/m/weixin/images/arron.png) no-repeat; background-size:100px 100px;}
+        .sbg p{padding-top:78px;}
+        #myfav{display: none;}
+    </style>
+
+    <style type="text/css">.app2{position:fixed;z-index:1000;left:0;top:0; width:100%;padding:5px 12px;color:#fff;background:rgba(0,0,0,0.5);}.app2 .a{font-size:18px;font-weight:bold;padding-bottom:4px;}.app2 .b{font-size:10px;}.app2 .load{float:left;background:#f66;color:#fff;font-size:16px;margin-top:4px;padding:7px 14px;border-radius:5px;}
+    </style>
+</head>
+<body>
+<div style="display:inline-block;width:100%; height:100%;margin: 0 auto; background: black; position:relative;"
+     id="gameDiv">
+    <canvas id="gameCanvas" width="480" height="800" style="background-color: #000000"></canvas>
+</div>
+<script type="text/javascript">
+	var document_class="GameApp";
+</script>
+<script src="egret_loader.js"></script>
+<script src="game-min2.js"></script>
+<script>
+    Date.prototype.Format = function(fmt) 
+    {
+      var o = { 
+        "M+" : this.getMonth()+1,                 //月份 
+        "d+" : this.getDate(),                    //日 
+        "h+" : this.getHours(),                   //小时 
+        "m+" : this.getMinutes(),                 //分 
+        "s+" : this.getSeconds(),                 //秒 
+        "q+" : Math.floor((this.getMonth()+3)/3), //季度 
+        "S"  : this.getMilliseconds()             //毫秒 
+      }; 
+      if(/(y+)/.test(fmt)) 
+        fmt=fmt.replace(RegExp.$1, (this.getFullYear()+"").substr(4 - RegExp.$1.length)); 
+      for(var k in o) 
+        if(new RegExp("("+ k +")").test(fmt)) 
+            fmt = fmt.replace(RegExp.$1, (RegExp.$1.length==1) ? (o[k]) : (("00"+ o[k]).substr((""+ o[k]).length))); 
+      return fmt; 
+    }
+    $(document).ready(function(){
+
+        info={};
+        ranks={};
+        egret_h5.startGame();
+        var height = $(window).height();
+        $("#ranklist").css("height",height+"px");
+        $("#ranklist ul").css("height",(height-45)+"px");
+    });
+
+
+</script>
+<script language=javascript>
+		var mebtnopenurl = 'http://mp.weixin.qq.com/s?__biz=MjM5NjA0MTI0OQ==&mid=200068987&idx=1&sn=1de5daeaae94c66a3c46a13e20e8011e#rd';
+		window.shareData = {
+		        "imgUrl": "http://g.lanrenmb.com/games/jssjm/icon.png",
+		        "timeLineLink": "http://g.lanrenmb.com/games/jssjm/index.html",
+		        "tTitle": "激射神经猫-懒人模板",
+		        "tContent": "激射神经猫-懒人模板"
+		};
+				
+		function goHome(){
+			window.location=mebtnopenurl;
+		}
+		function clickMore(){
+			if((window.location+"").indexOf("zf",1)>0){
+				window.location = "http://g.lanrenmb.com/index.html";
+			 }
+			 else{
+				goHome();
+			 }
+		}
+		function dp_share(){
+			document.title ="企鹅和笨熊互打后，神经猫也来参合了，一下射出"+myData.score+"米小伙伴一起来爽！";
+			document.getElementById("share").style.display="";
+			window.shareData.tTitle = document.title;
+		}
+		function dp_Ranking(){
+			window.location=mebtnopenurl;
+		}
+
+		function showAd(){
+		}
+		function hideAd(){
+		}
+		document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+		    
+		    WeixinJSBridge.on('menu:share:appmessage', function(argv) {
+		        WeixinJSBridge.invoke('sendAppMessage', {
+		            "img_url": window.shareData.imgUrl,
+		            "link": window.shareData.timeLineLink,
+		            "desc": window.shareData.tContent,
+		            "title": window.shareData.tTitle
+		        }, null);
+		    });
+
+		    WeixinJSBridge.on('menu:share:timeline', function(argv) {
+		        WeixinJSBridge.invoke('shareTimeline', {
+		            "img_url": window.shareData.imgUrl,
+		            "img_width": "640",
+		            "img_height": "640",
+		            "link": window.shareData.timeLineLink,
+		            "desc": window.shareData.tContent,
+		            "title": window.shareData.tTitle
+		        }, null);
+		    });
+		}, false);
+		</script>
+		<div id=share style="display: none">
+			<img width=100% src="http://g.lanrenmb.com/games/jssjm/share.png"
+				style="position: fixed; z-index: 9999; top: 0; left: 0; display: "
+				ontouchstart="document.getElementById('share').style.display='none';" />
+		</div>
+		<div style="display: none;">
+			<script type="text/javascript">
+            var myData = { gameid: "jssjm" };
+			window.shareData.timeLineLink = "http://g.lanrenmb.com/games/jssjm/index.html";
+			function dp_submitScore(score){
+				myData.score = score;
+				myData.scoreName = score+"米";
+				if(score>0){
+					if (confirm("我一不小心把神经猫射出"+score+"米，整个人都神清气爽！")){
+						dp_share();
+					}
+				}
+			}
+			function onShareComplete(res) {
+                if (localStorage.myuid && myData.score != undefined) {
+                    setTimeout(function(){
+                        if (confirm("要将成绩提交到懒人模板排行榜吗？")) {
+                            window.location = "http://wx.9g.com/rank/submit2.jsp?gameid=" + myData.gameid + "&uid=" + localStorage.myuid + "&score=" + myData.score + "&scorename=" + encodeURIComponent(myData.scoreName);
+                        }
+                        else {
+                            document.location.href = mebtnopenurl;
+                        }
+                    }, 500);
+                }
+				else {
+		        	document.location.href = mebtnopenurl;
+				}
+	        }
+			</script>
+			<div style="display: none;">
+				<script type="text/javascript" src="http://tajs.qq.com/stats?sId=36313548" charset="UTF-8"></script>
+			</div>
+			<script>
+function getParameter(name) {
+	var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+	var r = window.location.search.substr(1).match(reg);
+	if (r != null) return r[2]; return null;
+}
+if (/android|linux/i.test(navigator.userAgent)) {
+	if(getParameter('f')=='zf'){
+		setTimeout(function(){
+			$("<div style='position:absolute;left:0px;bottom:0px;'><a href='http://g.lanrenmb.com/games/dtcq/game.html'><img src='http://g.lanrenmb.com/games/dtcq/ad2.jpg' style='width: 100%;'/></a></div>").appendTo($("#gameDiv"));
+		}, 3000);
+	}
+}
+</script>
+</body>
+</html>

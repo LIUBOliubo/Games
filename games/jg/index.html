@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Type" content="text/html;">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta name="description" content="game for iPhone">
+<meta name="keywords" content="iPhone,Androig,iPad,game,html5 game,shooting,shooting game,action game,3d,Flash,Flash for iPhone,html5,iPod touch,iPad">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="viewport" id="viewport" content="width = device-width, initial-scale = 1, minimum-scale = 1, maximum-scale = 1">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta equiv="Expires" content="0">
+<style type="text/css">
+<!--
+body {
+	-webkit-user-select: none;
+	margin:0px;
+	background:#000;
+}
+#gcvs {
+	top: 0px;
+	left: 0px;
+	width: 320;
+	height: 416px;
+	background:no-repeat;
+}
+-->
+</style>
+
+
+<script language="javascript" type="text/javascript" src="static/play68.js"></script>
+<script type="text/javascript" src="static/gm12.min.js"></script>
+
+
+<meta name="viewport" content="width = device-width, initial-scale = 1, minimum-scale = 1, maximum-scale = 1"></head>
+
+<body onload="ist()" onorientationchange="rtalt()">
+
+<script src="http://cpro.baidustatic.com/cpro/ui/cm.js" type="text/javascript"></script>
+
+<div id="chf2" style="position:relative;width:320px;margin:0 auto;"><canvas id="gcvs" width="320" height="416"></canvas></div>
+ 
+
+<link type="text/css" rel="stylesheet" href="static/sidebar.css">
+
+<div style="display:none">
+<script type="text/javascript" src="static/play68bar.js"></script>
+<script src="http://s11.cnzz.com/stat.php?id=5578006&web_id=5578006" language="JavaScript"></script>
+
+</div></body></html>

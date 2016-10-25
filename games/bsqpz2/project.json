@@ -1,0 +1,9 @@
+{
+    "showFPS" : false,
+    "frameRate" : 60,
+    "id" : "gameCanvas",
+    "jsList" : [
+        "js/game.min.js",
+        "src/app.js"
+    ]
+}

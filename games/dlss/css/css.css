@@ -1,0 +1,345 @@
+@charset "utf-8";
+body{padding:0;margin:0;font-size:12px;text-align:left;font-family:"Microsoft YaHei","SimHei","SimSun";color:#000;background:#fff;-webkit-tap-highlight-color:rgba(0,0,0,0);-webkit-user-select:none}
+body,html {height:100%;}
+img{border:0}
+a{text-decoration:none}
+ul:after,div:after,h3:after{content:".";clear:both;height:0;line-height:0;font-size:0;display:block;overflow:hidden;visibility:hidden;}
+.zoom {-moz-transform-origin:top left;}
+.wrap{position:relative;height:100%;overflow:hidden;}
+.P_layer {position:absolute;z-index:1;}
+.start {z-index:100;left:0;top:0;width:100%;height:100%;font-size:0;overflow:hidden;}
+.start .cbox {left:0;top:0;width:100%;height:100%;}
+.start-go {/*-webkit-transform-origin:0% 100%;-webkit-transform: scaleY(-1);*/}
+.start .halo {z-index:1;left:50%;bottom:0;width:398px;height:300px;background:url(../images/start/halo-1.png) no-repeat;margin-left:-199px;-webkit-transition:background-image 300ms;display:none;}
+.start .halo-1 {background-image:url(../images/start/halo-1.png);}
+.start .halo-2 {background-image:url(../images/start/halo-2.png);}
+.start .halo-3 {background-image:url(../images/start/halo-3.png);}
+.start .halo-4 {background-image:url(../images/start/halo-4.png);}
+.start .football {z-index:20;left:50%;bottom:19px;width:183px;height:186px;background:url(../images/football.png) no-repeat;background-size:100% 100%;margin-left:-91px;display:none;}
+.start .prosess {left:50%;bottom:190px;width:160px;height:44px;background:url(../images/prose.png) no-repeat 0 -56px;margin-left:-80px;display:none;}
+.start .prosess div {height:44px;background:url(../images/prose.png) no-repeat 0 0;}
+
+.start .tip {z-index:3;left:0;bottom:354px;width:100%;line-height:40px;text-align:center;color:#fff;font-size:30px;display:none;}
+.start .hand {z-index:3;left:50%;bottom:265px;width:62px;height:65px;background:url(../images/start/speed/nhand.png) no-repeat;margin-left:-31px;-webkit-animation:startHandPlay 0.8s 0s infinite;display:none;}
+@-webkit-keyframes startHandPlay{
+	0%{
+		-webkit-transform:translate(0,0);
+	}
+	50%{
+		-webkit-transform:translate(0,10px);
+	}
+	100%{
+		-webkit-transform:translate(0,0);
+	}
+}
+.start .box {position:relative;}
+.start .loading {z-index:100;left:50%;top:50%;width:50px;height:120px;margin:-100px 0 0 -25px;display:none;}
+.start .loading div.f {position:relative;z-index:2;width:50px;height:50px;text-align:center;background:url(../images/football.png) no-repeat;background-size:100% 100%;-webkit-animation:startLoadingPlay 1s cubic-bezier(0.0, 0.0, 1.0, 1.0) infinite;margin:0 auto;}
+.start .loading div.fs {left:0;bottom:0;width:50px;height:13px;text-align:center;background:url(../images/footballshadow.png) no-repeat;background-size:100% 100%;-webkit-animation:startLoadingShadowPlay 1s cubic-bezier(0.0, 0.0, 1.0, 1.0) infinite;}
+.start .loading div.ft {left:0;bottom:-30px;width:100%;line-height:20px;font-size:20px;color:#fff;font-weight:bold;text-align:center;}
+@-webkit-keyframes startLoadingPlay{
+	0%{
+		-webkit-transform:translate(0,0) scaleY(1);
+	}
+	40%{
+		-webkit-transform:translate(0,45px) scaleY(1);
+	}
+	60%{
+		-webkit-transform:translate(0,65px) scaleY(1);
+	}
+	80%{
+		-webkit-transform:translate(0,70px) scaleY(0.8);
+	}
+	100%{
+		-webkit-transform:translate(0,0) scaleY(1);
+	}
+}
+@-webkit-keyframes startLoadingShadowPlay{
+	0%{
+		-webkit-transform:scale(0.5);
+	}
+	80%{
+		-webkit-transform:scale(1);
+	}
+	100%{
+		-webkit-transform:scale(0.5);
+	}
+}
+.start .selecttype {left:0;bottom:0;width:100%;height:560px;zoom:0.9;}
+.start .selecttype .t1 {left:50%;top:0;width:560px;height:202px;background:url(../images/start/select/1.png) no-repeat;margin-left:-280px;}
+.start .selecttype .t2 {left:50%;top:210px;width:271px;height:332px;background:url(../images/start/select/2.png) no-repeat;margin-left:-280px;}
+.start .selecttype .t3 {left:50%;top:210px;width:271px;height:332px;background:url(../images/start/select/3.png) no-repeat;margin-left:10px;}
+.start .box .logo {left:50%;top:0.5%;width:140px;height:128px;background:url(../images/start/logo.png) no-repeat;margin-left:-70px;-webkit-animation:startTxtStarPlay 2s 0;}
+.start .box .logo-amazon {right:5px;top:9px;width:130px;height:56px;background:url(../images/amazon.png) no-repeat;-webkit-animation:startTxtStarPlay 2s 0;display:none;}
+.start .box .txt-star {left:30%;top:8.4%;width:247px;height:202px;background:url(../images/start/zha.png) no-repeat;-webkit-animation:startTxtStarPlay 1s 1s infinite;}
+.start .box .txt-1 {left:20.9%;top:9.3%;width:294px;height:178px;background:url(../images/start/start-txt-1.png) no-repeat;-webkit-transform:translate(0,0);-webkit-transition:-webkit-transform 300ms;}
+.start .box .txt-2 {left:34%;top:14.3%;width:310px;height:117px;background:url(../images/start/start-txt-2.png) no-repeat;-webkit-transform:translate(0,0);-webkit-transition:-webkit-transform 300ms;}
+.start .box .prize {left:9.3%;top:17.8%;width:529px;height:154px;background:url(../images/start/start-prize.png) no-repeat;-webkit-transform:translate(0,0);-webkit-transition:-webkit-transform 300ms;}
+@-webkit-keyframes startTxtStarPlay{
+	0%{
+		opacity:0;
+	}
+	100%{
+		opacity:1;
+	}
+}
+.start .box .footballtarget {left:50%;top:26.5%;width:1px;height:1px;overflow:hidden;}
+
+
+
+.start .speedup {z-index:11;left:0;bottom:0;width:100%;height:620px;display:none;}
+.start .speedup .txt {left:50%;bottom:378px;width:440px;height:69px;background:url(../images/start/speed/ntxt.png) no-repeat;margin-left:-220px;-webkit-animation:gamingTxt1Play 0.8s 0s;}
+.start .speedup .txt-y {background-image:url(../images/start/speed/ntxt1.png);}
+.start .speedup .txt-s {left:50%;bottom:428px;width:257px;height:211px;text-align:center;background:url(../images/start/speed/nbg.png) no-repeat;margin-left:-128px;}
+.start .speedup .txt-s div {line-height:140px;font-size:100px;text-align:center;font-weight:bold;font-family:Arial;color:#fffe27;padding:20px 0 0 0;display:block;-webkit-transform:skewY(-10deg);display:none;}
+.start .speedup .txt-s div.num {font-size:130px;}
+.start .speedup .txt-s div.go, .start .speedup .txt-s div.ready{-webkit-animation:gamingTxtSPlay 0.3s 0s;display:none;}
+.start .speedup .prosess1 {left:50%;bottom:284px;width:396px;height:83px;background:url(../images/gaming/wate-g.png) no-repeat;margin-left:-198px;}
+.start .speedup .prosess1 span {width:294px;height:46px;background:url(../images/gaming/wate-g-1.png) no-repeat;display:block;}
+.start .speedup .prosess1 span.b {margin:18px 0 0 64px;}
+.start .speedup .prosess1 span.b span {width:0;background-image:url(../images/gaming/wate-g-2.png);overflow:hidden;}
+.start .speedup .hand1 {z-index:3;left:50%;bottom:224px;width:62px;height:65px;background:url(../images/start/speed/nhand.png) no-repeat;margin-left:-31px;-webkit-animation:startHandPlay 0.8s 0s infinite;}
+.start .speedup .halo {z-index:10;left:50%;bottom:0;width:460px;height:197px;background:url(../images/gaming/halo-1.png) no-repeat;margin-left:-230px;-webkit-animation:startHaloPlay 0.8s 0s;}
+
+@-webkit-keyframes gamingTxt1Play{
+	0%{
+		-webkit-transform:translate(-400px,0);
+	}
+	100%{
+		-webkit-transform:translate(0,0);
+	}
+}
+@-webkit-keyframes gamingTxtSPlay{
+	0%{
+		-webkit-transform:skewY(-10deg) scale(0);
+	}
+	100%{
+		-webkit-transform:skewY(-10deg) scale(1);
+	}
+}
+@-webkit-keyframes gamingHaloPlay{
+	0%{
+		-webkit-transform:translate(0,200px);
+	}
+	100%{
+		-webkit-transform:translate(0,0);
+	}
+}
+.start .speedup .halo-1 {background-image:url(../images/gaming/halo-1.png);}
+.start .speedup .halo-2 {background-image:url(../images/gaming/halo-2.png);}
+.start .speedup .halo-3 {background-image:url(../images/gaming/halo-3.png);}
+.start .speedup .halo-4 {background-image:url(../images/gaming/halo-4.png);}
+
+
+.gaming {position:relative;height:100%;overflow:hidden;
+	/*-webkit-transform-origin: 0% 0%;
+	-webkit-transform: scaleY(0);
+	opacity:1;
+	-webkit-transition:all 0s;*/
+}
+.gamingshow {/*-webkit-transform: scaleY(1);opacity:1;*/}
+.gaming .box {z-index:10;left:0;top:0;width:100%;height:100%;overflow:hidden;}
+.gaming .sky,.gamingshow .sky1,.gamingshow .sky2 {position:absolute;z-index:1;left:0;top:0;width:100%;background:no-repeat;background-size:100% 100%;}
+.gamingshow .sky {z-index:3;}
+.gamingshow .sky1 {z-index:2;}
+.gamingshow .sky2 {z-index:1;}
+/*.gamingshow .sky-go-0 {-webkit-transition:-webkit-transform 5s cubic-bezier(.99,.27,.82,.87);}*/
+.gamingshow .sky-go-0 {-webkit-transition:-webkit-transform 9s cubic-bezier(.2,0,0,0.9);}
+.gamingshow .sky-go-1 {-webkit-transition:-webkit-transform 5s cubic-bezier(0,.57,1,.53);}
+.gamingshow .sky-go-2 {-webkit-transition:-webkit-transform 10s cubic-bezier(0,0,1,1);}
+.gaming .bg {width:100%;opacity:1;-webkit-transition:opacity 3000ms;}
+.gaming .football {z-index:10;left:50%;top:0;width:394px;height:1000px;margin-left:-197px;-webkit-transform:translate(0,1000px);-webkit-transition:-webkit-transform 3s;-webkit-transform-origin: 50% 0%;}
+.gaming .footballflightnum {left:0;top:20%;width:100%;font-size:30px;color:#fff;text-align:center;display:none;-webkit-transition:top 3s;}
+.gaming .footballflightnum span {font-size:48px;font-weight:bold;}
+.gaming .footballflightnum-end {top:5%;}
+.gaming .football .shock,.gaming .football .shock-1,.gaming .football .shock-2 {position:absolute;z-index:1;left:0;top:0;width:394px;height:73px;background:url(../images/gaming/1.png) no-repeat;display:none;}
+.gaming .football .shock {-webkit-animation:gameShockPlay 0.2s 0s infinite;}
+.gaming .football .shock-1 {-webkit-animation:gameShockPlay 0.8s 0s infinite;}
+.gaming .football .shock-2 {-webkit-animation:gameShockPlay 2.2s 0s infinite;}
+@-webkit-keyframes gameShockPlay{
+	0%{
+		opacity:1
+	}
+	100%{
+		opacity:0
+	}
+}
+.gaming .football .ball,.gaming .football .ball-1,.gaming .football .ball-2,.gaming .football .ball-3 {position:relative;z-index:2;width:120px;height:120px;background:url(../images/gaming/football.png) no-repeat;-webkit-transform:-webkit-animation 3s cubic-bezier(0.0, 0.0, 1.0, 1.0);margin:30px auto 0;display:none;}
+.gaming .football .ball {-webkit-animation:gameFootballBallPlay 10s cubic-bezier(.2,0,0,1);}
+.gaming .football .ball-end {-webkit-transform-origin: 0% 0%;-webkit-transform:scaleY(0.8);-webkit-transition:-webkit-transform 3s;-webkit-animation:none;}
+@-webkit-keyframes gameFootballBallPlay{
+	0%{
+		-webkit-transform:rotate(0deg);
+	}
+	100%{
+		-webkit-transform:rotate(7200deg);
+	}
+}
+.gaming .football .fire {width:102px;height:248px;background:url(../images/gaming/huo.png) no-repeat;margin:-50px auto 0;}
+.gaming .football .condoms {left:50%;top:5px;width:180px;height:1000px;background:url(../images/gaming/tao.png) no-repeat;margin-left:-90px;}
+.gamingshow .football {}
+.gamingshow .footballfloat {-webkit-animation:gameFootballfloatPlay 10s 0s infinite;}
+.gamingshow .footballfloatstop {animation-play-state:paused;}
+@-webkit-keyframes gameFootballfloatPlay{
+	0%{
+		-webkit-transform:translate(0,30%);
+	}
+	50%{
+		-webkit-transform:translate(0,40%);
+	}
+	100%{
+		-webkit-transform:translate(0,30%);
+	}
+}
+.gaming .superman {z-index:10;left:50%;top:0;width:88px;height:426px;margin-left:70px;background:url(../images/gaming/superman.png) no-repeat;-webkit-transform:translate(0,1100px);}
+.gamingshow .supermanshow {-webkit-animation:gameSupermanPlay 6s 0s;}
+@-webkit-keyframes gameSupermanPlay{
+	0%{
+		-webkit-transform:translate(0,1100px);
+	}
+	20%{
+		-webkit-transform:translate(0,500px);
+	}
+	40%{
+		-webkit-transform:translate(0,300px);
+	}
+	50%{
+		-webkit-transform:translate(0,200px);
+	}
+	100%{
+		-webkit-transform:translate(0,1100px);
+	}
+}
+.gaming .pagelock {z-index:11;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,0.3);display:none;}
+
+.gend {z-index:101;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,0.3);overflow:hidden;display:none;}
+.gend .box {left:0;top:0;width:100%;height:100%;overflow:hidden;}
+.gend .box .yuan {left:50%;top:20px;width:500px;height:500px;background:url(../images/gameend/h.png) no-repeat;background-size:100% 100%;margin-left:-250px;-webkit-animation:gendYuanPlay 1s linear;}
+@-webkit-keyframes gendYuanPlay{
+	0%{
+		-webkit-transform:scale(0,0);
+	}
+	100%{
+		-webkit-transform:scale(1,1);
+	}
+}
+.gend .box .football {left:50%;top:90px;width:180px;height:180px;background:url(../images/gameend/t-0.png) no-repeat center center;background-size:100% 100%;margin-left:-90px;-webkit-animation:gendFootballPlay 4s linear infinite;display:none;}
+@-webkit-keyframes gendFootballPlay{
+	0%{
+		-webkit-transform:rotate(0deg);
+	}
+	100%{
+		-webkit-transform:rotate(360deg);
+	}
+}
+.gend .box .xh {left:50%;top:110px;width:360px;height:167px;background:url(../images/gameend/t-s.png) no-repeat;background-size:100% 100%;margin-left:-170px;-webkit-animation:gendXhPlay 4s linear infinite;display:none;}
+@-webkit-keyframes gendXhPlay{
+	0%{
+		opacity:0;
+	}
+	50%{
+		opacity:1;
+	}
+	100%{
+		opacity:0;
+	}
+}
+.gend .box .t1 {left:50%;top:180px;width:240px;height:208px;background:url(../images/gameend/t-1.png) no-repeat;background-size:100% 100%;margin-left:-110px;-webkit-animation:gendFromLeftPlay 0.5s;display:none;}
+.gend .box .t2 {left:50%;top:252px;width:500px;height:100px;background:url(../images/gameend/t-2.png) no-repeat;background-size:100% 100%;margin-left:-232px;-webkit-animation:gendFromRightPlay 0.5s;display:none;}
+.gend .box .t2 .txt {height:60px;text-align:center;-webkit-transform: skewY(-4deg);padding-top:28px;}
+.gend .box .t2 span {font-size:40px;color:#fff;text-shadow:3px 3px 0 #2a5304;}
+.gend .box .t2 b {font-size:40px;color:#f7fa04;text-shadow:3px 3px 0 #2a5304;}
+.gend .box .t3 {left:50%;top:318px;width:410px;height:133px;background:url(../images/gameend/t-3.png) no-repeat;background-size:100% 100%;margin-left:-205px;-webkit-animation:gendFromRightPlay 0.5s;display:none;}
+.gend .box .txt {left:0;width:100%;line-height:40px;text-align:center;font-size:24px;color:#fff;}
+.gend .box .txt span {color:#feeb14;}
+.gend .box .txt-1 {top:606px;}
+.gend .box .txt-2 {top:718px;}
+
+.gend .box .c1 {left:50%;top:440px;width:461px;height:155px;background:url(../images/gameend/c1.png) no-repeat;margin-left:-230px;}
+.gend .box .c1 a {width:127px;height:84px;background:url(../images/gameend/y/1.png) no-repeat;display:block;margin:40px 0 0 40px;}
+.gend .box .c1 a.co-0 {background-image:url(../images/gameend/y/1.png);}
+.gend .box .c1 a.co-1 {background-image:url(../images/gameend/y/2.png);}
+.gend .box .c1 a.co-2 {background-image:url(../images/gameend/y/3.png);}
+.gend .box .c1 a.co-3 {background-image:url(../images/gameend/y/4.png);}
+.gend .box .c1 a.co-4 {background-image:url(../images/gameend/y/5.png);}
+.gend .box .c1 a.co-5 {background-image:url(../images/gameend/y/6.png);}
+.gend .box .c2 {left:50%;top:604px;width:460px;height:102px;background:url(../images/gameend/b-4.png) no-repeat;margin-left:-230px;}
+.gend .box .b1 {left:50%;top:620px;width:567px;height:60px;background:url(../images/gameend/b-1.png) no-repeat;margin-left:-283px;}
+.gend .box .b2 {left:50%;top:690px;width:607px;height:66px;background:url(../images/gameend/b-2.png) no-repeat;margin-left:-303px;}
+.gend .box .b3 {left:50%;top:732px;width:460px;height:102px;background:url(../images/gameend/b-3.png) no-repeat;margin-left:-230px;}
+.gend .box .share {left:0;top:870px;width:100%;height:54px;text-align:center;color:#fff;font-size:30px;}
+
+@-webkit-keyframes gendFromLeftPlay{
+	0%{
+		-webkit-transform:translate(-1000px,0);
+	}
+	100%{
+		-webkit-transform:translate(0,0);
+	}
+}
+@-webkit-keyframes gendFromRightPlay{
+	0%{
+		-webkit-transform:translate(1000px,0);
+	}
+	100%{
+		-webkit-transform:translate(0,0);
+	}
+}
+.rand {z-index:102;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,0.3);overflow:hidden;-webkit-animation:gendRandShowPlay 1s linear;display:none;}
+@-webkit-keyframes gendRandShowPlay{
+	0%{
+		opacity:0;
+	}
+	100%{
+		opacity:1;
+	}
+}
+.rand .box {left:0;top:0;width:100%;height:100%;overflow:hidden;}
+.rand .box .title {z-index:3;left:50%;top:15px;width:513px;height:211px;background:url(../images/rand/title.png) no-repeat;margin-left:-256px;}
+.rand .box .list {z-index:2;left:50%;top:205px;width:492px;height:570px;color:#fff;text-align:center;background:#4d9606;margin-left:-246px;}
+.rand .box .list span {color:#fbec03;}
+.rand .box .list ul {padding:0;margin:5px 20px 0 20px;
+	display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+	display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+	display: -ms-flexbox;      /* TWEENER - IE 10 */
+	display: -webkit-flex;     /* NEW - Chrome */
+	display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+.rand .box .list ul:first-child {padding-top:20px;}
+.rand .box .list ul li {width:0;height:36px;line-height:36px;list-style:none;font-size:24px;font-family:Arial, Helvetica, sans-serif;background:#3e8207;
+	-webkit-box-flex: 1;
+	-moz-box-flex: 1;
+	-webkit-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
+	overflow:hidden;
+}
+.rand .box .list ul li:nth-child(2) {margin:0 5px;}
+.rand .box .list ul.my {background:#fbec03;}
+.rand .box .list ul.my li {color:#f37d0a;background:#fbec03;}
+.rand .box .list .line {height:20px;background:url(../images/rand/line.png) repeat-x 0 center;margin:5px 25px 0;}
+.rand .box .list .t1 {font-size:28px;padding:20px 0 15px;}
+.rand .box .list .t2 {font-size:20px;padding:5px 0;}
+.rand .box .list .listshadow {left:0;bottom:-6px;width:100%;height:6px;background:url(../images/rand/listshadow.png) no-repeat center 0;}
+.rand .box .b1 {z-index:1;left:50%;top:780px;width:201px;height:73px;background:url(../images/rand/b1.png) no-repeat;margin-left:-210px;}
+.rand .box .b2 {z-index:1;left:50%;top:780px;width:201px;height:73px;background:url(../images/rand/b2.png) no-repeat;margin-left:10px;}
+.rand .box .share {left:0;top:880px;width:100%;height:54px;text-align:center;color:#fff;font-size:30px;}
+
+.gend .bdsharebuttonbox a,.rand .bdsharebuttonbox a {float:none;width:70px;height:70px;background:url(../images/shareico.png) no-repeat;display:inline-block; vertical-align:middle;margin:0 0 0 6px;}
+.bdsharebuttonbox a.weixin {background-position:0 0;}
+.bdsharebuttonbox a.bds_tsina {background-position:-92px 0;}
+.bdsharebuttonbox a.bds_renren {background-position:-184px 0;}
+.bdsharebuttonbox a.bds_douban {background-position:-276px 0;}
+.bdsharebuttonbox a.bds_tqq {background-position:-368px 0;}
+
+.weixinbox {z-index:9999;left:0;top:0;width:100%;height:100%;display:none;overflow:hidden;}
+.weixinbox img {left:50%;top:0;height:100%;}
+
+.sceentip {position:absolute;z-index:99999;left:0;top:0;width:100%;height:100%;font-size:20px;text-align:center;color:#fff;background:#65c606;display:none;}
+
+.noweixinopen {position:absolute;z-index:9999;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,0.5);}
+.noweixinopen .box {position:absolute;z-index:1;left:50%;top:50%;width:260px;background:#d5ffac;border-radius:5px;margin:0 0 0 -130px;overflow:hidden;}
+.noweixinopen .box h3 {height:34px;line-height:34px;font-size:18px;color:#fff;background:#94d455;padding:0 0 0 10px;margin:0;}
+.noweixinopen .box p {line-height:180%;font-size:14px;padding:10px 15px;margin:0;}
+.noweixinopen .box .btns {text-align:center;padding:0 0 15px 0;margin:0 auto;}
+.noweixinopen .box .btns .btn {height:34px;line-height:34px;font-size:16px;color:#fff;background:#94d455;padding:0 15px;display:inline-block;}

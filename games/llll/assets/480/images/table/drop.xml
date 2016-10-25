@@ -1,0 +1,20 @@
+
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<drop>
+	<items>
+		<element id="0" type="1" rangmin="0" rangmax="9500" img="v_golditem.png" scale="0.5"/>
+		<element id="1" type="2" rangmin="9500" rangmax="9575" img="v_double.png" scale="0.9"/>
+		<element id="2" type="3" rangmin="9575" rangmax="9650" img="v_longxi.png" scale="0.9"/>
+		<element id="3" type="4" rangmin="9650" rangmax="9720" img="v_bomb1.png" scale="0.9"/>
+		<element id="4" type="5" rangmin="9720" rangmax="9820" img="item_gem.png" scale="0.7"/>
+		<element id="5" type="6" rangmin="9820" rangmax="9895" img="item_magnet.png" scale="0.7"/>
+		<element id="6" type="7" rangmin="9895" rangmax="9925" img="item_gem_02.png" scale="0.7"/>
+		<element id="7" type="8" rangmin="9925" rangmax="9933" img="item_gem_03.png" scale="0.7"/>
+		<element id="8" type="9" rangmin="9933" rangmax="9934" img="v_cannon.png" scale="0.9"/>
+		<element id="9" type="10" rangmin="9934" rangmax="9939" img="v_blood.png" scale="0.9"/>
+		<element id="10" type="202" rangmin="9939" rangmax="9954" img="petitem1.png" scale="0.7"/>
+		<element id="11" type="203" rangmin="9954" rangmax="9969" img="petitem2.png" scale="0.7"/>
+		<element id="12" type="204" rangmin="9969" rangmax="9984" img="petitem3.png" scale="0.7"/>
+		<element id="13" type="205" rangmin="9984" rangmax="9999" img="petitem4.png" scale="0."/>
+	</items>
+</drop>

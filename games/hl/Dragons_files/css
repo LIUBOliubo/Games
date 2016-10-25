@@ -1,0 +1,18 @@
+@font-face {
+  font-family: 'Modern Antiqua';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Modern Antiqua Regular'), local('ModernAntiqua-Regular'), url('http://themes.googleusercontent.com/static/fonts/modernantiqua/v3/8qX_tr6Xzy4t9fvZDXPkh9K4x0DJI-T8q5ozNuxBQHo.woff') format('woff');
+}
+@font-face {
+  font-family: 'Miltonian Tattoo';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Miltonian Tattoo'), local('MiltonianTattoo'), url('http://themes.googleusercontent.com/static/fonts/miltoniantattoo/v6/1oU_8OGYwW46eh02YHydnzhIoxOGKXnDP3ByRnzCG7U.woff') format('woff');
+}
+@font-face {
+  font-family: 'Irish Grover';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Irish Grover'), local('IrishGrover'), url('http://themes.googleusercontent.com/static/fonts/irishgrover/v3/kUp7uUPooL-KsLGzeVJbBHhCUOGz7vYGh680lGh-uXM.woff') format('woff');
+}

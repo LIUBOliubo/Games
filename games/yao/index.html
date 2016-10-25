@@ -1,0 +1,286 @@
+﻿<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="UTF-8">
+  <title>疯狂手臂，翻滚吧，是时候运动一下手臂了</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+
+  <meta name="full-screen" content="true">
+  <meta name="screen-orientation" content="portrait">
+  <meta name="x5-fullscreen" content="true">
+  <meta name="360-fullscreen" content="true">
+ <script type="text/javascript" src="jquery.js"></script>
+  <style type="text/css" media="screen">
+    body {
+      text-align: center;
+      background: #ccc;
+      overflow: hidden;
+    }
+    * {
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+    html {
+      -ms-touch-action: none;
+      /* Direct all pointer events to JavaScript code. */
+    }
+    #score {
+      -webkit-transition: .3s;
+      padding: 0;
+      background: #eee;
+      font-size: 1.5em;
+      margin: 0 auto;
+      margin-top: 50px;
+      border-radius: 100%;
+      border: 1px solid #eee;
+      vertical-align: baseline;
+      zoom: 1;
+      width: 100px;
+      height: 100px;
+      line-height: 100px;
+    }
+    .time {
+      font-size: 2em;
+      color: #fff;
+    }
+    .share {
+      color: #eee;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: rgba(0, 0, 0, .5);
+      padding-top: 240px;
+    }
+    .btn {
+      margin-right: 10px;
+      font-size: 1.5em;
+      display: inline-block;
+      background: #999;
+      padding: 15px;
+      border-radius: 15px;
+    }
+    .fx {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: none;
+    }
+  </style>
+</head>
+
+<body style="">
+  <p class="time"><span id="sec">10.00</span>秒</p>
+  <p>点击开始，狂摇手机吧</p>
+  <p id="score">开始</p>
+  <div class="share" style="display: none; ">
+    <span class="btn again">再来一次</span>
+    <span class="btn go">炫耀一下</span>
+  </div>
+  <img class="fx" src="share.png" alt="share" ontouchstart="document.querySelector(&#39;.fx&#39;).style.display=&#39;none&#39;;">
+  <div class="ads" style="width: 100%; height: 69px; margin: 0px; margin-top: 150px; padding: 0px; border: none; background: none; ">
+    <a align="center" style="color:white" href="http://g.lanrenmb.com/">更多游戏</a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a align="center" style="color:white" href="http://g.lanrenmb.com/games/dianji">疯狂点击屏幕</a>
+
+  </div>
+  <audio src="shake.m4r"></audio>
+  
+  <script type="text/javascript" charset="utf-8">
+    var audio = document.querySelector('audio');
+    audio.src = 'shake.m4r';
+    var mebtnopenurl = 'http://g.lanrenmb.com';
+
+    function goHome()
+    {
+      window.location =
+        "http://g.lanrenmb.com/games/yao";
+    }
+
+    function dp_submitScore(score)
+    {
+      dp_share();
+    }
+
+    function onShareComplete(res)
+    {
+      document.location.href = mebtnopenurl;
+    }
+
+    window.shareData = {
+      "imgUrl": "http://g.lanrenmb.com/games/yao/logo.jpg",
+      "timeLineLink": "http://g.lanrenmb.com/games/yao",
+      "tTitle": "疯狂手臂，翻滚吧，是时候治一下肩周炎了！",
+      "tContent": "在10秒内疯狂的摇一摇，想赢？不容易。"
+    };
+
+
+    document.addEventListener('WeixinJSBridgeReady', function onBridgeReady()
+    {
+      WeixinJSBridge.on('menu:share:appmessage', function(argv)
+      {
+        WeixinJSBridge.invoke('sendAppMessage',
+        {
+          "img_url": window.shareData.imgUrl,
+          "link": window.shareData.timeLineLink,
+          "desc": window.shareData.tContent,
+          "title": window.shareData.tTitle
+        }, onShareComplete);
+      });
+
+      WeixinJSBridge.on('menu:share:timeline', function(argv)
+      {
+        WeixinJSBridge.invoke('shareTimeline',
+        {
+          "img_url": window.shareData.imgUrl,
+          "img_width": "640",
+          "img_height": "640",
+          "link": window.shareData.timeLineLink,
+          "desc": window.shareData.tContent,
+          "title": window.shareData.tTitle
+        }, onShareComplete);
+      });
+    }, false);
+
+    document.addEventListener('touchmove', function(e)
+    {
+      e.preventDefault();
+    }, false);
+    if (window.DeviceMotionEvent)
+    {
+      window.addEventListener('devicemotion', deviceMotionHandler, false);
+    }
+    var SHAKE_THRESHOLD = 600;
+    var last_update = 0;
+    var x, y, z, last_x, last_y, last_z;
+    var ds = document.querySelector('#score');
+    var sec = document.querySelector('#sec');
+    var share = document.querySelector('.share');
+    var go = document.querySelector('.go');
+    var again = document.querySelector('.again');
+    var score = 0;
+    var begin = false;
+    var time = 1000;
+    var end = false;
+    ds.textContent = '开始';
+    share.style.display = 'none';
+
+    again.addEventListener('touchstart', function()
+    {
+      location.reload();
+      end = false;
+      time = 1000;
+      score = 0;
+      share.style.display = 'none';
+      ds.textContent = '开始';
+      sec.textContent = '10.00';
+      //run();
+    });
+
+    go.addEventListener('touchstart', function()
+    {
+      var fx = document.querySelector('.fx');
+      fx.style.display = 'block';
+      dp_share();
+    });
+
+    function dp_share()
+    {
+      if (score > 0)
+      {
+        document.title = '10秒我能摇' + score + '下,你行你试试.'
+      }
+      else
+      {
+        document.title = '疯狂摇一摇，玩完之后我的胳膊已经不是我的了.';
+      }
+      window.shareData.tTitle = document.title;
+    }
+
+    function run()
+    {
+      if (begin || end) return;
+      audio.loop = true;
+      audio.play();
+      begin = true;
+      ds.textContent = 0;
+      var tid = setInterval(function()
+      {
+        time--;
+        document.body.style.backgroundColor = '#' + (time + 700).toString(
+          16);
+        if (time < 0)
+        {
+          audio.loop = false;
+          audio.pause();
+          document.body.style.backgroundColor = '#ccc';
+          clearInterval(tid);
+          begin = false;
+          end = true;
+          share.style.display = 'block';
+          return;
+        }
+        sec.textContent = (time / 100).toPrecision(time.toString().length);
+      }, 10);
+
+    }
+
+    ds.addEventListener('touchstart', function()
+    {
+      run();
+    });
+
+    function deviceMotionHandler(eventData)
+    {
+      if (!begin)
+      {
+        ds.style.webkitTransform = 'translate3d(0px,0px,0px)';
+        return;
+      }
+      var acceleration = eventData.accelerationIncludingGravity;
+      var curTime = new Date().getTime();
+      var diffTime = curTime - last_update;
+
+      if (diffTime > 100)
+      {
+
+        last_update = curTime;
+
+        x = acceleration.x;
+        y = acceleration.y;
+        z = acceleration.z;
+
+        var xdiff = (x - last_x);
+        var ydiff = (y - last_y);
+        var zdiff = (z - last_z);
+
+        ds.style.webkitTransform = 'translate3d(' + xdiff + 'px,' + ydiff +
+          'px,' + zdiff + 'px)';
+
+        var value = x + y + z;
+        var lastvalue = last_x + last_y + last_z;
+        var speed = Math.abs(value - lastvalue) /
+          diffTime * 10000;
+
+        if (speed > SHAKE_THRESHOLD)
+        {
+          ds.textContent = score++;
+        }
+        last_x = x;
+        last_y = y;
+        last_z = z;
+      }
+    }
+  </script>
+
+<img src="http://img.tongji.linezing.com/3455448/tongji.gif">
+
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId=36313548" charset="UTF-8"></script></body></html>

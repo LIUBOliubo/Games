@@ -1,0 +1,66 @@
+html,body,div,p,ul,li,span,a,h1{padding:0;margin:0;}
+html,body{-webkit-tap-highlight-color:transparent;background:#ff8c4e;font-family:Tahoma, "微软雅黑", "黑体";}
+.clear{clear:both;height:0;overflow:hidden;}
+.animate{
+	-webkit-transition:all 200ms;
+	-moz-transition:all 200ms;
+	-ms-transition:all 200ms;
+	-o-transition:all 200ms;
+	transition:all 200ms;
+}
+a, a:hover{text-decoration:none;}
+
+#main{width:480px;height:760px;margin:0 auto;overflow:hidden;position:relative;}
+#main .page{position:absolute;overflow:hidden;top:0;width:100%;height:100%;}
+#main .show{left:0;}
+#main .hide{left:-100%;}
+#start, #play, #end{left:0;}
+
+#start{background:url("img_s/start.png") no-repeat 0 0;text-indent:-9999px;}
+#start .title{height:408px;}
+#start .guessPic, #start .guessNam{float:left;width:175px;height:84px;}
+#start .guessPic{margin-left:45px;}
+#start .guessNam{margin-left:37px;}
+#start .moreLink{position:absolute;top:630px;left:126px;width:230px;height:150px;}
+
+#play{}
+#play .header{height:56px;font-size:30px;text-align:center;color:#ff6c00;background:#ffee60;}
+#play .wLevel{position:absolute;top:10px;left:15px;}
+#play .time{display:inline-block;width:46px;height:40px;line-height:40px;margin-top:8px;text-align:center;color:#fff;background:#ff6c00;}
+#play .heartList{position:absolute;right:11px;top:13px;}
+#play .heart{float:left;width:36px;height:31px;margin:0 4px;background:url("img_d/image.png") no-repeat 0 0;}
+#play .logo{position:absolute;left:120px;bottom:20px;width:240px;height:30px;background:url("img_s/start.png") no-repeat -120px -700px;}
+
+.gameTip{padding:20px 0;font-size:36px;color:#fff;}
+.gameTip img{width:360px;height:360px;}
+
+.container{text-align:center;}
+/*** tip1: 图片, tip2: 文字***/
+.gameAnswer .tip1, .gameAnswer .tip2{display:inline-block;width:200px;height:200px;margin-top:-200px;background:url("img_d/image.png") no-repeat 200px 200px;}
+
+.gameAnswer .right .tip1{background-position:-210px -120px;}
+.gameAnswer .error .tip1{background-position:0 -120px;}
+.gameAnswer .answer1{float:left;width:210px;margin:0 -15px 20px 25px;}
+.answer1{text-align:center;}
+.answer1 img{width:200px;height:200px;}
+
+.gameAnswer .tip2{width:160px;height:60px;margin-top:-64px;}
+.gameAnswer .right .tip2{background-position:-170px -50px;}
+.gameAnswer .error .tip2{background-position:0 -50px;}
+.gameAnswer .answer2{text-align:left;float:left;width:180px;margin:15px -40px 15px 60px;}
+.answer2 .atext{display:block;width:160px;height:60px;line-height:60px;border-bottom:4px solid #e46304;text-align:center;font-size:26px;color:#ff8c4e;background:#fff;}
+
+#prepare{position:absolute;top:0;left:0;width:100%;height:100%;}
+#prepare .back{width:100%;height:100%;background:#000;opacity:0.5;}
+#prepare .text{position:absolute;top:200px;width:100%;font-weight:bold;font-size:50px;text-align:center;color:#fff;}
+#prepare .tip{position:absolute;top:280px;width:100%;text-align:center;font-size:24px;color:#fff;}
+
+#end{text-align:center;color:#fff;}
+#end .really{padding-top:100px;font-size:26px;}
+#end .title{padding-top:30px;font-size:48px;}
+#end .level{padding-top:25px;font-size:36px;color:#fcff00;}
+#end .again, #end .notify{position:absolute;top:330px;width:172px;height:84px;text-indent:-9999px;background:url("img_d/image.png") no-repeat;}
+#end .again{left:46px;background-position:-182px -330px;}
+#end .notify{right:46px;background-position:0 -330px;}
+#end .moreLink{position:absolute;left:120px;bottom:20px;width:240px;height:130px;background: url("img_s/start.png") no-repeat -120px -600px;}
+

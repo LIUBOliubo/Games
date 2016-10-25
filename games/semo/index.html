@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,minimal-ui">
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+	<meta http-equiv="expires" content="-1">
+	<title>看你有多色</title>
+	<link rel="stylesheet" type="text/css" href="m.min.css">
+</head>
+
+<body>
+	<div class="grid">
+		<div class="page hide" id="loading" style="display: none; ">loading...</div>
+		<div class="page hide" id="index" style="display: block; "><h1>看你有多色</h1><div id="help">找出所有色块里颜色不同的一个</div><div class="btns"><button data-type="color" class="btn play-btn">开始游戏</button> </div></div>
+
+		<div class="page hide" id="room"><header><span class="lv">得分： <em>1</em></span> <span class="time"></span> <span class="btn btn-pause">暂停</span></header>
+		<div id="box" class="lv1"></div></div>
+
+		<div class="page hide" id="dialog">
+			<div class="inner">
+				<div class="content gameover">
+					<div class="inner-content">
+						<h3></h3>
+						<div class="btn-wrap">
+							<button class="btn btn-restart">再来一次</button> 
+							<a href="http://g.lanrenmb.com" target="_blank" class="btn btn-boyaa">更多游戏...</a>
+						</div>
+					</div>
+				</div>
+				<div class="content pause">
+					<div class="inner-content">
+						<h3>游戏暂停</h3>
+						<div class="btn-wrap">
+							<button class="btn btn-resume">继续游戏</button> 
+							<a href="http://g.lanrenmb.com" target="_blank" class="btn btn-boyaa">更多游戏...</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	
+	<script src="libs.min.js"></script>
+	<script src="main.min.js"></script>
+<img src="http://img.tongji.linezing.com/3455448/tongji.gif">
+
+</body></html>

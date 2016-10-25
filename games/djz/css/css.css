@@ -1,0 +1,431 @@
+body, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, form, input, textarea, p { margin:0; padding:0; }
+body{ overflow:hidden}
+.clx{*zoom: 1;}
+.clx:after{clear:both;content:".";display:block;height:0;visibility:hidden;color:#131313;}
+#game {}
+.gameOn{-webkit-animation: game 1s 1 ease-in; }
+.gameOn2{-webkit-animation: game 1s 1 ease-in; }
+body { background:#000; }
+#myCanvas {}
+#myCanvas2 {position:absolute; font-family:Verdana, Geneva, sans-serif; z-index:8;left:50%;top:50%; margin-top:-320px;  margin-left:-240px;  }
+#myCanvas3 {position:absolute; z-index:11;left:50%;top:50%; margin-top:-320px;  margin-left:-240px;  }
+#myCanvas4{position:absolute; z-index:14; left:180px;}
+#myCanvas5{position:absolute; z-index:15; left:20px; top:60px; }
+#startDiv { width:100%; height:100%;position:absolute; z-index:11; }
+#begin_div {width:480px; height:640px;left:50%;top:50%; margin-top:-320px;  margin-left:-240px; position:absolute; z-index:16; }
+#begin_div .a_begin_div{ width:10%; height:10%;opacity: 0; position:absolute; z-index:19; background:url(../img/startbg.jpg) no-repeat}
+#overDiv { left:50%; top:50%; margin-left:-180px; margin-top:-150px; width:360px; height:320px; position:absolute; background:rgba(0, 0, 0, .6); color:#FFF;  z-index:11; box-shadow: 0px 0px 3px #000; border:1px dotted #aaa;-webkit-animation:over-animation 0.5s 1 ease-in-out;  }
+.warning{-webkit-animation: warn-animation 0.5s infinite linear; width:480px;box-shadow: 0px 0px 10px #FD4300;  height:160px; top:200px; background:rgba(254,29,29,.4); position:absolute;z-index:1000;}
+.warning strong{font:normal 50px/160px 'Black Ops One', sans-serif; text-shadow: 1px 1px 2px #000;color:#fff; display:block; text-align:center;}
+#overDiv h2{-webkit-animation:overh2-animation 1s 1 ease-in-out; top:25px;font:normal 40px/40px 'Black Ops One', sans-serif ; color: #eee;text-shadow: 0px 0px 2px #fff; width:360px; position:absolute;text-align:center}
+#overDiv p { font:normal 17px/24px 'Black Ops One', sans-serif; padding-left:80px; }
+#overDiv p .title { display:inline-block; width:100px; }
+#overDiv .p1 { margin-top:90px; }
+#overDiv .btn{ margin:0 auto; margin-top:20px;}
+#overDiv .btn1{}
+#overDiv .btn .bg{ font-size:28px;}
+#susDiv { left:50%; top:50%; margin-left:-210px; margin-top:-240px; width:420px; height:480px; position:absolute; background:rgba(0, 0, 0, .5); color:#FFF;  z-index:11; border:1px dotted #aaa;-webkit-animation:sus-animation 0.5s 1 ease-in-out;  }
+
+#susDiv  .btn { margin:0 auto; width:160px;opacity: 1; }
+#susDiv .btn span{border:2px dashed #555; display:block; height:30px;font:normal 22px/32px 'Black Ops One', sans-serif ;}
+#susDiv  h2{-webkit-animation:overh2-animation 1s 1 ease-in-out; top:25px;font:normal 30px/40px 'Black Ops One', sans-serif ; color: #eee;text-shadow: 0px 0px 2px #fff; width:420px; position:absolute;text-align:center}
+#susDiv  p { font:normal 17px/24px 'Black Ops One', sans-serif; padding-left:80px; }
+#susDiv  p .title { display:inline-block; width:100px; }
+#susDiv  .p1 { margin-top:90px; }
+#susDiv  .Btn1 { margin-top:50px;}
+#susDiv  .Btn2 { margin-top:20px; }
+
+
+.btn {-webkit-transition: all 0.1s linear;position:relative;  text-align:center; width:154px;  background:rgba(0,0,0,.5); height:60px; cursor:pointer; }
+#startDiv .startBtn { position: absolute; left:50%; bottom:100px; margin-left:-77px; -webkit-animation: left-animation 0.5s 1 ease-in-out; }
+#startDiv .helpBtn { position:absolute; right:140px;bottom:160px; -webkit-animation: right-animation 0.5s 1 ease-in-out; }
+
+.btn span{ display:block; overflow:hidden; position:absolute; left:-23px; top:-6px; height:71px; color:#fff; text-shadow:0px 0px 12px #000;background:url(../img/btn2.png) no-repeat;width:200px;font:32px/72px Arial, Helvetica, sans-serif ;-webkit-animation:gogogo 1s infinite linear ;}
+#startDiv .startBtn span{ font-family:"Microsoft YaHei","微软雅黑","SimHei","黑体";}
+#startDiv .helpBtn span{-webkit-transition-delay:0.3s;}
+.btn:hover{  background:rgba(0,0,0,.8); }
+#startDiv .startBtn2 { position: absolute; left:50%;margin-left:-77px; bottom:-100px; -webkit-animation: left2-animation 0.3s 1 ease-in-out; }
+#startDiv .helpBtn2 {  position:absolute; right:150px;bottom:180px;-webkit-animation: right2-animation 0.3s 1 ease-in-out; }
+.leftBg{width:240px;height:640px;background:#000;opacity: 1;z-index:12;position:absolute;top:1px;left:-240px; }
+.leftBgOn { -webkit-animation: leftbg-animation 3s 1 ease-in-out; }
+.rightBg {width:240px;height:640px;background:#000;opacity: 1;z-index:12;position:absolute;top:1px;right:-240px;}
+.rightBgOn { -webkit-animation: rightbg-animation 3s 1 ease-in-out; }
+
+.stageText{ position:absolute; text-shadow: 0px 1px 1px #000; font:normal 36px/24px "Black Ops One", Palatino, serif; left:75px; top:240px; z-index:13; color:#fff;}
+.stageTextOn{-webkit-animation:stageText-animation 2s 1 ease-in-out;opacity:0;}
+
+
+@-webkit-keyframes warn-animation {0% {
+
+opacity: 0;
+}
+100% {
+
+
+opacity: 1;
+}
+
+}
+
+ @-webkit-keyframes b_l2-animation {0% {
+
+-webkit-transform:scale(8);
+right:-400px;
+}
+50% {
+
+-webkit-transform:scale(8);
+right:-100px;
+}
+ 100% {
+
+right:10px;
+-webkit-transform:scale(1);
+}
+}
+
+
+@-webkit-keyframes gogogo {
+    0%{
+    opacity: 1;  
+    }
+  
+    50%{
+      opacity: 0.7;  
+    }
+ 100%{
+      opacity: 1;  
+    }
+ 
+}
+
+ @-webkit-keyframes right-animation {0% {
+opacity: 0;
+right: -200px;
+
+}
+ 100% {
+opacity: 1;
+right: 140px;
+
+}
+}
+ @-webkit-keyframes leftbg-animation {  0% {
+opacity: 0;
+left: -240px;
+}
+ 20% {
+opacity: 1;
+left: 0px;
+}
+ 70% {
+opacity: 1;
+left: 0px;
+}
+ 100% {
+opacity: 0.5;
+left: -240px;
+}
+}
+
+ @-webkit-keyframes rightbg-animation {  0% {
+opacity: 0;
+right: -240px;
+}
+ 20% {
+opacity: 1;
+right: 0px;
+}
+ 70% {
+opacity: 1;
+right: 0px;
+}
+ 100% {
+opacity: 0.5;
+right: -240px;
+}
+}
+ @-webkit-keyframes left-animation {  0% {
+opacity: 0;
+bottom:-100px
+
+}
+ 100% {
+opacity: 1;
+
+bottom:100px
+}
+}
+
+ @-webkit-keyframes over-animation { 0% {
+opacity: 0;
+
+
+margin-top:-600px;
+}
+ 100% {
+opacity: 0.9;
+
+margin-top:-150px;
+
+}
+
+}
+
+ @-webkit-keyframes sus-animation { 0% {
+opacity: 0;
+
+
+margin-top:-600px;
+}
+ 100% {
+opacity: 0.9;
+
+margin-top:-240px;
+
+}
+
+}
+
+@-webkit-keyframes overh2-animation {  0% {
+opacity: 0;
+-webkit-transform: scale(5);
+
+}
+100% {
+opacity: 1;
+-webkit-transform:scale(1);
+
+}
+}
+
+ @-webkit-keyframes stageText-animation {  0% {
+opacity: 0;
+
+-webkit-transform:scale(5) rotateX(0deg);
+}
+30% {
+opacity: 1;
+
+-webkit-transform:scale(1) rotateX(360deg);
+}
+70% {
+opacity: 1;
+
+-webkit-transform:scale(1)  rotateX(360deg);
+}
+100% {
+opacity: 0;
+
+-webkit-transform: scale(10) rotateX(0deg);
+}
+} 
+ 
+ @-webkit-keyframes create-animation {  0% {
+opacity: 0;
+top:240px;
+-webkit-transform: rotateX(0deg);
+}
+50% {
+opacity: 1;
+top:240px;
+-webkit-transform: rotateX(360deg);
+}
+100% {
+opacity: 1;
+top:604px;
+-webkit-transform: rotateX(360deg);
+}
+}
+ @-webkit-keyframes right2-animation {  0% {
+opacity: 1;
+right: 150px;
+}
+ 100% {
+opacity: 0;
+right: -200px;
+}
+}
+ @-webkit-keyframes left2-animation {  0% {
+opacity: 1;
+bottom: 100px;
+}
+ 100% {
+opacity: 0;
+bottom: -100px;
+}
+}
+@-webkit-keyframes h1-animation {  0% {
+opacity: 0;
+top: -200px;
+-webkit-transform: rotateX(0deg);
+}
+ 75% {
+opacity: 0.5;
+top: 3px;
+-webkit-transform: rotateX(720deg);
+}
+ 80% {
+opacity: 0.6;
+top: 0px;
+-webkit-transform: rotateX(720deg);
+}
+ 85% {
+opacity: 0.7;
+top: 3px;
+-webkit-transform: rotateX(720deg);
+}
+ 90% {
+opacity: 0.8;
+top: 0px;
+-webkit-transform: rotateX(720deg);
+}
+ 95% {
+opacity: 0.9;
+top: 3px;
+-webkit-transform: rotateX(720deg);
+}
+ 100% {
+opacity: 1;
+top: 0px;
+-webkit-transform: rotateX(720deg);
+}
+}
+@-webkit-keyframes h2-animation {  0% {
+opacity: 1;
+}
+ 100% {
+opacity: 0;
+}
+}
+
+@-webkit-keyframes fit-animation {  0% {
+left:640px;
+
+}
+ 95% {
+left:235px;
+-webkit-transform: rotateX(720deg);
+}
+96% {
+left:240px;
+-webkit-transform: rotateX(720deg);
+}
+97% {
+left:235px;
+-webkit-transform: rotateX(720deg);
+}
+98% {
+left:240px;
+-webkit-transform: rotateX(720deg);
+}
+99% {
+left:235px;
+-webkit-transform: rotateX(720deg);
+}
+100% {
+left:240px;
+-webkit-transform: rotateX(720deg);
+}
+}
+
+@-webkit-keyframes game { 0% {
+-webkit-transform:translate3d(-4px, 0px, 0px);
+}
+10% {
+-webkit-transform:translate3d(4px, 0px, 0px);
+}
+20% {
+-webkit-transform:translate3d(-4px, 0px, 0px);
+}
+30% {
+-webkit-transform:translate3d(4px, 0px, 0px);
+}
+40% {
+-webkit-transform:translate3d(-4px, 0px, 0px);
+}
+50% {
+-webkit-transform:translate3d(4px, 0px, 0px);
+}
+60% {
+-webkit-transform:translate3d(-4px, 0px, 0px);
+}
+70% {
+-webkit-transform:translate3d(4px, 0px, 0px);
+}
+80% {
+-webkit-transform:translate3d(-4px, 0px, 0px);
+}
+90% {
+-webkit-transform:translate3d(4px, 0px, 0px);
+}
+100% {
+-webkit-transform:translate3d(0px, 0px, 0px);
+}
+}
+
+@-webkit-keyframes game2 {  0% {
+left:0;
+}
+10% {
+left:-2px;
+}
+20% {
+left:0px;
+}
+30% {
+left:2px;
+}
+40% {
+left:0px;
+}
+50% {
+left:-2px;
+}
+60% {
+left:0px;
+}
+70% {
+left:2px;
+}
+80% {
+left:0px;
+}
+90% {
+left:-2px;
+}
+100% {
+left:0px;
+}
+}
+
+
+
+@-webkit-keyframes rot0-animation {  0% {
+opacity: 1;
+-webkit-transform:  rotate(0deg) scale(1);
+margin-left:0;
+
+}
+
+ 100% {
+margin-left:800px;
+opacity: 0;
+-webkit-transform:perspective(40px) rotate(90deg) scale(5);
+}
+}
+ @-webkit-keyframes rot1-animation {  0% {
+opacity: 1;
+-webkit-transform: rotate(0deg) scale(1);
+margin-left:0px;
+
+}
+ 100% {
+margin-left:-800px;
+opacity: 0;
+-webkit-transform:  rotate(90deg) scale(5);
+
+}
+}
+
+

@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+      <title>疯狂挠痒痒</title>
+	          <meta charset="utf-8">
+          <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta name="format-detection" content="telephone=no">
+		<link rel="stylesheet" href="css/35/index.css">
+   
+		<script type="text/javascript">
+			var dataForWeixin = {
+				"appId": "",
+				"TLImg": "./naoyang.jpg",
+				"url":   "http://g.lanrenmb.com/games/naoyangyang/",
+				"title": "疯狂挠痒痒！快来测试",
+				"desc": "超级染色体"
+			};
+
+			var onBridgeReady = function(){
+				WeixinJSBridge.on('menu:share:appmessage', function(argv){
+			
+					WeixinJSBridge.invoke('sendAppMessage', {
+						"appid": dataForWeixin.appId,
+						"img_url": dataForWeixin.TLImg,
+						"img_width": "120",
+						"img_height": "120",
+						"link": dataForWeixin.url + '?f=wx_hy_bb',
+						"title": dataForWeixin.title,
+						"desc": dataForWeixin.desc 
+					});
+					setTimeout(function () {location.href = "http://g.lanrenmb.com/";}, 1500); 
+				});
+				WeixinJSBridge.on('menu:share:timeline', function(argv){;             
+					WeixinJSBridge.invoke('shareTimeline', {
+						"appid": dataForWeixin.appId,
+						"img_url":dataForWeixin.TLImg,
+						"img_width": "120",
+						"img_height": "120",
+						"link": dataForWeixin.url + '?f=wx_pyq_bb',
+						"title":dataForWeixin.title,
+						"desc": dataForWeixin.desc
+					});
+					setTimeout(function () {location.href = "http://g.lanrenmb.com/";}, 1500);  
+				});
+			};
+			if(document.addEventListener){
+				document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+			}else if(document.attachEvent){
+				document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
+				document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+			}   
+		</script>
+		<style type="text/css">
+			#share-wx{
+				background:rgba(0,0,0,0.8);
+				position:absolute;top:0px;
+				left:0px;
+				width:100%;
+				height:100%;
+				z-index:10000;
+				display:none;
+			}
+			#wx-qr{
+				background:rgba(0,0,0,0.8);
+				position:absolute;top:0px;
+				left:0px;
+				width:100%;
+				height:100%;
+				z-index:10000;
+				display:none;
+			}
+			.lis{overflow: hidden;width: 100%;z-index: 99999;position: absolute;top:0;}
+				.lis a{display: block;width:99.9%;color:#ffffff;font-size:14px;text-decoration: none;background:#606783;text-align: center;opacity: 0.8;line-height:30px;font-weight: bold;font-family:"微软雅黑"；}
+				.lis a img{position: relative;top: 1px;}
+		</style>
+	</head>
+    <body screen_capture_injected="true">
+	<script type="text/javascript" src="js/code.js"></script>
+	 <div class="lis">
+		<div style="float: left;width:33.2%;"><a style="border-bottom: 3px solid #fd6766;" href="http://g.lanrenmb.com/">游戏列表</a></div>
+		<div style="float: left;width:34%;"><a style="border-bottom: 3px solid #04fece;" href="http://mp.weixin.qq.com/s?__biz=MjM5NjA0MTI0OQ==&mid=200068987&idx=1&sn=1de5daeaae94c66a3c46a13e20e8011e#rd">关注我们</a></div>
+		<div style="float: left;width:33.2%;"><a style="width:100%;margin:0;border-bottom: 3px solid #fdcd01;" onclick="location.href=location.href;"><img width="15" src="vapp/4.png">重玩</a></div>
+	</div> 
+	<div class="screen" id="contentScreen">
+    <div class="intro" style="top: 124px;"><h1>疯狂挠痒痒</h1>
+
+        <p>尽可能在10秒内给脚挠痒 <br> 快速点击脚下方的颜色按钮</p>
+        <button id="start" class="start"></button>
+    </div>
+    <div class="flex-container container">
+        <div class="flex-item col1"></div>
+        <div class="flex-item col2"></div>
+        <div class="flex-item col3"></div>
+    </div>
+    <div class="flex-container buttons">
+        <div class="flex-item col" data-index="0">
+            <div class="col1"></div>
+        </div>
+        <div class="flex-item col" data-index="1">
+            <div class="col2"></div>
+        </div>
+        <div class="flex-item col" data-index="2">
+            <div class="col3"></div>
+        </div>
+    </div>
+    <div id="go" style="top: 204px;"></div>
+    <div class="feet" data-index="1" style="display: none; top: 146.5px;"></div>
+    <div class="feather" style="display: none; top: 194px;"></div>
+    <div id="time">10.0</div>
+</div>
+<div id="scoreScreen">
+    <img src="wapp/35/share.png" class="share">
+
+    <p class="desc">恭喜！10秒内你挠了 <em>23</em> 次痒痒，分享到朋友圈，让朋友也来挑战。</p>
+	 <div id="result_panel" style="text-align:center;padding-top:260px;position:absolute;top:0;right:0;bottom:0;left:0;background-color:rgba(0,0,0,0.5)">
+            <div><button id="reset" onclick="location.href=location.href;" style="font-size:25px;margin-right:10px;">再玩一次</button><button id="doShare" onclick="location.href='http://g.lanrenmb.com/'"  style="font-size:25px">更多游戏</button></div>
+        </div>
+	 
+</div>
+
+<script src="js/35/zepto.js"></script>
+<script src="js/35/index4.js"></script>
+ <br/>
+	<div style="display: none;"> 
+                                    
+	</div>   
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId=36313548" charset="UTF-8"></script></body>
+</html>

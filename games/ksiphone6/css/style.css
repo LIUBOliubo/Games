@@ -1,0 +1,65 @@
+html {
+    /*height: 100%;*/
+}
+body {
+    /*height:100%;*/
+    padding: 0;
+    margin: 0;
+    border: 0;
+    background-color: #000;
+/*    transform-origin : left top;
+    transform: scale(0.5);
+    -webkit-transform-origin : left top;
+    -webkit-transform: scale(0.5);
+*/
+}
+
+div, span {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+body, div, span, canvas {
+    -webkit-text-size-adjust: none;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-touch-callout: none;
+    text-size-adjust: none;
+    user-select: none;
+    tap-highlight-color: rgba(0, 0, 0, 0);
+    touch-callout: none;
+}
+
+#info {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    border: 0px solid black;
+    background-color: transparent;
+    border-top: 2px solid black;
+}
+#preload {
+    position: absolute;
+    left:-10000px;
+}
+
+#container {
+    background-color: #000;
+    position: relative;
+    width:100%;
+    height:100%;
+    border: 0px solid red;
+    margin:0px;
+    padding:0px;
+
+    background-image: url(../res/bg.jpg);
+    background-position: center top;
+    background-repeat: no-repeat;
+    /*background-size: 100% auto;*/
+    background-size: 100%  auto;
+}
+
+
+#canvas {
+    margin:0px;
+    padding:0px;
+}

@@ -1,0 +1,25 @@
+
+#sg-loadscrn{
+    position:fixed; top:0;left:0;width:100%; height:100%; background-color:#fff; z-index:9999;
+}
+
+#sg-spinner{
+	position: absolute; width: 150px; height: 50px; top:50%; left:50%; margin-top:-25px; margin-left:-75px;
+	background-image: url('sg-loader.gif');
+}
+
+#sg-spinner.no-img{
+    background: #ffffff;
+}
+
+#sg-loadtext{
+    position:absolute;
+    font-family: sans-serif;
+    top:50%; left:50%;
+    width: 250px;
+    margin-left:-125px;
+    margin-top:-125px;
+    text-align:center;
+    line-height:150%;
+    font-size:16px;
+}

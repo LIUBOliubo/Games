@@ -1,0 +1,17 @@
+
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<monster>
+	<elements>
+		<element id="0" type="1" hp="10"/>
+		<element id="1" type="2" hp="550"/>
+		<element id="2" type="3" hp="790"/>
+		<element id="3" type="4" hp="1050"/>
+		<element id="4" type="5" hp="1440"/>
+		<element id="5" type="6" hp="1910"/>
+		<element id="6" type="7" hp="2500"/>
+		<element id="7" type="8" hp="40000"/>
+		<element id="8" type="9" hp="200"/>
+		<element id="9" type="10" hp="200"/>
+		<element id="10" type="11" hp="200"/>
+	</elements>
+</monster>

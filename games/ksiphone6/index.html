@@ -1,0 +1,120 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="-1" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta charset="utf-8">
+<title>狂摄iPhone 6</title>
+<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-touch-fullscreen" content="yes" />
+<meta name="full-screen" content="yes"/>
+<meta name="screen-orientation" content="portrait"/>
+<meta name="x5-fullscreen" content="true"/>
+<meta name="360-fullscreen" content="true"/>
+<link rel="stylesheet" href="css/style.css">
+<script src="js/all-in-one.js"></script>
+</head>
+<body>
+	<div id="container" class="splash">
+		<canvas id="canvas"><span>Browser does not support the canvas.</span></canvas>
+		<div id="info"></div>
+	</div>
+	<div id="preload"></div>
+	<script src="js/shanku_loading.js"></script>
+	<script language=javascript>
+		var mebtnopenurl = 'http://g.lanrenmb.com/index.html';
+var thegameurl ="http://g.lanrenmb.com/games/ksiphone6/"; 
+var guanzhuurl ="http://mp.weixin.qq.com/s?__biz=MjM5NjA0MTI0OQ==&mid=200068987&idx=1&sn=1de5daeaae94c66a3c46a13e20e8011e#rd";
+		window.shareData = {
+		        "imgUrl": "http://mmbiz.qpic.cn/mmbiz/2zpp2iaH4HWFv03p0x0LUFjTPr1UIrvoc1Rwu9zgVysHCUSUta68LwD9wHia350QmMXmzia8jWE056sk4P8TynExQ/640",
+		        "timeLineLink": thegameurl,
+		        "tTitle": "狂摄iPhone 6",
+		        "tContent": "狂摄iPhone 6飞啊飞"
+		};
+				
+		function goHome(){
+			window.location=mebtnopenurl;
+		}
+		function clickMore(){
+			 if((window.location+"").indexOf("f=zf",1)>0){
+			 	window.location = mebtnopenurl;
+			  }
+			  else{
+			 	goHome();
+			  }
+		}
+		function dp_share(){
+			document.getElementById("share").style.display="";
+			
+		}
+		function dp_Ranking(){
+			window.location=mebtnopenurl;
+		}
+
+		function showAd(){
+		}
+		function hideAd(){
+		}
+		document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+		    
+		    WeixinJSBridge.on('menu:share:appmessage', function(argv) {
+		        WeixinJSBridge.invoke('sendAppMessage', {
+		            "img_url": window.shareData.imgUrl,
+		            "link": window.shareData.timeLineLink,
+		            "desc": window.shareData.tContent,
+		            "title": window.shareData.tTitle
+		        }, onShareComplete);
+		    });
+
+		    WeixinJSBridge.on('menu:share:timeline', function(argv) {
+		        WeixinJSBridge.invoke('shareTimeline', {
+		            "img_url": window.shareData.imgUrl,
+		            "img_width": "640",
+		            "img_height": "640",
+		            "link": window.shareData.timeLineLink,
+		            "desc": window.shareData.tContent,
+		            "title": window.shareData.tTitle
+		        }, onShareComplete);
+		    });
+		}, false);
+		</script>
+		<div id=share style="display: none">
+			<img width=100% src="share.png"
+				style="position: fixed; z-index: 9999; top: 0; left: 0; display: "
+				ontouchstart="document.getElementById('share').style.display='none';" />
+		</div>
+		<div style="display: none;">
+			<script type="text/javascript">
+            var myData = { gameid: "ksiphone6" };
+			function dp_submitScore(score){
+				myData.score =parseInt(score*100);
+				myData.scoreName = "摄了"+score+"分";
+				document.title ="我狂摄iphone6摄了"+score+"分，大伙快来当一回土豪吧！";			
+				window.shareData.tTitle = document.title;
+				
+			}
+			
+			function onShareComplete(res) {
+                if (localStorage.myuid && myData.score != undefined) {
+                    setTimeout(function(){
+                        if (confirm("？")) {
+                            window.location = mebtnopenurl;
+                        }
+                        else {
+                            document.location.href = mebtnopenurl;
+                        }
+                    }, 500);
+                }
+				else {
+		        	document.location.href = guanzhuurl ;
+				}
+	        }
+			</script>
+			<div style="display: none;">
+				<script type="text/javascript" src="http://tajs.qq.com/stats?sId=36313548" charset="UTF-8"></script>
+			</div>
+</body>
+</html>

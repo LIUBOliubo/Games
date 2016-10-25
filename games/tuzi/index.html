@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html lang="en" manifest="manifest.mf"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>兔子快跑-懒人模板</title>
+	<meta charset="utf-8">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0, minimal-ui">
+	<style>
+		body {
+			margin: 0px;
+			padding: 0px;
+			width: 100%;
+			background-color:black;
+		}	
+
+		canvas {	
+			image-rendering: -o-crisp-edges;           
+			image-rendering: optimize-contrast;        
+			-ms-interpolation-mode: nearest-neighbor;  
+			-webkit-tap-highlight-color: rgba(0,0,0,0);
+			-moz-tap-highlight-color: rgba(0,0,0,0);
+			tap-highlight-color: rgba(0,0,0,0);
+			user-select: none;
+			-webkit-touch-callout: none;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+		} 
+	</style>
+	<!--<script type="text/javascript">document.write('<script type="text/javascript" src="../resource/js/resource_loader.js?ver='+Math.random()+'"><\/script>')</script>-->
+	
+	<script src="./index_files/viewporter.js"></script>
+
+</head>
+	
+	<body ryt12819="1"> 
+
+		<div id="viewporter" style="margin-top: 0px; margin-left: 57.75px;">
+		   <canvas id="canvas" moz-opaque="" width="480" height="320" style="width: 1282.5px; height: 855px;"></canvas>
+		</div>
+	
+	<script src="index_files/TweenMax.min.js"></script>
+	<script src="index_files/howler.js"></script>
+	<script src="index_files/seedrandom.js"></script>
+	<script type="text/javascript" src="./index_files/game.js"></script>
+	<script src="index_files/app.js"></script>
+	<script type="text/javascript">
+	 var mebtnopenurl = "http://mp.weixin.qq.com/s?__biz=MjM5NjA0MTI0OQ==&mid=200068987&idx=1&sn=1de5daeaae94c66a3c46a13e20e8011e#rd";
+               var tit = "";
+     var DFW = {
+         appId: "",
+         TLImg: "http://g.lanrenmb.com/icon/tuzi.png",
+         url: "http://g.lanrenmb.com/games/tuzi",
+         title: "兔子快跑",
+         desc: "比一比看谁跑的最远！"
+     };
+     var onBridgeReady = function () {
+         WeixinJSBridge.on('menu:share:appmessage', function (argv) {
+             WeixinJSBridge.invoke('sendAppMessage', {
+                 "appid": DFW.appId,
+                 "img_url": DFW.TLImg,
+                 "img_width": "120",
+                 "img_height": "120",
+                 "link": DFW.url,
+                 "title": DFW.title + tit,
+                 "desc": DFW.desc
+             }, function (res) {
+                 document.location.href = mebtnopenurl;
+             }
+             );
+         });
+         WeixinJSBridge.on('menu:share:timeline', function (argv) {
+             WeixinJSBridge.invoke('shareTimeline', {
+                 "appid": DFW.appId,
+                 "img_url": DFW.TLImg,
+                 "img_width": "120",
+                 "img_height": "120",
+                 "link": DFW.url,
+                 "title": DFW.title + tit,
+                 "desc": DFW.desc
+             }, function (res) {
+                 document.location.href = mebtnopenurl;
+             }
+             );
+         });
+     };
+     if (document.addEventListener) {
+         document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+     } else if (document.attachEvent) {
+         document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
+         document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+     }
+
+     function dp_submitScore(level,score)
+     {
+         
+         //alert("你获得了 " + score + " 分");
+         if (score > 0) {
+             if (confirm("你获得了" + score + " 要不要通知下小伙伴们呢？")) {
+                 do_share(score);
+             }
+         }
+     }
+     function do_share(score) {
+         document.title = "我获得了" + score + "你行吗？也来试试吧！";
+        
+         document.getElementById("share").style.display = "";
+         window.DFW.title = document.title;
+     }
+	</script>
+        <div id="share" style="display: none">
+			<img width="100%" src="images/share.png" style="position: fixed; z-index: 9999; top: 0; left: 0; display: " ontouchstart="document.getElementById(&#39;share&#39;).style.display=&#39;none&#39;;">
+		</div>
+<div style="display: none;"><script type="text/javascript" src="http://tajs.qq.com/stats?sId=36313548" charset="UTF-8"></script></div>
+</body></html>

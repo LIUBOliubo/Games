@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!-- saved from url=(0057)http://www.spacemonsters.co.uk/games/mobile/dangerranger/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title> Danger Ranger </title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=320, height=440, user-scalable=no, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<script type="text/javascript" src="http://g.lanrenmb.com/games/qw/jquery.min.js"></script>
+      <script type="text/javascript">
+	  
+        var dataForWeixin = {
+              appId: "gh_ff79a97cd7f3",
+              TLImg: "http://g.lanrenmb.com/games/jb/logo.jpg",
+              url: "http://g.lanrenmb.com/games/jb/",
+              title: "Classic  game <Stolen treasure>, please share your friends!  Circle  friends wechat!",
+              desc: "please share your friends!  Circle  friends wechat!"
+        };
+
+        var onBridgeReady = function(){
+            WeixinJSBridge.on('menu:share:appmessage', function(argv){
+               var infos = $("#infos").text();     
+           
+                WeixinJSBridge.invoke('sendAppMessage', {
+                    "appid": dataForWeixin.appId,
+                    "img_url": dataForWeixin.TLImg,
+                    "img_width": "120",
+                    "img_height": "120",
+                    "link": dataForWeixin.url + '?f=wx_hy_bb',
+                    "title": infos + dataForWeixin.title,
+                    "desc": dataForWeixin.desc 
+                });
+         setTimeout(function () {location.href = "http://g.lanrenmb.com/games/jb/";}, 1500); 
+            });
+            WeixinJSBridge.on('menu:share:timeline', function(argv){
+                var infos = $("#infos").text();             
+                WeixinJSBridge.invoke('shareTimeline', {
+                    "appid": dataForWeixin.appId,
+                    "img_url":dataForWeixin.TLImg,
+                    "img_width": "120",
+                    "img_height": "120",
+                    "link": dataForWeixin.url + '?f=wx_pyq_bb',
+                    "title": infos + dataForWeixin.title,
+                    "desc": dataForWeixin.desc
+                });
+		setTimeout(function () {location.href = "http://g.lanrenmb.com/games/jb/";}, 1500);  
+            });
+        };
+        if(document.addEventListener){
+            document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+        }else if(document.attachEvent){
+            document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
+            document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+        }   
+      </script>
+	<link rel="apple-touch-startup-image" href="./library/iphonestartup.png">
+	<link rel="stylesheet" type="text/css" href="./Danger Ranger_files/iphone.css" media="only screen and (max-width: 480px)">
+	<link rel="stylesheet" type="text/css" href="./Danger Ranger_files/desktop.css" media="screen and (min-width: 481px)">
+	<link rel="apple-touch-icon" href="./library/appleicon.png">
+	<!--<link href='http://fonts.googleapis.com/css?family=Bowlby+One+SC&v2' rel='stylesheet' type='text/css'>	
+	<link href='http://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>	-->
+	<!--[if IE]>
+	<link rel="stylesheet" type="text/css" href="explorer.css" media="all" />
+	<![endif]-->
+	<script type="text/javascript" async="" src="./Danger Ranger_files/ga.js"></script><script type="application/x-javascript" src="./Danger Ranger_files/aselect.js"></script>
+	<script type="application/x-javascript" src="./Danger Ranger_files/library.js"></script>
+	<script type="application/x-javascript" src="./Danger Ranger_files/textdata.js"></script>
+	<script type="application/x-javascript" src="./Danger Ranger_files/classlib.js"></script>
+	<script type="application/x-javascript" src="./Danger Ranger_files/resources.js"></script>
+	<script type="application/x-javascript" src="./Danger Ranger_files/data.js"></script>
+	<script type="application/x-javascript" src="./Danger Ranger_files/leveldata.js"></script>
+	<script type="application/x-javascript" src="./Danger Ranger_files/game.js"></script>
+</head>
+<body onLoad="init();" onkeydown="scanInput(event);" onkeyup="stopMove(event);">
+
+	<div id="container">
+		<canvas width="320" height="480" class="canvas"></canvas>
+		<div id="banad" style="display: block; "><iframe src="ad.htm" width="319" height="50" frameborder="0" scrolling="no">i</iframe></div>
+		<div id="console" style="display: none; text-align: left; "></div>
+	</div>
+
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId=36313548" charset="UTF-8"></script></body></html>

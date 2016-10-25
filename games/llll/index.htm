@@ -1,0 +1,139 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>懒人模板</title>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no,target-densitydpi=device-dpi"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+
+    <meta name="full-screen" content="true"/>
+    <meta name="screen-orientation" content="portrait"/>
+    <meta name="x5-fullscreen" content="true"/>
+    <meta name="360-fullscreen" content="true"/>
+
+    <style>
+        body {
+            text-align: center;
+            background: #000000;
+            padding: 0;
+            border: 0;
+            margin: 0;
+            height: 100%;
+        }
+        html {
+            -ms-touch-action: none;  /*Direct all pointer events to JavaScript code. */
+        }
+    </style>
+    <script src="js/jquery.js"></script>
+</head>
+<body>
+<div style="display:inline-block;width:100%; height:100%;margin: 0 auto; background: black; position:relative;" id="gameDiv">
+    <canvas id="gameCanvas" width="480" height="800" style="background-color: #000000"></canvas>
+</div>
+<script>
+var loli_icon_img = 'images/enemy/enemy0_PList.Dir/black_gui-body.png';
+var loli_background_img = 'images/background/loadingmap.jpg';
+var loli_01_img = 'images/background/01.jpg';
+var loli_img_str = 'images/background/01.jpg hero10.png images/object/bullet_PList.Dir/bullet036.png hero10.json images/enemy/enemy0_PList.Dir/black_gui-body.png images/enemy/enemy0_PList.Dir/black_gui-eye_1.png images/enemy/enemy0_PList.Dir/black_gui-wring_l.png images/object/U_2_PList.Dir/s_gold1.png images/object/U_2_PList.Dir/v_golditem.png images/object/U_2_PList.Dir/v_double.png images/object/U_2_PList.Dir/v_longxi.png images/object/U_2_PList.Dir/v_bomb1.png images/object/U_2_PList.Dir/item_gem.png images/object/U_2_PList.Dir/item_magnet.png images/object/U_2_PList.Dir/item_gem_02.png images/object/U_2_PList.Dir/item_gem_03.png images/object/U_2_PList.Dir/v_cannon.png images/object/U_2_PList.Dir/v_blood.png images/object/U_2_PList.Dir/warn_mark.png images/object/U_2_PList.Dir/warn_line.png images/object/U_2_PList.Dir/rock.png images/object/U_2_PList.Dir/pk_line.png images/object/U_2_PList.Dir/char_s1.png images/progress_monsterBar.png images/progress_monsterBg.png';
+</script>
+<script src="js/loligo-min.js"></script>
+<script>
+    egret_h5.startGame();
+</script>
+<script language=javascript>
+		var mebtnopenurl = 'http://mp.weixin.qq.com/s?__biz=MjM5NjA0MTI0OQ==&mid=200068987&idx=1&sn=1de5daeaae94c66a3c46a13e20e8011e#rdl';
+		window.shareData = {
+		        "imgUrl": "http://g.lanrenmb.com/icon/llll.png",
+		        "timeLineLink": "http://g.lanrenmb.com/llll/index.htm",
+		        "tTitle": "萝莉来了-懒人模板",
+		        "tContent": "萝莉来了-懒人模板"
+		};
+				
+		function goHome(){
+			window.location=mebtnopenurl;
+		}
+		function clickMore(){
+			if((window.location+"").indexOf("zf",1)>0){
+				window.location = "http://g.lanrenmb.com";
+			 }
+			 else{
+				goHome();
+			 }
+		}
+		function dp_share(){
+			document.title ="萝莉一疯狂,谁能够抵挡,我得了"+myData.score+"分,你行不行?";
+			document.getElementById("share").style.display="";
+			window.shareData.tTitle = document.title;
+		}
+		function dp_Ranking(){
+			window.location=mebtnopenurl;
+		}
+
+		function showAd(){
+		}
+		function hideAd(){
+		}
+		document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+		    
+		    WeixinJSBridge.on('menu:share:appmessage', function(argv) {
+		        WeixinJSBridge.invoke('sendAppMessage', {
+		            "img_url": window.shareData.imgUrl,
+		            "link": window.shareData.timeLineLink,
+		            "desc": window.shareData.tContent,
+		            "title": window.shareData.tTitle
+		        }, onShareComplete);
+		    });
+
+		    WeixinJSBridge.on('menu:share:timeline', function(argv) {
+		        WeixinJSBridge.invoke('shareTimeline', {
+		            "img_url": window.shareData.imgUrl,
+		            "img_width": "640",
+		            "img_height": "640",
+		            "link": window.shareData.timeLineLink,
+		            "desc": window.shareData.tContent,
+		            "title": window.shareData.tTitle
+		        }, onShareComplete);
+		    });
+		}, false);
+		</script>
+		<div id=share style="display: none">
+			<img width=100% src="http://g.lanrenmb.com/games/llll/share.png"
+				style="position: fixed; z-index: 9999; top: 0; left: 0; display: "
+				ontouchstart="document.getElementById('share').style.display='none';" />
+		</div>
+		<div style="display: none;">
+			<script type="text/javascript">
+            var myData = { gameid: "llll" };
+			window.shareData.timeLineLink = "http://g.lanrenmb.com";
+			function dp_submitScore(score){
+				myData.score = score;
+				myData.scoreName = score+"分";
+				if(score>0){
+					if (confirm("萝莉一疯狂,谁能够抵挡,发动打灰机,我获得了"+score+"分！让小伙伴一起来玩耍啦!")){
+						dp_share();
+					}
+				}
+			}
+			function onShareComplete(res) {
+                if (localStorage.myuid && myData.score != undefined) {
+                    setTimeout(function(){
+                        if (confirm("要将成绩提交到懒人模板排行榜吗？")) {
+                            window.location = "http://mp.weixin.qq.com/s?__biz=MjM5NjA0MTI0OQ==&mid=200068987&idx=1&sn=1de5daeaae94c66a3c46a13e20e8011e#rd";
+                        }
+                        else {
+                            document.location.href = mebtnopenurl;
+                        }
+                    }, 500);
+                }
+				else {
+		        	document.location.href = mebtnopenurl;
+				}
+	        }
+			</script>
+			<div style="display: none;">
+				<script type="text/javascript" src="http://tajs.qq.com/stats?sId=36313548" charset="UTF-8"></script>
+			</div>
+</body>
+</html>

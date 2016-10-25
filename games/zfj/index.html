@@ -1,0 +1,152 @@
+
+<!DOCTYPE HTML>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name='apple-touch-fullscreen' content='yes'>
+<meta name="full-screen" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<meta name="format-detection" content="address=no">
+<head>
+<title>纸飞机</title>
+<style type="text/css">
+.gameOn {-webkit-animation: game 1s 1 ease-in; }
+ @-webkit-keyframes game { 0% {
+-webkit-transform:translate3d(-4px, 0px, 0px);
+}
+10% {
+-webkit-transform:translate3d(4px, 0px, 0px);
+}
+20% {
+-webkit-transform:translate3d(-4px, 0px, 0px);
+}
+30% {
+-webkit-transform:translate3d(4px, 0px, 0px);
+}
+40% {
+-webkit-transform:translate3d(-4px, 0px, 0px);
+}
+50% {
+-webkit-transform:translate3d(4px, 0px, 0px);
+}
+60% {
+-webkit-transform:translate3d(-4px, 0px, 0px);
+}
+70% {
+-webkit-transform:translate3d(4px, 0px, 0px);
+}
+80% {
+-webkit-transform:translate3d(-4px, 0px, 0px);
+}
+90% {
+-webkit-transform:translate3d(4px, 0px, 0px);
+}
+100% {
+-webkit-transform:translate3d(0px, 0px, 0px);
+}
+}
+</style>
+
+</head>
+<body style="padding:0;margin:0">
+<script src="js/shanku_loading.js"></script>
+<div class="game" style="width:100%; height:100%;position:absolute;overflow: hidden;-webkit-transform:translate3d(0px, 0px, 0px);left:0px;top:0px;">
+  <canvas id="myCanvas" class="" style="position:absolute;overflow:visible;-webkit-transform:translate3d(0px, 0px, 0px);left:0px;top:0;width:100%" width="360" height="645"></canvas>
+
+</div>
+
+<script src="js/easyGame.js" type="text/javascript"></script>
+<script language=javascript>
+	var mebtnopenurl = 'http://g.lanrenmb.com/index.html';
+var thegameurl ="http://g.lanrenmb.com/games/zfj/"; 
+var guanzhuurl ="http://mp.weixin.qq.com/s?__biz=MjM5NjA0MTI0OQ==&mid=200068987&idx=1&sn=1de5daeaae94c66a3c46a13e20e8011e#rd";
+		window.shareData = {
+		        "imgUrl": "http://mmbiz.qpic.cn/mmbiz/2zpp2iaH4HWFv03p0x0LUFjTPr1UIrvocTMMtFxibDictTpT4PagWraZdTseBD1db1MywR3YOp1kn6FZjUiaPMjaXg/640",
+		        "timeLineLink": thegameurl,
+		        "tTitle": "纸飞机",
+		        "tContent": "纸飞机飞啊飞"
+		};
+				
+		function goHome(){
+			window.location=mebtnopenurl;
+		}
+		function clickMore(){
+			 if((window.location+"").indexOf("f=zf",1)>0){
+			 	window.location = mebtnopenurl;
+			  }
+			  else{
+			 	goHome();
+			  }
+		}
+		function dp_share(){
+			document.getElementById("share").style.display="";
+			
+		}
+		function dp_Ranking(){
+			window.location=mebtnopenurl;
+		}
+
+		function showAd(){
+		}
+		function hideAd(){
+		}
+		document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+		    
+		    WeixinJSBridge.on('menu:share:appmessage', function(argv) {
+		        WeixinJSBridge.invoke('sendAppMessage', {
+		            "img_url": window.shareData.imgUrl,
+		            "link": window.shareData.timeLineLink,
+		            "desc": window.shareData.tContent,
+		            "title": window.shareData.tTitle
+		        }, onShareComplete);
+		    });
+
+		    WeixinJSBridge.on('menu:share:timeline', function(argv) {
+		        WeixinJSBridge.invoke('shareTimeline', {
+		            "img_url": window.shareData.imgUrl,
+		            "img_width": "640",
+		            "img_height": "640",
+		            "link": window.shareData.timeLineLink,
+		            "desc": window.shareData.tContent,
+		            "title": window.shareData.tTitle
+		        }, onShareComplete);
+		    });
+		}, false);
+		</script>
+		<div id=share style="display: none">
+			<img width=100% src="share.png"
+				style="position: fixed; z-index: 9999; top: 0; left: 0; display: "
+				ontouchstart="document.getElementById('share').style.display='none';" />
+		</div>
+		<div style="display: none;">
+			<script type="text/javascript">
+            var myData = { gameid: "zfj" };
+			function dp_submitScore(score){
+				myData.score =parseInt(score*10);
+				myData.scoreName = "飞了"+score+"米";
+				document.title ="我的小飞机飞了"+score+"米，小伙伴们快来找下童年的记忆吧！";			
+				window.shareData.tTitle = document.title;
+			}
+			function onShareComplete(res) {
+                if (localStorage.myuid && myData.score != undefined) {
+                    setTimeout(function(){
+                        if (confirm("？")) {
+                            window.location = mebtnopenurl;
+                        }
+                        else {
+                            document.location.href = mebtnopenurl;
+                        }
+                    }, 500);
+                }
+				else {
+		        	document.location.href = guanzhuurl ;
+				}
+	        }
+			</script>
+			<div style="display: none;">
+				<script type="text/javascript" src="http://tajs.qq.com/stats?sId=36313548" charset="UTF-8"></script>
+			</div>
+</body>
+</html>

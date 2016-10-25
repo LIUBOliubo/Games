@@ -1,0 +1,41 @@
+
+html { width: 100%; position: relative; background: #fff; height: 100%; overflow: hidden; }
+.mainS { position: relative; width: 640px; height: 620px; margin: 0 auto; display: inline-block; vertical-align: top; margin-top: 100px; }
+    .mainS canvas, .mainS > div { position: absolute; left: 0px; }
+    .mainS > div { display: none; }
+html, body, audio { margin: 0; padding: 0; border: 0; }
+body { cursor: pointer; -moz-user-select: none; -khtml-user-select: none; -o-user-select: none; -ms-user-select: none; -webkit-user-select: none; user-select: none; width: 640px; margin: 0 auto; padding: 0; border: 0; position: relative; font-weight: bold; font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "微软雅黑", "Microsoft YaHei", "Apple LiGothic Medium", "黑体"; height: 100%; }
+#logo1 { -moz-transform: scale(1); -webkit-transform: scale(1); -o-transform: scale(1); -ms-transform: scale(1); transform: scale(1); }
+    #logo1.scale { animation: sca 0.5s linear; -moz-animation: sca 0.5s linear; -webkit-animation: sca 0.5s linear; -o-animation: sca 0.5s linear; }
+#Logo1 { -moz-transform: scale(1); -webkit-transform: scale(1); -o-transform: scale(1); -ms-transform: scale(1); transform: scale(1); }
+    #Logo1.scale { animation: sca 0.5s linear; -moz-animation: sca 0.5s linear; -webkit-animation: sca 0.5s linear; -o-animation: sca 0.5s linear; }
+
+@keyframes sca {
+    0% { -moz-transform: scale(0); -webkit-transform: scale(0); -o-transform: scale(0); -ms-transform: scale(0); transform: scale(0); }
+    100% { -moz-transform: scale(1); -webkit-transform: scale(1); -o-transform: scale(1); -ms-transform: scale(1); transform: scale(1); }
+}
+
+@-moz-keyframes sca {
+    0% { -moz-transform: scale(0); -webkit-transform: scale(0); -o-transform: scale(0); -ms-transform: scale(0); transform: scale(0); }
+    100% { -moz-transform: scale(1); -webkit-transform: scale(1); -o-transform: scale(1); -ms-transform: scale(1); transform: scale(1); }
+}
+
+@-webkit-keyframes sca {
+    0% { -moz-transform: scale(0); -webkit-transform: scale(0); -o-transform: scale(0); -ms-transform: scale(0); transform: scale(0); }
+    100% { -moz-transform: scale(1); -webkit-transform: scale(1); -o-transform: scale(1); -ms-transform: scale(1); transform: scale(1); }
+}
+
+@-o-keyframes sca {
+    0% { -moz-transform: scale(0); -webkit-transform: scale(0); -o-transform: scale(0); -ms-transform: scale(0); transform: scale(0); }
+    100% { -moz-transform: scale(1); -webkit-transform: scale(1); -o-transform: scale(1); -ms-transform: scale(1); transform: scale(1); }
+}
+
+#maskloading { display: none; position: absolute; left: 0; top: 0; bottom: 0; right: 0; min-width: 640px; height: 100%; min-height: 100%; background: #000; opacity: 0.8; font-size: 40px; text-align: center; font-weight: bold; vertical-align: middle; z-index: 9999; margin: 0; }
+
+audio { position: absolute; width: 0; height: 0; z-index: -999; top: 0; left: 0; }
+.zoomh, .zoom { transform-origin: center 20%; -webkit-transform-origin: center 20%; -moz-transform-origin: center 20%; -o-transform-origin: center 20%; -ms-transform-origin: center 20%; }
+.zoomh_t, .zoom_t { transform-origin: center 0; -webkit-transform-origin: center 0; -moz-transform-origin: center 0; -o-transform-origin: center 0; -ms-transform-origin: center 0; }
+.zoomh_m, .zoom_m, zoom_btn { transform-origin: center; -webkit-transform-origin: center; -moz-transform-origin: center; -o-transform-origin: center; -ms-transform-origin: center; }
+.zoomh_b, .zoom_b { transform-origin: center bottom; -webkit-transform-origin: center bottom; -moz-transform-origin: center bottom; -o-transform-origin: center bottom; -ms-transform-origin: center bottom; }
+
+.sceentip { position: absolute; z-index: 99999; left: 0; top: 0; width: 100%; height: 100%; font-size: 20px; text-align: center; color: #fff; background: rgb(0,111,192); display: none; }

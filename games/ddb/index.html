@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=100%; initial-scale=1; maximum-scale=1; minimum-scale=1; user-scalable=no;">
+<title>Playing Twins Match-Up</title>
+	<script type="text/javascript" src="http://g.lanrenmb.com/games/qw/jquery.min.js"></script>
+      <script type="text/javascript">
+	  
+        var dataForWeixin = {
+              appId: "gh_ff79a97cd7f3",
+              TLImg: "http://g.lanrenmb.com/games/ddb/logo.jpg",
+              url: "http://g.lanrenmb.com/games/ddb/",
+              title: "Classic  game <Twins Match>, please share your friends!  Circle  friends wechat!",
+              desc: "please share your friends!  Circle  friends wechat!"
+        };
+
+        var onBridgeReady = function(){
+            WeixinJSBridge.on('menu:share:appmessage', function(argv){
+               var infos = $("#infos").text();     
+           
+                WeixinJSBridge.invoke('sendAppMessage', {
+                    "appid": dataForWeixin.appId,
+                    "img_url": dataForWeixin.TLImg,
+                    "img_width": "120",
+                    "img_height": "120",
+                    "link": dataForWeixin.url + '?f=wx_hy_bb',
+                    "title": infos + dataForWeixin.title,
+                    "desc": dataForWeixin.desc 
+                });
+         setTimeout(function () {location.href = "http://g.lanrenmb.com/games/ddb/";}, 1500); 
+            });
+            WeixinJSBridge.on('menu:share:timeline', function(argv){
+                var infos = $("#infos").text();             
+                WeixinJSBridge.invoke('shareTimeline', {
+                    "appid": dataForWeixin.appId,
+                    "img_url":dataForWeixin.TLImg,
+                    "img_width": "120",
+                    "img_height": "120",
+                    "link": dataForWeixin.url + '?f=wx_pyq_bb',
+                    "title": infos + dataForWeixin.title,
+                    "desc": dataForWeixin.desc
+                });
+		setTimeout(function () {location.href = "http://g.lanrenmb.com/games/ddb/";}, 1500);  
+            });
+        };
+        if(document.addEventListener){
+            document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+        }else if(document.attachEvent){
+            document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
+            document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+        }   
+      </script>
+<link href='http://g.lanrenmb.com/css' rel='stylesheet' type='text/css'>
+<style>
+body {
+	text-align: center;
+	background: #FFEDD9 url(images/bg.jpg) repeat 0 0;
+	font-family: 'Luckiest Guy', cursive;
+	color: #48321D;
+}
+
+h2 {
+	color: #E61D25;
+	font-size: 36px;	
+	margin: 15px 0;
+}
+
+p {
+	display: block;	
+	font-size: 16px;
+	margin: 0 0 15px;
+}
+
+#game {
+	background: #FFCEB8;
+	width: 300px;	
+	height: 320px;
+	margin: 0 auto 10px;
+	padding: 10px;
+	display: -webkit-box;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	box-shadow: 0 0 4px #CC1220;
+	-webkit-box-shadow: 0 0 4px #CC1220;
+	-moz-box-shadow: 0 0 4px #CC1220;
+}
+
+#time {
+	clear: both;
+	position: relative;
+}
+
+#cards {
+	position: relative;
+	width: 300px;
+	height: 345px;
+}
+
+.card {
+	-webkit-perspective: 600;
+	width: 60px;
+	height: 90px;
+	position: absolute;
+	-moz-transition: all .3s;
+	-webkit-transition: all .3s;
+	transition: all .3s;
+}
+
+.face {
+	border-radius: 10px;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	-webkit-transition-property: opacity, transform, box-shadow;
+	-webkit-transition-duration: .3s;
+	-webkit-backface-visibility: hidden;	
+}
+
+.front {
+	background: #999 url(images/deck.png) 0 -180px;
+	z-index: 10;
+}
+
+.back {
+	background: #efefef	url(images/deck.png) 0 -180px;
+	-webkit-transform: rotate3d(0,1,0,-180deg);
+	z-index: 8;
+}
+
+.card:hover .face, .card-flipped .face {
+	-webkit-box-shadow: 0 0 10px #CC1220;	
+}
+
+.card-flipped .front {
+	-webkit-transform: rotate3d(0,1,0,180deg);
+	z-index: 8;
+}
+.card-flipped .back {
+	-webkit-transform: rotate3d(0,1,0,0deg);
+	z-index: 10;
+}
+
+.card-removed {
+	opacity: 0;	
+}
+
+.cardAQ {background-position: 0 0;}
+.cardAK {background-position: -60px 0;}
+.cardCK {background-position: -120px 0;}
+.cardBQ {background-position: -180px 0;}
+.cardCQ {background-position: 0 -90px;}
+.cardBK {background-position: -60px -90px;}
+.cardDQ {background-position: -120px -90px;}
+.cardDK {background-position: -180px -90px;}
+
+#game_wrapper {
+	position: relative;
+	margin: 0 auto;
+	width: 320px;
+}
+
+#timer {
+	background: url(images/message.png) no-repeat left top;
+	height: 95px;
+	width: 300px;
+	position: relative;
+}
+
+#timer p {
+	margin: 0 0 10px;
+	left: 137px;
+	top: 47px;
+	position: absolute;
+}
+
+.button a {
+	background: url(images/btn.png) no-repeat 0 0;
+	color: #fff;
+	display: block;
+	margin: 0 auto;
+	height: 30px;
+	padding: 3px;
+	text-align: center;
+	text-decoration: none;
+	width: 145px;
+}
+
+.button a:hover {
+	color: #fff;
+	text-decoration: none;
+}
+
+#popup {
+	margin: 0 auto;
+	position:absolute;
+	top: 180px;
+	width: 100%;
+	z-index: 10;
+}
+
+#popup.hide {
+	display: none;	
+}
+
+#popup.show {
+	display: block;	
+}
+
+#popup p {
+	font-size: 18px;
+	margin: 0 0 15px;
+}
+
+#popup .score {
+	color: #52B910;
+	font-size: 24px;	
+}
+
+#notice {
+	background: none repeat scroll 0 0 #F9E48F;
+    border: 1px solid #F0D567;
+    color: #A26C0D;
+    font-size: 1.2em;
+    line-height: 1.64;
+	margin: 10px 0 0;
+    padding: 10px;
+	display: none;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	box-shadow: 0 0 4px #CC1220;
+	-webkit-box-shadow: 0 0 4px #CC1220;
+	-moz-box-shadow: 0 0 4px #CC1220;
+}
+
+#notice p {
+	margin: 0;	
+}
+
+.other_game {
+		background: #28AAA9;
+		margin: 0 auto;
+		overflow: hidden;
+		padding: 10px;
+		text-align: left;
+		width: 300px;
+		-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;
+		border-radius: 5px;
+		}
+		.other_game p {
+			color: #fff;
+			font-family: Arial, Helvetica, sans-serif;
+			font-weight: normal;
+			font-size: 14px;
+			margin: 0 0 10px;
+		}
+		.other_game ul {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+		}
+		
+		.other_game ul li {
+			margin-top: 10px;	
+		}
+		
+		.other_game ul li:first-child {
+			margin: 0;	
+		}
+		
+		.other_game ul li img {
+			float: left;
+			margin-right: 10px;
+		}
+		.other_game a {
+			display:block;
+			color: #fff;	
+			font-family: Arial, Helvetica, sans-serif;
+			font-size: 14px;
+			overflow: hidden;
+			text-decoration: none;
+		}
+		.other_game a span {
+			font-size: 12px;
+			font-family: Arial, Helvetica, sans-serif;
+			color: #fff;
+		}
+</style>
+<!-- Google analytics, ignore this -->
+<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-18035087-2']);
+	  _gaq.push(['_trackPageview']);
+	
+	  (function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+</script>
+
+<script src="http://g.lanrenmb.com/games/qw/jquery.min.js"></script>
+<script>
+window.addEventListener("load",function() {
+	  // Set a timeout...
+	  setTimeout(function(){
+		// Hide the address bar!
+		window.scrollTo(0, 65);
+	  }, 0);
+	});
+
+//logic
+var matchingGame = {};
+matchingGame.deck = [
+	'cardAK', 'cardAK',
+	'cardAQ', 'cardAQ',
+	'cardCQ', 'cardCQ',
+	'cardBK', 'cardBK',
+	'cardBQ', 'cardBQ',
+	'cardDK', 'cardDK',
+];
+	
+$(function(){
+	if (!$.browser.webkit) {
+    	alert( "Your current browser doesn't support this game. Please play this game on either Safari or Google Chrome!" );
+		$("#game_wrapper").html('<div class"notice"><p>Your current browser does not support this game</p></div>');
+  }
+  
+	//reset elapsed time
+	matchingGame.elapsedTime = 0;
+	//start the timer
+	matchingGame.timer = setInterval(countTimer, 1000);
+	
+	matchingGame.deck.sort(shuffle);
+	
+	// clone 12 copies of the card
+	for(var i=0;i<11;i++){
+		$(".card:first-child").clone().appendTo("#cards");
+	}
+	// initialize each card's position
+	$("#cards").children().each(function(index) {
+		// align the cards to be 4x3 ourselves.
+		$(this).css({
+			"left" : ($(this).width() + 20) * (index % 4),
+			"top" : ($(this).height() + 20) * Math.floor(index / 4)
+		});
+		
+		//get pattern from shuffled deck
+		var pattern = matchingGame.deck.pop();
+		//visually apply the pattern on the card's back side
+		$(this).find('.back').addClass(pattern);
+		//embed the pattern data into DOM
+		$(this).attr('data-pattern',pattern);
+		//listen the click event on each card
+		$(this).click(selectCard);
+	});
+	
+});
+
+function shuffle() {
+	return 0.5 - Math.random();
+}
+
+function selectCard() {
+	//we do nothing if there are already two card flipped.
+	if($('.card-flipped').size() > 1) {
+		return;	
+	}
+	$(this).addClass('card-flipped');
+	//check the pattern of both flipped card 0.7s latter
+	if($('.card-flipped').size() == 2) {
+		setTimeout(checkPattern, 700);
+	}
+}
+
+function checkPattern() {
+	if(isMatchPattern()) {
+		$('.card-flipped').removeClass('card-flipped').addClass('card-removed');
+		$('.card-removed').bind("webkitTransitionEnd",removeTookCards);
+		//checkWinStatus();
+	} else {
+		$('.card-flipped').removeClass('card-flipped');	
+	}
+}
+
+function isMatchPattern() {
+	var cards = $('.card-flipped');
+	var pattern = $(cards[0]).data('pattern');
+	var anotherPattern = $(cards[1]).data('pattern');
+	return (pattern == anotherPattern);
+}
+
+function removeTookCards() {
+	$('.card-removed').remove();
+	
+	//check if all cards are removed and show game over
+	if($('.card').length == 0) {
+		gameover();	
+	}
+}
+
+function gameover() {
+	//stop the timer
+	clearInterval(matchingGame.timer);
+	//set the score in the game over popup
+	$('.score').html($('#elapsed-time').html());
+	
+	//load the saved last score from local storage
+	var lastElapsedTime = localStorage.getItem('last-elapsed-time');
+	//convert the elapsed time into minute:second format
+	var minute = Math.floor(lastElapsedTime / 60);
+	var second = lastElapsedTime % 60;
+	//add 0 if minute and sec less than 10
+	if(minute<10) minute = "0" + minute;
+	if(second<10) second = "0" + second;
+	//display the last elapsed time
+	$('.last-score').html(minute+":"+second);
+	
+	// save the score into local storage
+	localStorage.setItem("last-elapsed-time", matchingGame.elapsedTime);
+	
+	//show the game over popup
+	$('#popup').removeClass('hide');
+	$('#popup').addClass('show');
+}
+
+function countTimer() {
+	matchingGame.elapsedTime++;
+	//calculate
+	var minute = Math.floor(matchingGame.elapsedTime / 60);
+	var second = matchingGame.elapsedTime % 60;
+	
+	//add 0 if minute and sec less than 10
+	if(minute<10) minute = "0" + minute;
+	if(second<10) second = "0" + second;
+	
+	//display the elapsed time
+	$('#elapsed-time').html(minute+":"+second);
+}
+
+
+</script>
+
+
+</head>
+
+<body>
+<div id="game_wrapper">
+	<div id="ads">
+
+    </div>
+    
+    <div id="timer">
+        <p>Elapsed time: <span id="elapsed-time">00:00</span></p>
+    </div>
+    
+    <section id="game">
+        <div id="cards">
+            <div class="card">
+                <div class="face front"></div>
+                <div class="face back"></div>
+            </div> <!-- .card -->
+        </div> <!-- #cards -->
+    </section> <!-- #game -->
+    
+    <section id="popup" class="hide">
+        <div id="popup-bg"></div><!-- END popup-bg -->
+        <div id="popup-box">
+            <div id="popup-box-content">
+                <h2>You Won</h2>
+                <p>Your Score:</p>
+                <p><span class="score"></span></p>
+                <p>Last Score: <span class='last-score'></span></p>
+                <p class="button"><a href="index.html">Retry</a></p>
+            </div><!-- END popup-box-content -->
+        </div><!-- END popup-box -->
+    </section>
+    
+    <footer>
+        <p>Copyright &copy; <script>var year = new Date().getFullYear(); document.write(year);</script> YT Low</p>
+    </footer>
+</div><!-- END game_wrapper -->
+
+<div class="other_game">
+  <ul><li>
+    <div align="center">Twins Match-Up</div>
+  </li>
+            <li>
+              <p>There are a group of snow monsters looking for their long lost twin!</p>
+              <p>To reunited them, you have to search and find out the twins that look exactly alike</p>
+			  <p><img src="http://img.tongji.linezing.com/3455448/tongji.gif"/></p>
+            </li>
+  </ul>
+</div><!-- END other game -->
+</body>
+</html>

@@ -1,0 +1,48 @@
+body, ul, dl, ol, form { margin: 0; }
+
+body { width: 320px; margin: 0 auto; font-family: "Microsoft YaHei", "微软雅黑", "宋体"; font-size: 14px; color: #222; background-color: #3C3C3C; }
+p { margin: 3px 0; line-height: 150%; }
+h1 { margin: 0; text-align: center; font-size: 20px; }
+hr { border: 0; height: 1px; background-color: #CCC; margin: 5px 0; }
+button { border: 0; }
+
+#game { position: relative; width: 320px; height: 320px; background: #000 url(bj.png) no-repeat; }
+#game div, #game button { position: absolute; }
+.land { position: absolute; width: 125px; height: 115px; }
+.L { left: 0; top: 90px; }
+.R { left: 195px; top: 90px; }
+.L .line_boy.p1 { left: 5px; }
+.L .line_boy.p2 { left: 40px; }
+.L .line_boy.p3 { left: 75px; }
+.L .line_girl.p1 { left: 20px; top: 50px; }
+.L .line_girl.p2 { left: 55px; top: 50px; }
+.L .line_girl.p3 { left: 90px; top: 50px; }
+.R .line_boy.p1 { left: 95px; }
+.R .line_boy.p2 { left: 60px; }
+.R .line_boy.p3 { left: 25px; }
+.R .line_girl.p1 { left: 80px; top: 50px; }
+.R .line_girl.p2 { left: 45px; top: 50px; }
+.R .line_girl.p3 { left: 10px; top: 50px; }
+.boy { width: 27px; height: 65px; background-image: url(boy.png); cursor: pointer; z-index: 100; }
+.girl { width: 30px; height: 61px; background-image: url(girl.png); cursor: pointer; z-index: 101; }
+.boat { width: 160px; height: 91px; left: 160px; top: 195px; }
+/*.boat_bg { width: 160px; height: 66px; top: 25px; background: url(chuan.png) no-repeat bottom center; z-index: 102; }*/
+.boat_bg_1 { width: 40px; height: 66px; left: 0; top: 25px; background: url(boat_1.png) no-repeat bottom center; z-index: 102; }
+.boat_bg_2 { width: 40px; height: 66px; left: 120px; top: 25px; background: url(boat_2.png) no-repeat bottom center; z-index: 102; }
+.boat_bg_3 { width: 80px; height: 40px; left: 40px; top: 51px; background: url(boat_3.png) no-repeat bottom center; z-index: 102; }
+.boat .seat { height: 91px; }
+.boat .seat.p1 { left:47px; }
+.boat .seat.p2 { left:82px; }
+.boat .seat .boy, .boat .seat .girl { bottom: 25px; }
+.go { width: 100px; height: 41px; left: 110px; top: 270px; background: url(bt1.png) no-repeat; display: none; z-index: 103; }
+.time { right: 20px; color: green; z-index: 103; }
+.mask { width: 320px; height: 320px; left: 0; top: 0; background-color: #000; opacity: .7; z-index: 104; }
+.success { left: 0; top: 0; z-index: 105; display: none; }
+.failure { left: 30px; top: 40px; z-index: 105; display: none; }
+.result { font-size: 20px; left: 30px; top: 45px; color: #FFF; font-weight: bold; z-index: 106; }
+.welcome { font-size: 16px; margin: 20px; padding: 10px; color: green; background-color: #EEE; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; z-index: 106; }
+.start { width: 160px; height: 41px; left: 80px; top: 180px; background: url(start.png) no-repeat; z-index: 106; }
+.more { width: 160px; height: 41px; left: 80px; top: 250px; background: url(more.png) no-repeat; z-index: 106; }
+.reload { width: 100px; height: 41px; left: 30px; top: 270px; background: url(bt2.png) no-repeat; display: none; z-index: 106; }
+.help { width: 100px; height: 41px; left: 180px; top: 270px; background: url(help.png) no-repeat; display: none; z-index: 106; }
+.xuanyao { width: 100px; height: 41px; left: 30px; top: 270px; background: url(xuanyao.png) no-repeat; display: none; z-index: 106; }

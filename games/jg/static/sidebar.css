@@ -1,0 +1,112 @@
+body{
+	oncontextmenu: return false;
+	onselectstart: return false;
+}
+
+#play68box{
+	width: 190px;
+	font-size: 12px;
+	line-height: 15px;
+	right: -172px;
+	top: 35%; /* change this value to place the menu higher or lower */
+	position: fixed;
+	z-index: 9998;
+}
+
+#tab{
+	float: left;
+	list-style: none outside none;
+	padding: 0;
+	position: relative;
+	z-index: 99;
+	margin-top: 10px;
+	margin-right: 0;
+	margin-bottom: 0;
+	margin-left: 0;
+}
+
+#tab li span{
+    display: block;
+    padding: 0 5px;
+    position: relative;
+}
+
+#links{
+	width: 100px;
+	padding: 1px;
+	float: left;
+	background-color: #f6bb42;
+	border-radius: 8px;
+}
+
+.show, .hide{
+    /* we specify the transition length for hiding and showing */
+            transition: margin-right .4s ease-in;
+    -webkit-transition: margin-right .4s ease-in;
+}
+
+.hide{
+    margin-right:0px;
+}
+
+.show{
+    margin-right:95px;
+}
+
+#arrow, .bt{
+    cursor: pointer;
+}
+
+.bt{
+	width: 95px;
+	height: 41px;
+	margin: 2px;
+	text-align:center;
+	/*border:1px solid #858fa6;*/
+    font: bold 15px Arial, Helvetica, "Microsoft Yahei", "Î¢ÈíÑÅºÚ", STXihei, "»ªÎÄÏ¸ºÚ", sans-serif;
+	background-color: #da4453;
+	border-radius: 6px;
+}
+
+.bt a{
+    line-height: 40px;
+    color: #fff;
+    display: block;
+	text-decoration:none;
+}
+
+.bt:hover{
+    transition: background .3s linear         -o-transition: background .3s linear;
+       -moz-transition: background .3s linear;
+    -webkit-transition: background .3s linear;
+	background-color: #37bc9b;
+}
+
+#deco{
+	width: 90px;
+	float: left;    /*        box-shadow:0px 0px 5px #000;
+       -moz-box-shadow:0px 0px 5px #000;
+    -webkit-box-shadow:0px 0px 5px #000;*/
+}
+
+#share-wx{
+	background:rgba(0,0,0,0.8);
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:100%;
+	height:100%;
+	z-index:10000;
+	display:none;
+}
+
+#wx-qr{
+	background:rgba(0,0,0,0.8);
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:100%;
+	height:100%;
+	z-index:10000;
+	display:none;
+}
